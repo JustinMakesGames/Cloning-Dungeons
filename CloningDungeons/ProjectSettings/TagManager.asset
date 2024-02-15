@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pickup
+  - Red
+  - Green
+  - Yellow
+  - Blue
+  - BlueButton
+  - GreenButton
+  - RedButton
+  - YellowButton
   layers:
   - Default
   - TransparentFX
@@ -14,7 +22,7 @@ TagManager:
   - UI
   - Player
   - Pickup
-  - 
+  - SmallPlayer
   - 
   - 
   - 

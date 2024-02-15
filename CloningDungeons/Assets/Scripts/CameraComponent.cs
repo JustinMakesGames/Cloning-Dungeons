@@ -16,6 +16,7 @@ public class CameraComponent : MonoBehaviour
 
     public Transform bigclone;
     public Transform smallclone;
+    public SmallClone script;
     public bool bigcloneparent;
     public bool smallcloneparent;
 
@@ -27,6 +28,7 @@ public class CameraComponent : MonoBehaviour
         transform.parent = bigclone;
         bigcloneparent = true;
         transform.position = bigclone.GetChild(0).transform.position;
+        script = smallclone.GetComponent<SmallClone>();
     }
 
     public float camspeed;
@@ -53,6 +55,10 @@ public class CameraComponent : MonoBehaviour
         xRotation -= yMovement;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        if (script.ableToDrag && Input.GetMouseButton(0))
+        {
+            yRotation = Mathf.Clamp(yRotation, script.camclamp - 10f, script.camclamp + 10f);
+        }
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         moveOrientation.rotation = Quaternion.Euler(0, yRotation, 0);
