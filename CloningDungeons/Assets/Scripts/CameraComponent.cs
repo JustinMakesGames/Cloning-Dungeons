@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraComponent : MonoBehaviour
 {
 
     public float sensx;
     public float sensy;
 
-    public Transform playerOrientation;
+    public Transform moveOrientation;
     
 
-    float xRotation;
-    float yRotation;
+    public float xRotation;
+    public float yRotation;
 
     public Transform bigclone;
     public Transform smallclone;
@@ -26,6 +26,7 @@ public class Camera : MonoBehaviour
         Cursor.visible = false;
         transform.parent = bigclone;
         bigcloneparent = true;
+        transform.position = bigclone.GetChild(0).transform.position;
     }
 
     public float camspeed;
@@ -54,6 +55,7 @@ public class Camera : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        moveOrientation.rotation = Quaternion.Euler(0, yRotation, 0);
         
     }
 
@@ -64,6 +66,8 @@ public class Camera : MonoBehaviour
             
             transform.parent = smallclone;
             transform.position = Vector3.MoveTowards(transform.position, smallclone.GetChild(0).transform.position, camspeed * Time.deltaTime);
+            bigclone.GetComponent<Movement>().isPlayer = false;
+            smallclone.GetComponent<Movement>().isPlayer = true;
             if (Vector3.Distance(transform.position, smallclone.GetChild(0).transform.position) < 0.05f)
             {
                 timeToMove = false;
@@ -77,6 +81,8 @@ public class Camera : MonoBehaviour
             
             transform.parent = bigclone;
             transform.position = Vector3.MoveTowards(transform.position, bigclone.GetChild(0).transform.position, camspeed * Time.deltaTime);
+            bigclone.GetComponent<Movement>().isPlayer = true;
+            smallclone.GetComponent<Movement>().isPlayer = false;
             if (Vector3.Distance(transform.position, bigclone.GetChild(0).transform.position) < 0.05f)
             {
                 timeToMove = false;
