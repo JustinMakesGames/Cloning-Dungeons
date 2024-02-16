@@ -35,29 +35,13 @@ public class Movement : MonoBehaviour
     public virtual void Update()
     {
         InputCheck();
-    }
-
-    // Update is called once per frame
-    public virtual void FixedUpdate()
-    {
-        
-
-        
-
         if (isPlayer)
         {
             Moving();
         }
-        
-       
-        
-        
-        
-
-        
-        
-
     }
+
+    
 
     void InputCheck()
     {

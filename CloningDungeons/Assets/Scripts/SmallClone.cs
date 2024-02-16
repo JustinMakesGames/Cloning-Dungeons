@@ -13,14 +13,13 @@ public class SmallClone : Movement
     public bool isCameraClamped;
     public Transform obj;
 
-    
-    public override void FixedUpdate()
+
+    public override void Update()
     {
-        base.FixedUpdate();
-        
+        base.Update();
         if (Physics.Raycast(cam.position, cam.forward, out hit, 2f, pickupable))
         {
-            
+
             obj = hit.collider.transform;
             ableToDrag = true;
 
@@ -29,11 +28,10 @@ public class SmallClone : Movement
 
         else if (!Physics.Raycast(cam.position, cam.forward, out hit, 2f, pickupable) && !Input.GetMouseButton(0))
         {
-            
+
             ableToDrag = false;
-            speed = 1000f;
+            speed = 2000f;
         }
-        
 
         if (ableToDrag)
         {
@@ -43,7 +41,7 @@ public class SmallClone : Movement
 
                 Pickup();
             }
-            
+
         }
 
         else
@@ -51,10 +49,8 @@ public class SmallClone : Movement
             isCameraClamped = false;
         }
 
-       
-        
-        
     }
+   
 
     public float distance;
     void CameraClamping()
@@ -83,7 +79,7 @@ public class SmallClone : Movement
         objrigid.velocity = velocity;
 
 
-        speed = 700f;
+        speed = 1200f;
 
         
 
