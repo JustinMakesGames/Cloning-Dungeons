@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     //Movement
     public float speed;
     Rigidbody rb;
+    public bool jump;
+    public float jumppower;
     
 
 
@@ -39,6 +41,7 @@ public class Movement : MonoBehaviour
         {
             Moving();
         }
+        Jump();
     }
 
     
@@ -47,6 +50,7 @@ public class Movement : MonoBehaviour
     {
         hor = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
+        jump = Input.GetButtonDown("Jump");
     }
 
     void Moving()
@@ -55,6 +59,14 @@ public class Movement : MonoBehaviour
         rb.AddForce(dir.normalized * speed * Time.deltaTime);
         
 
+    }
+
+    void Jump()
+    {
+        if (jump)
+        {
+            rb.AddForce(new Vector3(0, jumppower, 0), ForceMode.Impulse);
+        }
     }
 
     
