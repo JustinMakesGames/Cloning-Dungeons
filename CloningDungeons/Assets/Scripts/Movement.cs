@@ -37,6 +37,12 @@ public class Movement : MonoBehaviour
     public virtual void Update()
     {
         InputCheck();
+        
+        
+    }
+
+    public virtual void FixedUpdate()
+    {
         if (isPlayer)
         {
             Moving();

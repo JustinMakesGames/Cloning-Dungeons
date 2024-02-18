@@ -33,8 +33,9 @@ public class BigClone : Movement
     }
 
 
-    private void FixedUpdate()
+    public override void FixedUpdate()
     {
+        base.FixedUpdate();
         if (isGrabbing)
         {
             GrabPlayer(objtoGet);
@@ -45,14 +46,13 @@ public class BigClone : Movement
 
     void GrabPlayer(Transform obj)
     {
-        obj.parent = cam;
-        obj.rotation = Quaternion.identity;
-        
-        float movespeed = 100f;
+
+
+        float movespeed = 10f;
         Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
         rigidobj.useGravity = false;
         rigidobj.isKinematic = true;
-        rigidobj.interpolation = RigidbodyInterpolation.None;
+        
         Vector3 targetposition = cam.position + cam.forward * 2f;
         Vector3 lerping = Vector3.Lerp(obj.position, targetposition, movespeed * Time.deltaTime);
         rigidobj.MovePosition(lerping);

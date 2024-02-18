@@ -11,6 +11,7 @@ public class SmallClone : Movement
     public bool ableToDrag;
     public float camclamp;
     public bool isCameraClamped;
+    public bool dragging;
     public Transform obj;
 
 
@@ -37,9 +38,7 @@ public class SmallClone : Movement
         {
             if (Input.GetMouseButton(0))
             {
-                CameraClamping();
-
-                Pickup();
+                dragging = true;
             }
 
         }
@@ -47,12 +46,24 @@ public class SmallClone : Movement
         else
         {
             isCameraClamped = false;
+            dragging = false;
         }
 
     }
    
 
     public float distance;
+
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        if (dragging)
+        {
+            CameraClamping();
+            Pickup();
+        }
+
+    }
     void CameraClamping()
     {
         if (!isCameraClamped)
