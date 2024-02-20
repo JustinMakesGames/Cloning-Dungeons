@@ -15,6 +15,10 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     public bool jump;
     public float jumppower;
+    public bool ableToJump;
+    private RaycastHit hit;
+    public LayerMask ground;
+    private bool resetjump;
     
 
 
@@ -27,15 +31,20 @@ public class Movement : MonoBehaviour
 
     
 
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         script = cam.GetComponent<CameraComponent>();
+        resetjump = true;
         
     }
 
     public virtual void Update()
     {
+        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, transform.localScale.y, ground);
+        Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
         
         
@@ -46,7 +55,13 @@ public class Movement : MonoBehaviour
         if (isPlayer)
         {
             Moving();
-            Jump();
+            if (ableToJump && jump && resetjump)
+            {
+                resetjump = false;
+                Jump();
+                Invoke(nameof(Reset), 0.25f);
+            }
+            
         }
         
     }
@@ -57,7 +72,7 @@ public class Movement : MonoBehaviour
     {
         hor = Input.GetAxisRaw("Horizontal");
         vert = Input.GetAxisRaw("Vertical");
-        jump = Input.GetButtonDown("Jump");
+        jump = Input.GetButton("Jump");
     }
 
     void Moving()
@@ -70,11 +85,16 @@ public class Movement : MonoBehaviour
 
     void Jump()
     {
-        if (jump)
-        {
-            rb.AddForce(new Vector3(0, jumppower, 0), ForceMode.Impulse);
-        }
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(new Vector3(0, jumppower, 0), ForceMode.Impulse);
+
+
+
     }
 
-    
+    private void Reset()
+    {
+        resetjump = true;
+    }
+
 }
