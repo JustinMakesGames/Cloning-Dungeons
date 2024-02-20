@@ -46,8 +46,9 @@ public class Movement : MonoBehaviour
         if (isPlayer)
         {
             Moving();
+            Jump();
         }
-        Jump();
+        
     }
 
     

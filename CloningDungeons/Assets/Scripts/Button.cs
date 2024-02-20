@@ -10,7 +10,7 @@ public class Button : MonoBehaviour
     public float buttonSpeed;
     public float howmuchPressed;
     private bool pressed;
-    private bool fullyPressed;
+    public bool fullyPressed;
     public float howMuchDistance;
 
     private void Start()
