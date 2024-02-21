@@ -15,6 +15,7 @@ public class SmallClone : Movement
     public Transform obj;
 
 
+    
     public override void Update()
     {
         base.Update();
@@ -68,9 +69,10 @@ public class SmallClone : Movement
     {
         if (!isCameraClamped)
         {
-            isCameraClamped = true;
+            
             camclamp = script.yRotation;
             distance = Vector3.Distance(transform.position, obj.position);
+            isCameraClamped = true;
         }
     }
 
@@ -78,7 +80,7 @@ public class SmallClone : Movement
     void Pickup()
     {
 
-        
+
         
         Rigidbody objrigid = obj.GetComponent<Rigidbody>();
 

@@ -66,7 +66,7 @@ public class CameraComponent : MonoBehaviour
         xRotation -= yMovement;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        if (script.ableToDrag && Input.GetMouseButton(0))
+        if (script.isCameraClamped)
         {
             yRotation = Mathf.Clamp(yRotation, script.camclamp - 10f, script.camclamp + 10f);
         }
