@@ -31,9 +31,6 @@ public class DoorOpening : MonoBehaviour
 
         }
 
-        else
-        {
-            print("Die");
-        }
+        
     }
 }
