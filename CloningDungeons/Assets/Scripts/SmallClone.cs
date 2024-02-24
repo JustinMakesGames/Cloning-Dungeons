@@ -84,7 +84,7 @@ public class SmallClone : Movement
         
         Rigidbody objrigid = obj.GetComponent<Rigidbody>();
 
-        Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * distance;
+        Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * maxdistance;
         Vector3 movingplace = positiontoBe - obj.position;
 
         Vector3 velocity = movingplace * speedofpickup * Time.deltaTime;
