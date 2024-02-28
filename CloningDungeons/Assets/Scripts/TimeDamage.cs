@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TimeDamage : MonoBehaviour
+public class TimeDamageHit : MonoBehaviour
 {
     public float awayhitpower;
     public float uphitpower;
     public TMP_Text showtimepunishment;
 
-    private void Start()
-    {
-        showtimepunishment = Timer
-    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "SmallPlayer")
