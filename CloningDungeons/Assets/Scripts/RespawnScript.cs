@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnScript : MonoBehaviour
+public class TimeDamage : MonoBehaviour
 {
-    public List<Respawning> respawnscripts;
-    // Start is called before the first frame update
-    void Start()
-    {
-        respawnscripts.Add(FindObjectOfType<Respawning>());
-    }
-
+    public float awayhitpower;
+    public float uphitpower;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.tag == "Player" || collision.collider.gameObject.tag == "SmallPlayer")
         {
-            foreach (Respawning s in respawnscripts)
-            {
-                s.respawntime = true;
-            }
+            Transform player = collision.collider.transform;
+            Rigidbody rb = player.GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
+            Timer.timer -= 10f;
+            
+
         }
+
     }
 }
