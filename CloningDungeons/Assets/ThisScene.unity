@@ -1771,7 +1771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8cfb85219320b4d8905d8f8bd85bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 300
   timertext: {fileID: 673017942}
 --- !u!114 &673017942
 MonoBehaviour:
@@ -3211,12 +3210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ad93c10dc8ab54d9d2bdef429e0428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawntime: 0
-  toRespawnHere: 0
-  bigclone: {fileID: 0}
-  smallclone: {fileID: 0}
-  bigclonespawn: {fileID: 0}
-  smallclonespawn: {fileID: 0}
 --- !u!65 &1293484606
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4476,6 +4469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  awayhitpower: 0
+  uphitpower: 0
+  showtimepunishment: {fileID: 0}
 --- !u!136 &2005508694
 CapsuleCollider:
   m_ObjectHideFlags: 0
