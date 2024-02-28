@@ -11,7 +11,7 @@ public class TimeDamage : MonoBehaviour
 
     private void Start()
     {
-        showtimepunishment = 
+        showtimepunishment = Timer
     }
     private void OnCollisionEnter(Collision collision)
     {
