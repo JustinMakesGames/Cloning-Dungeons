@@ -69,7 +69,7 @@ public class BigClone : Movement
         rigidobj.isKinematic = false;
         rigidobj.interpolation = RigidbodyInterpolation.Interpolate;
         rigidobj.AddForce(cam.forward * throwingForceForward, ForceMode.Impulse);
-        obj.parent = null;
+       
         isGrabbing = false;
 
     }

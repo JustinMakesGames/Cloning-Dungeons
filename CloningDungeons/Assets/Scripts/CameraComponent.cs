@@ -50,6 +50,10 @@ public class CameraComponent : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            bigclone.GetComponent<BigClone>().isGrabbing = false;
+            Rigidbody rb = smallclone.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
             timeToMove = true;
         }
 

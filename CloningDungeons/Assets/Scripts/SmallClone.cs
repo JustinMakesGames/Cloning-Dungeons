@@ -48,6 +48,7 @@ public class SmallClone : Movement
         {
             isCameraClamped = false;
             dragging = false;
+
         }
 
     }
@@ -63,6 +64,7 @@ public class SmallClone : Movement
             CameraClamping();
             Pickup();
         }
+        
 
     }
     void CameraClamping()
@@ -84,6 +86,7 @@ public class SmallClone : Movement
         
         Rigidbody objrigid = obj.GetComponent<Rigidbody>();
 
+        
         Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * maxdistance;
         Vector3 movingplace = positiontoBe - obj.position;
 
@@ -94,6 +97,8 @@ public class SmallClone : Movement
 
         speed = 1200f;
 
+        
+ 
         
 
         
