@@ -14,15 +14,22 @@ public class DoorOpening : MonoBehaviour
 
     private void Update()
     {
-        bool dooropened = true;
-        foreach (Button b in buttonscripts)
+        
+
+        if (!dooropened)
         {
-            if (!b.fullyPressed)
+            foreach (Button b in buttonscripts)
             {
-                dooropened = false;
-                break;
+                if (!b.fullyPressed)
+                {
+                    dooropened = false;
+                    break;
+                }
             }
+
+            dooropened = true;
         }
+        
 
         if (dooropened)
         {
