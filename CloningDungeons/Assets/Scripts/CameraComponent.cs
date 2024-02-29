@@ -35,29 +35,34 @@ public class CameraComponent : MonoBehaviour
 
     public float camspeed;
     public bool timeToMove;
-
+    public bool cutscene;
    
     void LateUpdate()
     {
 
-        if (!timeToMove)
+        if (!cutscene)
         {
-            transform.position = targetposition.position;
+            if (!timeToMove)
+            {
+                transform.position = targetposition.position;
+            }
+
+
+            CameraMovement();
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                bigclone.GetComponent<BigClone>().isGrabbing = false;
+                Rigidbody rb = smallclone.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.isKinematic = false;
+                timeToMove = true;
+            }
+
+            TimeToMove();
         }
 
-
-        CameraMovement();
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            bigclone.GetComponent<BigClone>().isGrabbing = false;
-            Rigidbody rb = smallclone.GetComponent<Rigidbody>();
-            rb.useGravity = true;
-            rb.isKinematic = false;
-            timeToMove = true;
-        }
-
-        TimeToMove();
+        
         
 
     }

@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public static float timer;
     public TMP_Text timertext;
-
+    public bool cutscene;
 
     private void Start()
     {
@@ -16,12 +16,16 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
-        TimerCountdown();
+        if (!cutscene)
+        {
+            TimerCountdown();
+        }
+        
     }
 
     void TimerCountdown()
     {
+        timer -= Time.deltaTime;
         int minutes = Mathf.FloorToInt(timer / 60.0f);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         timertext.text = minutes.ToString() + ":" + seconds.ToString("00");
