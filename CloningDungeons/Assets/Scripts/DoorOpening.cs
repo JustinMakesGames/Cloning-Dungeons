@@ -6,10 +6,13 @@ public class DoorOpening : MonoBehaviour
 {
     public Button[] buttonscripts;
     public bool dooropened;
+    
+  
 
     private void Start()
     {
         buttonscripts = GetComponentsInChildren<Button>();
+        
     }
 
     private void Update()
@@ -34,7 +37,8 @@ public class DoorOpening : MonoBehaviour
         if (dooropened)
         {
             print("Cool");
-            transform.GetChild(0).transform.Translate(0, 1 * Time.deltaTime, 0);
+            
+            
 
         }
 
