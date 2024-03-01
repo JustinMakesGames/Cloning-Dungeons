@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     private RaycastHit hit;
     public LayerMask ground;
     private bool resetjump;
+    public float jumpraycast;
     
 
 
@@ -38,12 +39,13 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         script = cam.GetComponent<CameraComponent>();
         resetjump = true;
+        jumpraycast = transform.localScale.y + 0.1f;
         
     }
 
     public virtual void Update()
     {
-        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, transform.localScale.y, ground);
+        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground);
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
         
