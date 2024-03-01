@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class SmallClone : Movement
 {
+    [Header("Dragging")]
     RaycastHit hit;
     public LayerMask pickupable;
     public float speedofpickup;
-    public float maxdistance;
+    public float maxgrabbingdistance;
     public bool ableToDrag;
     public float camclamp;
-    public bool isCameraClamped;
-    public bool dragging;
-    public Transform obj;
-
-
     
+    public bool isCameraClamped;
+    private bool dragging;
+    public Transform obj;
+    private float distancefromposition;
+
+
     public override void Update()
     {
         base.Update();
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 2f, pickupable))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maxgrabbingdistance, pickupable))
         {
 
             obj = hit.collider.transform;
@@ -28,7 +30,7 @@ public class SmallClone : Movement
 
         }
 
-        else if (!Physics.Raycast(cam.position, cam.forward, out hit, 2f, pickupable) && !Input.GetMouseButton(0))
+        else if (!Physics.Raycast(cam.position, cam.forward, out hit, maxgrabbingdistance, pickupable) && !Input.GetMouseButton(0))
         {
 
             ableToDrag = false;
@@ -54,7 +56,7 @@ public class SmallClone : Movement
     }
    
 
-    public float distance;
+    
 
     public override void FixedUpdate()
     {
@@ -73,7 +75,7 @@ public class SmallClone : Movement
         {
             
             camclamp = script.yRotation;
-            distance = Vector3.Distance(transform.position, obj.position);
+            distancefromposition = Vector3.Distance(transform.position, obj.position);
             isCameraClamped = true;
         }
     }
@@ -87,7 +89,7 @@ public class SmallClone : Movement
         Rigidbody objrigid = obj.GetComponent<Rigidbody>();
 
         
-        Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * maxdistance;
+        Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * distancefromposition;
         Vector3 movingplace = positiontoBe - obj.position;
 
         Vector3 velocity = movingplace * speedofpickup * Time.deltaTime;
