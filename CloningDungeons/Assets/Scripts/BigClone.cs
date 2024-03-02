@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BigClone : Movement
@@ -20,30 +21,28 @@ public class BigClone : Movement
     public override void Update()
     {
         base.Update();
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, smallclone) && Input.GetKeyDown(KeyCode.E) && !isGrabbing)
+        if (isPlayer)
         {
-            isGrabbing = true;
-            objtoGet = hit.collider.gameObject.transform;
-            
+            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, smallclone) && Input.GetKeyDown(KeyCode.E) && !isGrabbing)
+            {
+                isGrabbing = true;
+                objtoGet = hit.collider.gameObject.transform;
 
+
+            }
+
+
+            if (isGrabbing && Input.GetKeyDown(KeyCode.Q))
+            {
+                Throw(objtoGet);
+            }
+
+            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, chest) && Input.GetKeyDown(KeyCode.E))
+            {
+                StartCoroutine(ChestOpen());
+            }
         }
-
         
-        
-
-       
-
-        
-
-        if (isGrabbing && Input.GetKeyDown(KeyCode.Q))
-        {
-            Throw(objtoGet);
-        }
-
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, chest) && Input.GetKeyDown(KeyCode.E))
-        {
-            StartCoroutine(ChestOpen());
-        }
 
 
 
@@ -54,10 +53,15 @@ public class BigClone : Movement
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (isGrabbing)
+        if (isPlayer)
         {
-            GrabPlayer(objtoGet);
+            if (isGrabbing)
+            {
+                GrabPlayer(objtoGet);
+            }
         }
+        
+       
     }
 
 
@@ -68,12 +72,15 @@ public class BigClone : Movement
 
         float movespeed = 10f;
         Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
+       
+        
         rigidobj.useGravity = false;
         rigidobj.isKinematic = true;
         
-        Vector3 targetposition = cam.position + cam.forward * 2f;
+        Vector3 targetposition = cam.position + cam.forward * maxDistance;
         Vector3 lerping = Vector3.Lerp(obj.position, targetposition, movespeed * Time.deltaTime);
         rigidobj.MovePosition(lerping);
+        
 
         
     }
@@ -82,32 +89,45 @@ public class BigClone : Movement
     
     void Throw(Transform obj)
     {
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance + 0.7f, ~smallclone))
+        { 
+            obj.position = cam.position;
+        }
+
+        
         Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
         rigidobj.useGravity = true;
         rigidobj.isKinematic = false;
-        rigidobj.interpolation = RigidbodyInterpolation.Interpolate;
+    
         rigidobj.AddForce(cam.forward * throwingForceForward, ForceMode.Impulse);
-       
+        
         isGrabbing = false;
+        
 
     }
 
-    public GameObject keyprefab;
+    
 
+    public GameObject keyprefab;
+    
     IEnumerator ChestOpen()
     {
         Transform chest = hit.collider.gameObject.transform;
         Transform chestlid = chest.parent.GetChild(0);
         Transform spawnobject = chest.parent.GetChild(2);
-        
+        DoorKeyFloating doorkey = chest.parent.GetComponentInChildren<DoorKeyFloating>();
         GameObject key = Instantiate(keyprefab, spawnobject.position,
-            Quaternion.identity);
+            Quaternion.identity, chest.parent);
+        key.transform.localRotation = Quaternion.Euler(0,180,0);
         Animator keyanimator = key.transform.GetChild(0).GetComponent<Animator>();
         Animator chestanimator = chestlid.GetComponent<Animator>();
         keyanimator.Play("KeyGoingin");
         yield return new WaitForSeconds(2);
         Destroy(key);
         chestanimator.Play("ChestDeksel");
+        yield return new WaitForSeconds(1);
+        doorkey.ifopened = true;
+
 
         
         
