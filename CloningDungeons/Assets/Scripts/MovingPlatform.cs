@@ -11,6 +11,7 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         buttons = GetComponentsInChildren<Button>();
         platform = transform.GetChild(0);
         platformrb = platform.GetComponent<Rigidbody>();

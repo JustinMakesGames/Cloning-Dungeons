@@ -30,16 +30,23 @@ public class Movement : MonoBehaviour
     public Transform cam;
     public CameraComponent script;
 
+    //Saving
+    public LayerMask save;
+    public float rayCastSaveDistance;
+    public ToSpawnHere saveplace;
+
     
 
     
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         script = cam.GetComponent<CameraComponent>();
         resetjump = true;
         jumpraycast = transform.localScale.y + 0.1f;
+        saveplace = GameObject.FindObjectOfType<ToSpawnHere>().GetComponent<ToSpawnHere>(); 
         
     }
 
@@ -48,6 +55,7 @@ public class Movement : MonoBehaviour
         ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground);
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
+        Saving();
         
         
     }
@@ -92,6 +100,16 @@ public class Movement : MonoBehaviour
 
 
 
+    }
+
+    void Saving()
+    {
+        if (Physics.Raycast(cam.position, cam.forward, out hit, rayCastSaveDistance, save) && Input.GetKeyDown(KeyCode.E))
+        {
+            print("Saved");
+            saveplace.toSpawnhere = hit.collider.transform.GetSiblingIndex();
+            saveplace.SavePlayer();
+        }
     }
 
     private void Reset()

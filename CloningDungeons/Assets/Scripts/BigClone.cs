@@ -65,19 +65,28 @@ public class BigClone : Movement
     }
 
 
-
+    public float stuckagainstwalldistance;
+    public float numberawayfromobject;
     void GrabPlayer(Transform obj)
     {
 
-
+        
         float movespeed = 10f;
         Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
-       
+        
+        
         
         rigidobj.useGravity = false;
         rigidobj.isKinematic = true;
         
+
         Vector3 targetposition = cam.position + cam.forward * maxDistance;
+        if (Physics.Raycast(obj.position, targetposition - obj.position, out hit, stuckagainstwalldistance))
+        {
+            Vector3 newtargetposition = (obj.position - targetposition).normalized * numberawayfromobject;
+            targetposition = hit.point + newtargetposition;
+            
+        }
         Vector3 lerping = Vector3.Lerp(obj.position, targetposition, movespeed * Time.deltaTime);
         rigidobj.MovePosition(lerping);
         
@@ -89,10 +98,7 @@ public class BigClone : Movement
     
     void Throw(Transform obj)
     {
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance + 0.7f, ~smallclone))
-        { 
-            obj.position = cam.position;
-        }
+        
 
         
         Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
@@ -116,11 +122,15 @@ public class BigClone : Movement
         Transform chestlid = chest.parent.GetChild(0);
         Transform spawnobject = chest.parent.GetChild(2);
         DoorKeyFloating doorkey = chest.parent.GetComponentInChildren<DoorKeyFloating>();
+
         GameObject key = Instantiate(keyprefab, spawnobject.position,
             Quaternion.identity, chest.parent);
+
         key.transform.localRotation = Quaternion.Euler(0,180,0);
         Animator keyanimator = key.transform.GetChild(0).GetComponent<Animator>();
         Animator chestanimator = chestlid.GetComponent<Animator>();
+
+
         keyanimator.Play("KeyGoingin");
         yield return new WaitForSeconds(2);
         Destroy(key);
