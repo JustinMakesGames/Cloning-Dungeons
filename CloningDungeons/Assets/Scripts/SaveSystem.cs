@@ -33,7 +33,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.Log("No save file idiot");
+            Debug.Log("No save file");
             return null;
         }
     }

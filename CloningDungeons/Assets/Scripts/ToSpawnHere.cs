@@ -7,13 +7,13 @@ public class ToSpawnHere : MonoBehaviour
 {
     public Transform bigclone;
     public Transform smallclone;
-    public int toSpawnhere;
+    public int spawnplace;
 
     
     void Start()
     {
         StartCoroutine(SpawnPlayer());
-        print(toSpawnhere);
+        print(spawnplace);
         
     }
 
@@ -26,11 +26,11 @@ public class ToSpawnHere : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
          
-        toSpawnhere = data.toSpawnhere;
+        spawnplace = data.toSpawnhere;
         yield return new WaitForSeconds(0.1f);
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (i == toSpawnhere)
+            if (i == spawnplace)
             {
                 print(i + " is the right number to spawn to");
                 bigclone.position = transform.GetChild(i).GetChild(0).position;

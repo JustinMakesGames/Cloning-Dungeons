@@ -32,8 +32,11 @@ public class Movement : MonoBehaviour
 
     //Saving
     public LayerMask save;
-    public float rayCastSaveDistance;
-    public ToSpawnHere saveplace;
+    public float maximumdistance;
+    public ToSpawnHere toSpawnHere;
+
+    //Lever
+    public LayerMask lever;
 
     
 
@@ -46,7 +49,7 @@ public class Movement : MonoBehaviour
         script = cam.GetComponent<CameraComponent>();
         resetjump = true;
         jumpraycast = transform.localScale.y + 0.1f;
-        saveplace = GameObject.FindObjectOfType<ToSpawnHere>().GetComponent<ToSpawnHere>(); 
+        toSpawnHere = GameObject.FindObjectOfType<ToSpawnHere>().GetComponent<ToSpawnHere>(); 
         
     }
 
@@ -56,6 +59,7 @@ public class Movement : MonoBehaviour
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
         Saving();
+        Lever();
         
         
     }
@@ -104,11 +108,20 @@ public class Movement : MonoBehaviour
 
     void Saving()
     {
-        if (Physics.Raycast(cam.position, cam.forward, out hit, rayCastSaveDistance, save) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumdistance, save) && Input.GetKeyDown(KeyCode.E))
         {
             print("Saved");
-            saveplace.toSpawnhere = hit.collider.transform.GetSiblingIndex();
-            saveplace.SavePlayer();
+            toSpawnHere.spawnplace = hit.transform.GetSiblingIndex();
+            toSpawnHere.SavePlayer();
+        }
+    }
+
+    void Lever()
+    {
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumdistance, lever) && Input.GetKeyDown(KeyCode.E))
+        {
+            hit.transform.parent.parent.transform.GetComponent<Lever>().movinglever = true;
+
         }
     }
 

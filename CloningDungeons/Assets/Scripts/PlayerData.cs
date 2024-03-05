@@ -10,7 +10,7 @@ public class PlayerData
 
     public PlayerData(ToSpawnHere toSpawn)
     {
-        toSpawnhere = toSpawn.toSpawnhere;
+        toSpawnhere = toSpawn.spawnplace;
     }
 
 
