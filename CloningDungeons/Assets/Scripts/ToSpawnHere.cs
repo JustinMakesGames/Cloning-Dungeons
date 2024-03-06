@@ -27,7 +27,7 @@ public class ToSpawnHere : MonoBehaviour
 
          
         spawnplace = data.toSpawnhere;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         for (int i = 0; i < transform.childCount; i++)
         {
             if (i == spawnplace)
