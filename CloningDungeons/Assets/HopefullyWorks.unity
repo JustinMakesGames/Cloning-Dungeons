@@ -1759,6 +1759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movinglever: 0
+  cam: {fileID: 0}
 --- !u!1 &201901120
 GameObject:
   m_ObjectHideFlags: 0
@@ -12652,6 +12653,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.043
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.328
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656043641162695834, guid: 228774d6e4abca64f89cbf233dc349de,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3486560028459578919, guid: 228774d6e4abca64f89cbf233dc349de,
         type: 3}
