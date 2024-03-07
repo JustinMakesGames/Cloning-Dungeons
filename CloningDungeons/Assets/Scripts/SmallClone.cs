@@ -15,7 +15,13 @@ public class SmallClone : Movement
     public bool isCameraClamped;
     private bool dragging;
     public Transform obj;
-    private float distancefromposition;
+    public float distancefromposition;
+
+    [Header("ColliderShow")]
+    public Material outlineMaterial;
+    private Collider colliding;
+    private GameObject outlineObject;
+    private BoxCollider boxCollider;
 
 
     public override void Update()
@@ -25,8 +31,10 @@ public class SmallClone : Movement
         {
             if (Physics.Raycast(cam.position, cam.forward, out hit, maxgrabbingdistance, pickupable))
             {
-
+                
+             
                 obj = hit.collider.transform;
+                obj.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
                 ableToDrag = true;
 
 
@@ -37,6 +45,12 @@ public class SmallClone : Movement
 
                 ableToDrag = false;
                 speed = 2000f;
+                if (obj != null)
+                {
+                    obj.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+
+                }
+                obj = null;
             }
 
             if (ableToDrag)
@@ -58,10 +72,10 @@ public class SmallClone : Movement
        
 
     }
-   
+
+
 
     
-
     public override void FixedUpdate()
     {
         base.FixedUpdate();
