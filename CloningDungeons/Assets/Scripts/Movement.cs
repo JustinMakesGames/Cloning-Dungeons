@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     public bool ableToJump;
     private RaycastHit hit;
     public LayerMask ground;
+    public LayerMask cratejump;
     private bool resetjump;
     public float jumpraycast;
     
@@ -55,7 +56,9 @@ public class Movement : MonoBehaviour
 
     public virtual void Update()
     {
-        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground);
+        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground) || 
+            Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, cratejump);
+
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
         Saving();

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class BigClone : Movement
 {
+    [Header("BigCloneOnly")]
     RaycastHit hit;
     public LayerMask smallclone;
+    public LayerMask pickup;
     public float maxDistance;
     public bool isGrabbing;
     public Transform objtoGet;
@@ -23,10 +25,15 @@ public class BigClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, smallclone) && Input.GetKeyDown(KeyCode.E) && !isGrabbing)
+            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, smallclone) ||
+                Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, pickup))
             {
-                isGrabbing = true;
-                objtoGet = hit.collider.gameObject.transform;
+                if (Input.GetKeyDown(KeyCode.E) && !isGrabbing)
+                {
+                    isGrabbing = true;
+                    objtoGet = hit.collider.gameObject.transform;
+                }
+             
 
 
             }
@@ -36,6 +43,8 @@ public class BigClone : Movement
             {
                 Throw(objtoGet);
             }
+
+            
 
             if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, chest) && Input.GetKeyDown(KeyCode.E))
             {

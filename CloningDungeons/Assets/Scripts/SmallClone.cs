@@ -17,11 +17,7 @@ public class SmallClone : Movement
     public Transform obj;
     public float distancefromposition;
 
-    [Header("ColliderShow")]
-    public Material outlineMaterial;
-    private Collider colliding;
-    private GameObject outlineObject;
-    private BoxCollider boxCollider;
+    
 
 
     public override void Update()
@@ -68,7 +64,18 @@ public class SmallClone : Movement
                 dragging = false;
 
             }
+
+            if (Input.GetKeyDown(KeyCode.F) && ableToDrag)
+            {
+                obj.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+            }
         }
+        else
+        {
+            isCameraClamped = false;
+            dragging = false;
+        }
+        
        
 
     }
