@@ -85,6 +85,8 @@ public class CameraComponent : MonoBehaviour
         
     }
 
+
+    //Switching the camera
     void TimeToMove()
     {
         if (bigcloneparent && timeToMove)

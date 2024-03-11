@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour
         
     }
 
+    //FloorToInt zorgt ervoor dat ie getal omlaag afrondt
     void TimerCountdown()
     {
         timer -= Time.deltaTime;
