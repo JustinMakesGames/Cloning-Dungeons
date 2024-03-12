@@ -62,11 +62,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ef2e359fcc54b6a40b3d4cef9025d8aa, type: 2}
+      objectReference: {fileID: 2100000, guid: 4bb63916403a098469fc988fae6dddc6, type: 2}
     - target: {fileID: 919132149155446097, guid: d497dddbb8b48724d9c787c1e2e6d533,
         type: 3}
       propertyPath: m_Name
-      value: traliesframe
+      value: traliesframe 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -177,7 +177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2f93208f37f64d34aac79eb1da595c22, type: 2}
+      objectReference: {fileID: 2100000, guid: 79764547ab7522a46b06f1b87af7f38b, type: 2}
     - target: {fileID: 919132149155446097, guid: d75428f1a52dfc748af8586bc494b158,
         type: 3}
       propertyPath: m_Name
