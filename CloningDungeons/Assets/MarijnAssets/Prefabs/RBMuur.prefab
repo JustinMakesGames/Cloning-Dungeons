@@ -95,11 +95,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: muur 3 balken rechts
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8503278099430997123, guid: 4f8f83952f7c25c409192d0264b14663, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2296651853444150963, guid: 4f8f83952f7c25c409192d0264b14663,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4457570830855725867}
   m_SourcePrefab: {fileID: 100100000, guid: 4f8f83952f7c25c409192d0264b14663, type: 3}
+--- !u!1 &6203378638955894379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2296651853444150963, guid: 4f8f83952f7c25c409192d0264b14663,
+    type: 3}
+  m_PrefabInstance: {fileID: 5316935523157254360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4457570830855725867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6203378638955894379}
+  m_Material: {fileID: 13400000, guid: ebc9df85ba69bb0489a8b7f896129246, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 3, z: 0.15000011}
+  m_Center: {x: -0.13043475, y: 1.5, z: -0.074999966}
 --- !u!4 &6727538562868579537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1482959839003388937, guid: 4f8f83952f7c25c409192d0264b14663,
