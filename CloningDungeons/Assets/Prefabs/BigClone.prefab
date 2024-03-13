@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 961220061503010055}
   - component: {fileID: 6347052317286885080}
   - component: {fileID: 7844186551026762506}
+  - component: {fileID: 2023570803508927084}
   m_Layer: 6
   m_Name: BigClone
   m_TagString: Player
@@ -185,17 +186,69 @@ MonoBehaviour:
   vert: 0
   dir: {x: 0, y: 0, z: 0}
   speed: 1000
+  jump: 0
+  jumppower: 0
+  ableToJump: 0
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
+  cratejump:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpraycast: 0
   isPlayer: 1
   movecam: {fileID: 5137429333765730154}
   cam: {fileID: 0}
   script: {fileID: 0}
+  save:
+    serializedVersion: 2
+    m_Bits: 0
+  maximumdistance: 0
+  toSpawnHere: {fileID: 0}
+  lever:
+    serializedVersion: 2
+    m_Bits: 0
   smallclone:
     serializedVersion: 2
     m_Bits: 256
+  pickup:
+    serializedVersion: 2
+    m_Bits: 0
   maxDistance: 2
   isGrabbing: 0
   objtoGet: {fileID: 0}
+  inventoryspace: 0
+  key:
+    serializedVersion: 2
+    m_Bits: 0
+  chest:
+    serializedVersion: 2
+    m_Bits: 0
+  stuckagainstwalldistance: 0
+  numberawayfromobject: 0
   throwingForceForward: 5
+  keyprefab: {fileID: 0}
+--- !u!114 &2023570803508927084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684877092957884099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8a5b77d0f84af408cd658a3102d13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDis: 2
+  state: 0
+  keymask:
+    serializedVersion: 2
+    m_Bits: 128
+  cam: {fileID: 0}
+  chestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
+    type: 3}
+  doorKey: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476, type: 3}
 --- !u!1 &8046863976763166124
 GameObject:
   m_ObjectHideFlags: 0

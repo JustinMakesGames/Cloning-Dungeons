@@ -46,10 +46,7 @@ public class BigClone : Movement
 
             
 
-            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, chest) && Input.GetKeyDown(KeyCode.E))
-            {
-                StartCoroutine(ChestOpen());
-            }
+          
         }
         
 
@@ -121,37 +118,5 @@ public class BigClone : Movement
 
     }
 
-    
-
-    public GameObject keyprefab;
-    
-    IEnumerator ChestOpen()
-    {
-        Transform chest = hit.collider.gameObject.transform;
-        Transform chestlid = chest.parent.GetChild(0);
-        Transform spawnobject = chest.parent.GetChild(2);
-        DoorKeyFloating doorkey = chest.parent.GetComponentInChildren<DoorKeyFloating>();
-
-        GameObject key = Instantiate(keyprefab, spawnobject.position,
-            Quaternion.identity, chest.parent);
-
-        key.transform.localRotation = Quaternion.Euler(0,180,0);
-        Animator keyanimator = key.transform.GetChild(0).GetComponent<Animator>();
-        Animator chestanimator = chestlid.GetComponent<Animator>();
-
-
-        keyanimator.Play("KeyGoingin");
-        yield return new WaitForSeconds(2);
-        Destroy(key);
-        chestanimator.Play("ChestDeksel");
-        yield return new WaitForSeconds(1);
-        doorkey.ifopened = true;
-
-
-        
-        
-
-    }
-
-    
+   
 }
