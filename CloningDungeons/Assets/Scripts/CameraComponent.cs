@@ -77,7 +77,13 @@ public class CameraComponent : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         if (script.isCameraClamped)
         {
-            yRotation = Mathf.Clamp(yRotation, script.camclamp - 10f, script.camclamp + 10f);
+            sensx = 200f;
+            sensy = 200f;
+        }
+        else
+        {
+            sensx = 750f;
+            sensy = 750f;
         }
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);

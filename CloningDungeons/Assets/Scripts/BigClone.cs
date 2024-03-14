@@ -7,11 +7,12 @@ public class BigClone : Movement
 {
     [Header("BigCloneOnly")]
     RaycastHit hit;
-    public LayerMask smallclone;
+    public LayerMask bigpickup;
     public LayerMask pickup;
     public float maxDistance;
     public bool isGrabbing;
     public Transform objtoGet;
+    public LayerMask everything;
 
     //Inventory
     public bool inventoryspace;
@@ -25,8 +26,7 @@ public class BigClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, smallclone) ||
-                Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, pickup))
+            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, bigpickup))
             {
                 if (Input.GetKeyDown(KeyCode.E) && !isGrabbing)
                 {
@@ -42,6 +42,13 @@ public class BigClone : Movement
             if (isGrabbing && Input.GetKeyDown(KeyCode.Q))
             {
                 Throw(objtoGet);
+            }
+
+            if (isGrabbing && Input.GetKeyDown(KeyCode.R))
+            {
+
+                Drop(objtoGet);
+                
             }
 
             
@@ -76,6 +83,12 @@ public class BigClone : Movement
     void GrabPlayer(Transform obj)
     {
 
+        Collider[] colliders = FindObjectsOfType<Collider>();
+
+        foreach (Collider collider in colliders)
+        {
+            Physics.IgnoreCollision(obj.GetComponent<Collider>(), collider, true);
+        }
         
         float movespeed = 10f;
         Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
@@ -87,8 +100,10 @@ public class BigClone : Movement
         
 
         Vector3 targetposition = cam.position + cam.forward * maxDistance;
-        if (Physics.Raycast(obj.position, targetposition - obj.position, out hit, stuckagainstwalldistance))
+        if (Physics.Raycast(obj.position, targetposition - obj.position, out hit, stuckagainstwalldistance, everything))
         {
+            Debug.DrawRay(obj.position, (targetposition - obj.position) * stuckagainstwalldistance, Color.yellow);
+            print("Yes");
             Vector3 newtargetposition = (obj.position - targetposition).normalized * numberawayfromobject;
             targetposition = hit.point + newtargetposition;
             
@@ -111,11 +126,31 @@ public class BigClone : Movement
         rigidobj.useGravity = true;
         rigidobj.isKinematic = false;
     
-        rigidobj.AddForce(cam.forward * throwingForceForward, ForceMode.Impulse);
+        rigidobj.AddForce(cam.forward * throwingForceForward, ForceMode.VelocityChange);
         
         isGrabbing = false;
-        
+        Collider[] colliders = FindObjectsOfType<Collider>();
 
+        foreach (Collider collider in colliders)
+        {
+            Physics.IgnoreCollision(obj.GetComponent<Collider>(), collider, false);
+        }
+
+
+    }
+
+    void Drop(Transform obj)
+    {
+        Rigidbody rigidobj = obj.GetComponent<Rigidbody>();
+        rigidobj.useGravity = true;
+        rigidobj.isKinematic = false;
+        isGrabbing = false;
+        Collider[] colliders = FindObjectsOfType<Collider>();
+
+        foreach (Collider collider in colliders)
+        {
+            Physics.IgnoreCollision(obj.GetComponent<Collider>(), collider, false);
+        }
     }
 
    
