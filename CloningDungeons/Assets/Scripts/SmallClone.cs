@@ -36,7 +36,7 @@ public class SmallClone : Movement
 
             }
 
-            else if (!Physics.Raycast(cam.position, cam.forward, out hit, maxgrabbingdistance, pickupable) && !Input.GetMouseButton(0))
+            if (!Input.GetMouseButton(0))
             {
 
                 ableToDrag = false;
@@ -44,6 +44,7 @@ public class SmallClone : Movement
                 if (obj != null)
                 {
                     obj.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+                    obj.GetComponent<Rigidbody>().useGravity = true;
 
                 }
                 obj = null;
@@ -57,6 +58,8 @@ public class SmallClone : Movement
                 }
 
             }
+
+           
 
             else
             {
@@ -119,6 +122,7 @@ public class SmallClone : Movement
 
         
         Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * distancefromposition;
+        objrigid.useGravity = false;
         Vector3 movingplace = positiontoBe - obj.position;
 
         Vector3 velocity = movingplace * speedofpickup * Time.deltaTime;
