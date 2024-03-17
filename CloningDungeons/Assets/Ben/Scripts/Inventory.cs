@@ -70,7 +70,7 @@ public class Inventory : MonoBehaviour
             StartCoroutine(ChestOpen());
         }
 
-            if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             Instantiate(chestKey,cam.position,cam.rotation);
             state = InventoryState.None;

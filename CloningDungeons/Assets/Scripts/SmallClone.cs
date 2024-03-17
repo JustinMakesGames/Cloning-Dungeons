@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SmallClone : Movement
@@ -16,6 +17,7 @@ public class SmallClone : Movement
     private bool dragging;
     public Transform obj;
     public float distancefromposition;
+    
 
     
 
@@ -122,7 +124,9 @@ public class SmallClone : Movement
 
         
         Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * distancefromposition;
-        objrigid.useGravity = false;
+
+     
+        //objrigid.useGravity = false;
         Vector3 movingplace = positiontoBe - obj.position;
 
         Vector3 velocity = movingplace * speedofpickup * Time.deltaTime;
