@@ -2786,6 +2786,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed5c1cea99cff34daba11247c1f69f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  cam: {fileID: 7804093580773360121}
+  chestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
+    type: 3}
+  doorKey: {fileID: 0}
+  maxDis: 3
 --- !u!4 &362748703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3795169771435805309, guid: 42e74a71b2c9133499faa89053f72150,
