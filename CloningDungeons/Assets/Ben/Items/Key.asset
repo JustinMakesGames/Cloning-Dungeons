@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0067e2cfb9c55e44381ad8f2354a0db6, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
-  itemName: Key
+  itemName: ChestKey
   itemPrefab: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
     type: 3}
   id: 1

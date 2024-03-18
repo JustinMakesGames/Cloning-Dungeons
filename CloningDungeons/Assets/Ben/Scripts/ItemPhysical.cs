@@ -10,6 +10,7 @@ public class ItemPhysical : MonoBehaviour, iInteractable
         if (InventorySlot._instance.item == null)
         {
             InventorySlot._instance.item = item;
+            Destroy(gameObject);
         } 
     }
 }   
