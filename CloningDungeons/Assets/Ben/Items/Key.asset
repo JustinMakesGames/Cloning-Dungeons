@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   itemName: Key
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
+    type: 3}
   id: 1
   itemSprite: {fileID: 21300000, guid: 5f1aa20e151729e4384a0d6361843873, type: 3}

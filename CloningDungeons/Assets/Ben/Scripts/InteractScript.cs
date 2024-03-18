@@ -8,7 +8,7 @@ public class InteractScript : MonoBehaviour
     private void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit))
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit, 3f))
         {
             if (hit.collider.GetComponent<iInteractable>() != null)
             {
