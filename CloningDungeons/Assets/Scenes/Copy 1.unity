@@ -519,10 +519,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorKey 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
+        type: 3}
+      propertyPath: m_TagString
+      value: DoorKey
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6509146620604912931, guid: aedac5a4e2ad844438a28cf0c120b476,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1914102234}
   m_SourcePrefab: {fileID: 100100000, guid: aedac5a4e2ad844438a28cf0c120b476, type: 3}
 --- !u!1001 &62093330
 PrefabInstance:
@@ -2893,9 +2907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   cam: {fileID: 7804093580773360121}
-  chestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
-    type: 3}
-  doorKey: {fileID: 0}
+  dropKey: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -13713,6 +13725,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 640513759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1914102227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6509146620604912931, guid: aedac5a4e2ad844438a28cf0c120b476,
+    type: 3}
+  m_PrefabInstance: {fileID: 59440166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1914102234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914102227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1850a330b1faf6941b4ad4d125568ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a2596c911e9064944832d52cdfcd7c95, type: 2}
 --- !u!1001 &1918491728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15052,6 +15083,6 @@ SceneRoots:
   - {fileID: 547957155}
   - {fileID: 652346858}
   - {fileID: 215664589}
+  - {fileID: 59440166}
   - {fileID: 228934554}
   - {fileID: 200149755}
-  - {fileID: 59440166}

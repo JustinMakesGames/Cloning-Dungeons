@@ -12,8 +12,7 @@ public class InteractScript : MonoBehaviour
     public RaycastHit hit;
 
     public Transform cam;
-    public GameObject chestKey;
-    public GameObject doorKey;
+    public GameObject dropKey;
     public LayerMask layerMask;
 
     public int maxDis;
@@ -26,15 +25,60 @@ public class InteractScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, layerMask))
+        KeepValues();
+        Interact();
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
         {
-           Destroy(hit.collider.transform.parent.gameObject);
-           item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
+             if (hit.collider.gameObject.tag == "ChestKey")
+             {
+                Destroy(hit.collider.transform.parent.gameObject);
+                item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
+             }
         }     
         if (Input.GetKeyDown(KeyCode.G) && item != null)
         {
-            Instantiate(chestKey, cam.position, cam.rotation);
+            Instantiate(dropKey, cam.position, cam.rotation);
             item = null;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        {
+            if (hit.collider.gameObject.tag == "DoorKey")
+            {
+                Destroy(hit.collider.transform.parent.gameObject);
+                item = Resources.Load<InventoryScriptableObj>("DoorKeyData");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.G) && item != null)
+        {
+            Instantiate(dropKey, cam.position, cam.rotation);
+            item = null;
+        }
+    }
+
+    private void Interact()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, layerMask))
+        {
+            if (hit.collider.gameObject.GetComponent<iInteractable>() != null)
+            {
+                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+                script.interactable();
+            }
+        }
+    }
+
+    private void KeepValues ()
+    {
+        if (item != null)
+        {
+            dropKey = item.itemPrefab;
+            layerMask = item.layerMask;
+        }
+        else 
+        {
+            dropKey = null;
+            layerMask = 0;  
         }
     }
 }
