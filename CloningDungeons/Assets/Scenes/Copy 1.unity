@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1342259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8679439003403549900, guid: f0684f9cf5318734a838cf51ed77a333,
+    type: 3}
+  m_PrefabInstance: {fileID: 200149755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &11348651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,10 +1302,15 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6910866659695211917, guid: f0684f9cf5318734a838cf51ed77a333, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6657632190443947207, guid: f0684f9cf5318734a838cf51ed77a333,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1527680059}
   m_SourcePrefab: {fileID: 100100000, guid: f0684f9cf5318734a838cf51ed77a333, type: 3}
 --- !u!1001 &202823032
 PrefabInstance:
@@ -10719,6 +10736,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 551490255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1527680055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6657632190443947207, guid: f0684f9cf5318734a838cf51ed77a333,
+    type: 3}
+  m_PrefabInstance: {fileID: 200149755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1527680059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527680055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b099104e1295f34a95e92eea6df9df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot: {fileID: 361110130}
+  item: {fileID: 0}
+  itemImage: {fileID: 1342259}
+  itemSprite: {fileID: 0}
 --- !u!1001 &1530340752
 PrefabInstance:
   m_ObjectHideFlags: 0
