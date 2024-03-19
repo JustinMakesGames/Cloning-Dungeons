@@ -16,7 +16,7 @@ public class InteractScript : MonoBehaviour
     public GameObject doorKey;
 
     public int maxDis;
-   
+    
 
     private void Start()
     {
@@ -29,13 +29,14 @@ public class InteractScript : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "ChestKey")
             {
-                Destroy(hit.collider.gameObject);
-                
+                Destroy(hit.collider.transform.parent.gameObject);
+                item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
             }
         }     
         if (Input.GetKeyDown(KeyCode.G) && item != null)
         {
             Instantiate(chestKey, cam.position, cam.rotation);
+            item = null;
         }
     }
 }
