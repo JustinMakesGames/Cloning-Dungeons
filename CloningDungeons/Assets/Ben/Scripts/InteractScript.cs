@@ -64,6 +64,7 @@ public class InteractScript : MonoBehaviour
             {
                 iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
                 script.interactable();
+                item = null;
             }
         }
     }
