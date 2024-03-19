@@ -14,6 +14,7 @@ public class InteractScript : MonoBehaviour
     public Transform cam;
     public GameObject chestKey;
     public GameObject doorKey;
+    public LayerMask layerMask;
 
     public int maxDis;
     
@@ -25,13 +26,10 @@ public class InteractScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, layerMask))
         {
-            if (hit.collider.gameObject.tag == "ChestKey")
-            {
-                Destroy(hit.collider.transform.parent.gameObject);
-                item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
-            }
+           Destroy(hit.collider.transform.parent.gameObject);
+           item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
         }     
         if (Input.GetKeyDown(KeyCode.G) && item != null)
         {

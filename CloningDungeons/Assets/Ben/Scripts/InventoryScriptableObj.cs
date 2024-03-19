@@ -11,4 +11,5 @@ public class InventoryScriptableObj : ScriptableObject
 
     public GameObject itemPrefab;
     public Sprite itemSprite;
+    public LayerMask layerMask;
 }
