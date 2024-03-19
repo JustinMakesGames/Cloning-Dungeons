@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0067e2cfb9c55e44381ad8f2354a0db6, type: 3}
-  m_Name: ChestKeyData
+  m_Name: DoorKeyData
   m_EditorClassIdentifier: 
-  itemName: ChestKey
-  id: 1
-  itemPrefab: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
-    type: 3}
-  itemSprite: {fileID: 21300000, guid: a66ba872cd3cb8f4fb550e50f2022a02, type: 3}
+  itemName: DoorKey
+  id: 2
+  itemPrefab: {fileID: 0}
+  itemSprite: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 32768
