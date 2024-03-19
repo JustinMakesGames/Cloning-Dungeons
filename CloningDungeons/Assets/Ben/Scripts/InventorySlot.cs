@@ -25,6 +25,7 @@ public class InventorySlot : MonoBehaviour
 
     public void Update()
     {
+        KeepValues();
         item = itemSlot.item;
         if (item != null)
         {
@@ -36,5 +37,16 @@ public class InventorySlot : MonoBehaviour
             itemImage.gameObject.SetActive(false); 
             itemImage.texture = null;
         }
-    }   
+    }
+    private void KeepValues()
+    {
+        if (item != null)
+        {
+            itemSprite = item.itemSprite;
+        }
+        else
+        {
+            itemSprite = null;
+        }
+    }
 }
