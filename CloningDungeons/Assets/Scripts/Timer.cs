@@ -18,6 +18,9 @@ public class Timer : MonoBehaviour
     public GameObject bigclone;
     public GameObject smallclone;
 
+    public GameObject gameoverscreen;
+
+
 
 
 
@@ -60,6 +63,7 @@ public class Timer : MonoBehaviour
                 if (image.color.a >= 1f)
                 {
                     blackscreenhappened = true;
+                    gameoverscreen.SetActive(true);
                 }
             }
             
@@ -76,9 +80,20 @@ public class Timer : MonoBehaviour
                     
                 }
 
+                
+                
+
+
+            }
+
+            if (blackscreenhappened && image.color.a < 0.01f)
+            {
+                
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
 
-
+                blackscreen.SetActive(false);
+                
             }
 
 
@@ -98,6 +113,8 @@ public class Timer : MonoBehaviour
         return scripts;
         
     }
+
+
 
 
 }
