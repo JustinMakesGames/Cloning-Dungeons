@@ -17012,6 +17012,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5438574298142621104, guid: 66c882aeee71ce74fb95c2be27548a8b,
+        type: 3}
+      propertyPath: m_Name
+      value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890936527907495384, guid: 66c882aeee71ce74fb95c2be27548a8b,
+        type: 3}
+      propertyPath: m_Name
+      value: TimeOFF
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
