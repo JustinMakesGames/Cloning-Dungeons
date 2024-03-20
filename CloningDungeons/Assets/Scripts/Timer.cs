@@ -15,9 +15,17 @@ public class Timer : MonoBehaviour
     [SerializeField] private float blackscreenspeed;
     private bool blackscreenhappened;
 
+    public GameObject bigclone;
+    public GameObject smallclone;
+
+
+
+
+
+
     private void Start()
     {
-        timer = 3f;
+        timer = 300f;
         image = blackscreen.GetComponent<Image>();
         black = image.color;
 
@@ -44,7 +52,7 @@ public class Timer : MonoBehaviour
         }
         
 
-        if (timer <= 0)
+        if (timer <= 1)
         {
             if (!blackscreenhappened)
             {
@@ -59,10 +67,37 @@ public class Timer : MonoBehaviour
             if (blackscreenhappened)
             {
                 image.color -= new Color(0, 0, 0, blackscreenspeed * Time.deltaTime);
+
+                List<MonoBehaviour> movementclasses = FindScripts();
+
+                for (int i = 0; i < movementclasses.Count; i++)
+                {
+                    movementclasses[i].enabled = false;
+                    
+                }
+
+                Cursor.lockState = CursorLockMode.None;
+
+
             }
 
 
             
         }
     }
+
+    List<MonoBehaviour> FindScripts()
+    {
+        List<MonoBehaviour> scripts = new List<MonoBehaviour>();
+        BigClone bigclonescript = bigclone.GetComponent<BigClone>();
+        SmallClone smallclonescript = smallclone.GetComponent<SmallClone>();
+
+        scripts.Add(bigclonescript);
+        scripts.Add(smallclonescript);
+
+        return scripts;
+        
+    }
+
+
 }
