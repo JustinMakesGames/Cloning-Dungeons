@@ -2672,6 +2672,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   maxDis: 3
+  bigclonescript: {fileID: 0}
 --- !u!4 &362748703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3795169771435805309, guid: 42e74a71b2c9133499faa89053f72150,
@@ -2770,6 +2771,11 @@ PrefabInstance:
       propertyPath: smallclone
       value: 
       objectReference: {fileID: 2075344101}
+    - target: {fileID: 3523677011978703326, guid: 64d9a8cb878a2ed4baff0d724746383a,
+        type: 3}
+      propertyPath: spawnplace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4561809948888004121, guid: 64d9a8cb878a2ed4baff0d724746383a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2824,6 +2830,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Save_LoadSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793265689660881748, guid: 64d9a8cb878a2ed4baff0d724746383a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793265689660881748, guid: 64d9a8cb878a2ed4baff0d724746383a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793265689660881748, guid: 64d9a8cb878a2ed4baff0d724746383a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49.36
       objectReference: {fileID: 0}
     - target: {fileID: 9165090715879896551, guid: 64d9a8cb878a2ed4baff0d724746383a,
         type: 3}
