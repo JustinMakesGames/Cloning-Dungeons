@@ -6,7 +6,7 @@ using UnityEngine;
 public class BigClone : Movement
 {
     [Header("BigCloneOnly")]
-    RaycastHit hit;
+    RaycastHit hitraycast;
     public LayerMask bigpickup;
     public LayerMask pickup;
     public float maxDistance;
@@ -18,6 +18,8 @@ public class BigClone : Movement
     public bool inventoryspace;
     public LayerMask key;
     public LayerMask chest;
+
+    
     
 
     
@@ -26,12 +28,12 @@ public class BigClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, bigpickup))
+            if (Physics.Raycast(cam.position, cam.forward, out hitraycast, maxDistance, bigpickup))
             {
                 if (Input.GetKeyDown(KeyCode.E) && !isGrabbing)
                 {
                     isGrabbing = true;
-                    objtoGet = hit.collider.gameObject.transform;
+                    objtoGet = hitraycast.collider.gameObject.transform;
                 }
              
 
@@ -65,7 +67,8 @@ public class BigClone : Movement
 
     public override void FixedUpdate()
     {
-        base.FixedUpdate();
+        
+        
         if (isPlayer)
         {
             if (isGrabbing)
@@ -73,8 +76,21 @@ public class BigClone : Movement
                 GrabPlayer(objtoGet);
             }
         }
-        
-       
+
+        if (objtoGet != null)
+        {
+            objtograb = true;
+        }
+        else
+        {
+            objtograb = false;
+        }
+
+        base.FixedUpdate();
+
+
+
+
     }
 
 
@@ -100,12 +116,12 @@ public class BigClone : Movement
         
 
         Vector3 targetposition = cam.position + cam.forward * maxDistance;
-        if (Physics.Raycast(obj.position, targetposition - obj.position, out hit, stuckagainstwalldistance, everything))
+        if (Physics.Raycast(obj.position, targetposition - obj.position, out hitraycast, stuckagainstwalldistance, everything))
         {
             Debug.DrawRay(obj.position, (targetposition - obj.position) * stuckagainstwalldistance, Color.yellow);
             print("Yes");
             Vector3 newtargetposition = (obj.position - targetposition).normalized * numberawayfromobject;
-            targetposition = hit.point + newtargetposition;
+            targetposition = hitraycast.point + newtargetposition;
             
         }
         Vector3 lerping = Vector3.Lerp(obj.position, targetposition, movespeed * Time.deltaTime);
@@ -136,6 +152,8 @@ public class BigClone : Movement
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), collider, false);
         }
 
+        objtoGet = null;
+
 
     }
 
@@ -151,6 +169,8 @@ public class BigClone : Movement
         {
             Physics.IgnoreCollision(obj.GetComponent<Collider>(), collider, false);
         }
+
+        objtoGet = null;
     }
 
    

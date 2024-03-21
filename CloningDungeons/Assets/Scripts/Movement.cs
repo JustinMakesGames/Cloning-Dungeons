@@ -16,11 +16,12 @@ public class Movement : MonoBehaviour
     public bool jump;
     public float jumppower;
     public bool ableToJump;
-    private RaycastHit hit;
+    public RaycastHit hit;
     public LayerMask ground;
     public LayerMask cratejump;
-    private bool resetjump;
+    protected bool resetjump;
     public float jumpraycast;
+    protected bool objtograb;
     
 
 
@@ -56,8 +57,7 @@ public class Movement : MonoBehaviour
 
     public virtual void Update()
     {
-        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground) || 
-            Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, cratejump);
+        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground);
 
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
@@ -72,8 +72,10 @@ public class Movement : MonoBehaviour
         if (isPlayer)
         {
             Moving();
-            if (ableToJump && jump && resetjump)
+            if (ableToJump && jump && resetjump && !objtograb)
             {
+                
+                
                 resetjump = false;
                 Jump();
                 Invoke(nameof(Reset), 0.25f);
