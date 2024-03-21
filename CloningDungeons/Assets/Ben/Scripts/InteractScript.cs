@@ -16,49 +16,56 @@ public class InteractScript : MonoBehaviour
     public LayerMask layerMask;
 
     public int maxDis;
+
+    public BigClone bigclonescript;
     
 
     private void Start()
     {
         cam = GameObject.Find("MainCamera").transform;
+        bigclonescript = GetComponent<BigClone>();
     }
 
     private void Update()
     {
-        KeepValues();
-        Interact();
-        if (item == null)
+        if (bigclonescript.isPlayer)
         {
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+            KeepValues();
+            Interact();
+            if (item == null)
             {
-                if (hit.collider.gameObject.tag == "ChestKey")
+                if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
                 {
-                    Destroy(hit.collider.transform.parent.gameObject);
-                    item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
+                    if (hit.collider.gameObject.tag == "ChestKey")
+                    {
+                        Destroy(hit.collider.transform.parent.gameObject);
+                        item = Resources.Load<InventoryScriptableObj>("ChestKeyData");
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+                {
+                    if (hit.collider.gameObject.tag == "DoorKey")
+                    {
+                        Destroy(hit.collider.transform.parent.gameObject);
+                        item = Resources.Load<InventoryScriptableObj>("DoorKeyData");
+                    }
                 }
             }
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+            else
             {
-                if (hit.collider.gameObject.tag == "DoorKey")
+                if (Input.GetKeyDown(KeyCode.G) && item != null)
                 {
-                    Destroy(hit.collider.transform.parent.gameObject);
-                    item = Resources.Load<InventoryScriptableObj>("DoorKeyData");
+                    Instantiate(dropKey, cam.position, cam.rotation);
+                    item = null;
+                }
+                if (Input.GetKeyDown(KeyCode.G) && item != null)
+                {
+                    Instantiate(dropKey, cam.position, cam.rotation);
+                    item = null;
                 }
             }
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.G) && item != null)
-            {
-                Instantiate(dropKey, cam.position, cam.rotation);
-                item = null;
-            }
-            if (Input.GetKeyDown(KeyCode.G) && item != null)
-            {
-                Instantiate(dropKey, cam.position, cam.rotation);
-                item = null;
-            }
-        }
+        
     }
 
     private void Interact()
