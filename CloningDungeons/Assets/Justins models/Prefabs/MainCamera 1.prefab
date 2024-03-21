@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95c78e4af26ef34d9247ea69f508943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensx: 500
-  sensy: 500
+  sensx: 300
+  sensy: 300
   moveOrientation: {fileID: 0}
   xRotation: 0
   yRotation: 0

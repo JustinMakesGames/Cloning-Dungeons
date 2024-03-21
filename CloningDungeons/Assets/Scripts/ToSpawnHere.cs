@@ -43,6 +43,8 @@ public class ToSpawnHere : MonoBehaviour
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+
+       
     }
  
     
