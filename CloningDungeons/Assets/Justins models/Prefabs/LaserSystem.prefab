@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ab061014d3cf4a4c9fc75f9ffeaf842, type: 2}
+  - {fileID: 2100000, guid: fdbae6f9d3d1b38469d01d31ce8abc5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   awayhitpower: 5
   uphitpower: 5
   showtimepunishment: {fileID: 0}
+  buttonpressed: 0
 --- !u!1 &2838839150770520635
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a112cc2491eaad240b0d0b16b4593885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons: []
+  lasers: []
 --- !u!1 &6841716159074131288
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 146d69903260c4a41bd2f01868d24804, type: 2}
+  - {fileID: 2100000, guid: 7ea80189f586c024682023690f4feacf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,6 +365,7 @@ MonoBehaviour:
   awayhitpower: 5
   uphitpower: 5
   showtimepunishment: {fileID: 0}
+  buttonpressed: 0
 --- !u!1 &7990631312245220020
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +429,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea3e8f91f87f21d438e193a80fec0c6d, type: 2}
+  - {fileID: 2100000, guid: 62654a2a24ed02345acfb6d52b523cfb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -485,6 +489,7 @@ MonoBehaviour:
   awayhitpower: 5
   uphitpower: 5
   showtimepunishment: {fileID: 0}
+  buttonpressed: 0
 --- !u!1 &8714214714150760197
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +553,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d161faa1cef094c4a9bc101aa743f68c, type: 2}
+  - {fileID: 2100000, guid: 04dfc144308369c489e71d7f4e876c42, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -608,6 +613,7 @@ MonoBehaviour:
   awayhitpower: 5
   uphitpower: 5
   showtimepunishment: {fileID: 0}
+  buttonpressed: 0
 --- !u!1001 &7758484789858806570
 PrefabInstance:
   m_ObjectHideFlags: 0
