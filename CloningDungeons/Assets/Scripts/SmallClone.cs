@@ -6,7 +6,7 @@ using UnityEngine;
 public class SmallClone : Movement
 {
     [Header("Dragging")]
-    RaycastHit hit;
+    RaycastHit hitsmallclone;
     public LayerMask pickupable;
     public float speedofpickup;
     public float maxgrabbingdistance;
@@ -27,11 +27,11 @@ public class SmallClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hit, maxgrabbingdistance, pickupable))
+            if (Physics.Raycast(cam.position, cam.forward, out hitsmallclone, maxgrabbingdistance, pickupable))
             {
                 
              
-                obj = hit.collider.transform;
+                obj = hitsmallclone.collider.transform;
                 obj.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
                 ableToDrag = true;
 
