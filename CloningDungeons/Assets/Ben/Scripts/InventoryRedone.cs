@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScript : MonoBehaviour
+public class InventoryRedone : MonoBehaviour
 {   
     public RaycastHit hit;
 

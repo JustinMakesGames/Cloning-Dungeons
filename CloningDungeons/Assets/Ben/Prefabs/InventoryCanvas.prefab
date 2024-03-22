@@ -336,4 +336,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   chestKeyImage: {fileID: 6169722530704006382}
   doorKeyImage: {fileID: 3954852792694165674}
+  dropDoorKey: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
+    type: 3}
+  dropChestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
+    type: 3}
   maxDis: 3
