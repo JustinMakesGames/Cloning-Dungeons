@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,16 +26,32 @@ public class UIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        if (Input.GetKeyDown(KeyCode.E) && doorKeyImage.gameObject.activeInHierarchy == false && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
         {
             if (hit.collider.gameObject.tag == "ChestKey")
             {
                 chestKeyImage.gameObject.SetActive(true);
+                Destroy(hit.collider.transform.parent.gameObject);
             }
         }
-        if (Input.GetKeyDown(KeyCode.G) && chestKeyImage.gameObject.activeInHierarchy == true) 
+        if (Input.GetKeyDown(KeyCode.G) && chestKeyImage.gameObject.activeInHierarchy == true)
         {
-            
+            chestKeyImage.SetActive(false);
+            Instantiate(dropChestKey, cam.position, cam.rotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && chestKeyImage.gameObject.activeInHierarchy == false  && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        {
+            if (hit.collider.gameObject.tag == "DoorKey")
+            {
+                doorKeyImage.gameObject.SetActive(true);
+                Destroy(hit.collider.transform.parent.gameObject);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.G) && doorKeyImage.gameObject.activeInHierarchy == true)
+        {
+            doorKeyImage.SetActive(false);
+            Instantiate(dropDoorKey, cam.position, cam.rotation);
         }
     }
 }
