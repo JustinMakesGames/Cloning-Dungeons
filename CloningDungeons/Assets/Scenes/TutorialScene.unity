@@ -1291,7 +1291,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemSlot
       value: 
-      objectReference: {fileID: 361110130}
+      objectReference: {fileID: 0}
     - target: {fileID: 8441065112529455436, guid: f0684f9cf5318734a838cf51ed77a333,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2647,26 +2647,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 214407572873935636}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &361110130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358527351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed5c1cea99cff34daba11247c1f69f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  cam: {fileID: 7804093580773360121}
-  dropKey: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  maxDis: 3
-  bigclonescript: {fileID: 0}
 --- !u!4 &362748703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3795169771435805309, guid: 42e74a71b2c9133499faa89053f72150,
@@ -10779,7 +10759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b099104e1295f34a95e92eea6df9df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlot: {fileID: 361110130}
+  itemSlot: {fileID: 0}
   item: {fileID: 0}
   itemImage: {fileID: 1342259}
   itemSprite: {fileID: 0}
@@ -14820,11 +14800,7 @@ PrefabInstance:
     - {fileID: 8858398816544795254, guid: 3354881feaa202c40bc166c7d20f4654, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 890686716240625369, guid: 3354881feaa202c40bc166c7d20f4654,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 361110130}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3354881feaa202c40bc166c7d20f4654, type: 3}
 --- !u!1001 &949303162605987286
 PrefabInstance:
