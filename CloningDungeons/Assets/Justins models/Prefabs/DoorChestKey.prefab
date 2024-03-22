@@ -4922,7 +4922,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ab7a10b43514c9941b9feb0fd8029e0c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2300674034486044981}
+      addedObject: {fileID: 2935317796942769651}
   m_SourcePrefab: {fileID: 100100000, guid: ab7a10b43514c9941b9feb0fd8029e0c, type: 3}
 --- !u!4 &5845376486674485145 stripped
 Transform:
@@ -4970,24 +4970,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a2596c911e9064944832d52cdfcd7c95, type: 2}
---- !u!95 &2300674034486044981
-Animator:
-  serializedVersion: 5
+--- !u!114 &2935317796942769651
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6509146620604912931}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47a8da435d920bf46b6ac60d631548d1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d075459d032c034b82f40de2170bf4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatespeed: 100
+  range: 0.1
+  floatingspeed: 5
+  movespeed: 1
+  ifopened: 0
+  endposition: {fileID: 0}

@@ -171,6 +171,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3374408672623404337}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6717126252593454545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8353131071247726816, guid: c7739e3334b29e641b38dc7917d20cd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3374408672623404337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7105723624940637810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,3 +311,4 @@ MonoBehaviour:
   doorKey: {fileID: 4474449973497284186, guid: c6324f75d94905249a0b6c6fb5d36131, type: 3}
   openLock: {fileID: 3810610345896663707, guid: c0d5644a4fbbbdd47aa8ab100796d271,
     type: 3}
+  door: {fileID: 6717126252593454545}

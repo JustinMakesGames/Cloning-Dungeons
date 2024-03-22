@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: DoorKey
   id: 2
-  itemPrefab: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
+  itemPrefab: {fileID: 8447684688386171174, guid: 5cf595c0d7f65bd4686b36ee28b7637e,
     type: 3}
   itemSprite: {fileID: 21300000, guid: b8e0e819026da014397bc583bf8a6df8, type: 3}
   layerMask:

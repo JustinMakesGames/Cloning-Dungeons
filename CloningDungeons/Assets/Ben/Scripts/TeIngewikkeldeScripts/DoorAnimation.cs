@@ -30,11 +30,12 @@ public class DoorAnimation : MonoBehaviour, iInteractable
         keyanimator.Play("KeyGoingin");
         yield return new WaitForSeconds(2);
         Destroy(keyclone);
-        Destroy(lockclosed.gameObject);
+        lockclosed.GetComponent<MeshRenderer>().enabled = false;
         GameObject openlockclone = Instantiate(openLock, spawnobject.position, Quaternion.Euler(0, 180, 0));
         yield return new WaitForSeconds(1);
         dooranimator.Play("DoorOpening");
         yield return new WaitForSeconds(2);
         Destroy(openlockclone);
+        Destroy(lockclosed.gameObject);
     }
 }

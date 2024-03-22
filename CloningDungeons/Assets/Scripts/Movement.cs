@@ -51,7 +51,14 @@ public class Movement : MonoBehaviour
         script = cam.GetComponent<CameraComponent>();
         resetjump = true;
         jumpraycast = transform.localScale.y + 0.1f;
-        toSpawnHere = GameObject.FindObjectOfType<ToSpawnHere>().GetComponent<ToSpawnHere>(); 
+
+        if (GameObject.FindObjectOfType<ToSpawnHere>() != null)
+        {
+            toSpawnHere = GameObject.FindObjectOfType<ToSpawnHere>().GetComponent<ToSpawnHere>();
+        }
+        
+
+        
         
     }
 
