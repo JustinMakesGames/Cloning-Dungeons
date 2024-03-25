@@ -19,6 +19,9 @@ public class BigClone : Movement
     public LayerMask key;
     public LayerMask chest;
 
+    //E to interact 
+    public GameObject eInteract;
+
     
     
 
@@ -28,16 +31,19 @@ public class BigClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hitraycast, maxDistance, bigpickup))
+            if (Physics.Raycast(cam.position, cam.forward, out hitraycast, maxDistance, bigpickup) && !isGrabbing)
             {
+                eInteract.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && !isGrabbing)
                 {
                     isGrabbing = true;
                     objtoGet = hitraycast.collider.gameObject.transform;
                 }
-             
 
-
+            }
+            else
+            {
+                eInteract.SetActive(false);
             }
 
 

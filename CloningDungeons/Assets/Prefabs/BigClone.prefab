@@ -227,6 +227,7 @@ MonoBehaviour:
   chest:
     serializedVersion: 2
     m_Bits: 0
+  eInteract: 0
   stuckagainstwalldistance: 0
   numberawayfromobject: 0
   throwingForceForward: 5
@@ -249,6 +250,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   maxDis: 3
+  bigclonescript: {fileID: 0}
 --- !u!1 &8046863976763166124
 GameObject:
   m_ObjectHideFlags: 0
