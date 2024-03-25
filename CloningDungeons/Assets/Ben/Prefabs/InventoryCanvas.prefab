@@ -257,7 +257,6 @@ GameObject:
   - component: {fileID: 8441065112529455436}
   - component: {fileID: 4546073460153149088}
   - component: {fileID: 236844016573989356}
-  - component: {fileID: 4719256119457973058}
   m_Layer: 5
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -321,23 +320,3 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &4719256119457973058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657632190443947207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1cbaa58b8562bf4db33d605209a0bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  chestKeyImage: {fileID: 6169722530704006382}
-  doorKeyImage: {fileID: 3954852792694165674}
-  dropDoorKey: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
-    type: 3}
-  dropChestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
-    type: 3}
-  maxDis: 3

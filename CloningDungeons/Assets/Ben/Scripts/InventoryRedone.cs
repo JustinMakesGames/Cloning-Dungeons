@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class InventoryRedone : MonoBehaviour
+public class InventoryRedone : MonoBehaviour, iInteractable
 {   
     public RaycastHit hit;
 
@@ -34,13 +35,7 @@ public class InventoryRedone : MonoBehaviour
                 Destroy(hit.collider.transform.parent.gameObject);
             }
         }
-        if (Input.GetKeyDown(KeyCode.G) && chestKeyImage.gameObject.activeInHierarchy == true)
-        {
-            chestKeyImage.SetActive(false);
-            Instantiate(dropChestKey, cam.position, cam.rotation);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && chestKeyImage.gameObject.activeInHierarchy == false  && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        if (Input.GetKeyDown(KeyCode.E) && chestKeyImage.gameObject.activeInHierarchy == false && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
         {
             if (hit.collider.gameObject.tag == "DoorKey")
             {
@@ -48,10 +43,42 @@ public class InventoryRedone : MonoBehaviour
                 Destroy(hit.collider.transform.parent.gameObject);
             }
         }
-        if (Input.GetKeyDown(KeyCode.G) && doorKeyImage.gameObject.activeInHierarchy == true)
+        else
         {
-            doorKeyImage.SetActive(false);
-            Instantiate(dropDoorKey, cam.position, cam.rotation);
+            if (Input.GetKeyDown(KeyCode.G) && chestKeyImage.gameObject.activeInHierarchy == true)
+            {
+                chestKeyImage.SetActive(false);
+                Instantiate(dropChestKey, cam.position, cam.rotation);
+            }
+            if (Input.GetKeyDown(KeyCode.G) && doorKeyImage.gameObject.activeInHierarchy == true)
+            {
+                doorKeyImage.SetActive(false);
+                Instantiate(dropDoorKey, cam.position, cam.rotation);
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        {
+            if (hit.collider.gameObject.tag == "Chest" && chestKeyImage.gameObject.activeInHierarchy == true)
+            {
+                chestKeyImage.SetActive(false);
+                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+                script.interactable();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        {
+            if (hit.collider.gameObject.tag == "Door" && doorKeyImage.gameObject.activeInHierarchy == true)
+            {
+                doorKeyImage.SetActive(false);
+                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+                script.interactable();
+            }
+        }
+    }
+    
+    public void interactable()
+    {
+
     }
 }

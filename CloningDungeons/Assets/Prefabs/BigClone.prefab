@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 961220061503010055}
   - component: {fileID: 6347052317286885080}
   - component: {fileID: 7844186551026762506}
-  - component: {fileID: 958204468433685638}
+  - component: {fileID: 8908460417653738745}
   m_Layer: 6
   m_Name: BigClone
   m_TagString: Player
@@ -227,11 +227,11 @@ MonoBehaviour:
   chest:
     serializedVersion: 2
     m_Bits: 0
-  eInteract: 0
+  eInteract: {fileID: 0}
   stuckagainstwalldistance: 0
   numberawayfromobject: 0
   throwingForceForward: 5
---- !u!114 &958204468433685638
+--- !u!114 &8908460417653738745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,17 +240,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7684877092957884099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed5c1cea99cff34daba11247c1f69f0, type: 3}
+  m_Script: {fileID: 11500000, guid: c1cbaa58b8562bf4db33d605209a0bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   cam: {fileID: 0}
-  dropKey: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  maxDis: 3
-  bigclonescript: {fileID: 0}
+  chestKeyImage: {fileID: 0}
+  doorKeyImage: {fileID: 0}
+  dropDoorKey: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
+    type: 3}
+  dropChestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
+    type: 3}
+  maxDis: 5
 --- !u!1 &8046863976763166124
 GameObject:
   m_ObjectHideFlags: 0
