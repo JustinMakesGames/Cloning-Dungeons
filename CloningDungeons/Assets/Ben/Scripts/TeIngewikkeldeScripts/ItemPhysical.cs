@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemPhysical : MonoBehaviour, iInteractable
 {
     public InventoryScriptableObj item;
-    public void interactable()
+    public void Interactable()
     {
         if (InventorySlot._instance.item == null)
         {
