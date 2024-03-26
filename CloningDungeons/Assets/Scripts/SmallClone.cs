@@ -29,18 +29,13 @@ public class SmallClone : Movement
         {
             if (Physics.Raycast(cam.position, cam.forward, out hitsmallclone, maxgrabbingdistance, pickupable))
             {
-                
-             
                 obj = hitsmallclone.collider.transform;
                 obj.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
                 ableToDrag = true;
-
-
             }
 
             if (!Input.GetMouseButton(0))
             {
-
                 ableToDrag = false;
                 speed = 2000f;
                 if (obj != null)
@@ -60,9 +55,6 @@ public class SmallClone : Movement
                 }
 
             }
-
-           
-
             else
             {
                 isCameraClamped = false;
@@ -106,8 +98,7 @@ public class SmallClone : Movement
     void CameraClamping()
     {
         if (!isCameraClamped)
-        {
-            
+        {           
             camclamp = script.yRotation;
             distancefromposition = Vector3.Distance(transform.position, obj.position);
             isCameraClamped = true;
@@ -116,37 +107,12 @@ public class SmallClone : Movement
 
 
     void Pickup()
-    {
-
-
-        
+    {      
         Rigidbody objrigid = obj.GetComponent<Rigidbody>();
-
-        
         Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * distancefromposition;
-
-     
-        //objrigid.useGravity = false;
         Vector3 movingplace = positiontoBe - obj.position;
-
         Vector3 velocity = movingplace * speedofpickup * Time.deltaTime;
-
         objrigid.velocity = velocity;
-
-
-        speed = 1200f;
-
-        
- 
-        
-
-        
-
-
-
-
-        
-    }
-
-    
+        speed = 1200f;       
+    }    
 }

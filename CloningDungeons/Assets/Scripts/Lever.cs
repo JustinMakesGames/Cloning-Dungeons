@@ -13,10 +13,10 @@ public class Lever : MonoBehaviour
     private Timer timer;
     private void Start()
     {
-        door = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
+        door = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
         lever = transform.GetChild(1).GetChild(1).GetComponent<Animator>();
         cam = GameObject.Find("MainCamera").transform;
-        camendposition = transform.GetChild(0).GetChild(2);
+        camendposition = transform.GetChild(0).GetChild(1);
         timer = FindObjectOfType<Timer>();
         camscript = cam.GetComponent<CameraComponent>();
 

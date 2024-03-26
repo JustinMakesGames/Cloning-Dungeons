@@ -22,10 +22,14 @@ public class BigClone : Movement
     //E to interact 
     public GameObject eInteract;
 
-    
-    
+    //Wall Problems
+    public float stuckagainstwalldistance;
+    public float numberawayfromobject;
 
-    
+
+
+
+
     public override void Update()
     {
         base.Update();
@@ -100,8 +104,7 @@ public class BigClone : Movement
     }
 
 
-    public float stuckagainstwalldistance;
-    public float numberawayfromobject;
+    
     void GrabPlayer(Transform obj)
     {
 

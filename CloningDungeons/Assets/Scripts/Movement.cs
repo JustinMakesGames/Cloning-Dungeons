@@ -132,7 +132,7 @@ public class Movement : MonoBehaviour
     {
         if (Physics.Raycast(cam.position, cam.forward, out hit, maximumdistance, lever) && Input.GetKeyDown(KeyCode.E))
         {
-            hit.transform.parent.parent.transform.GetComponent<Lever>().movinglever = true;
+            hit.transform.parent.parent.GetComponent<Lever>().movinglever = true;
 
         }
     }

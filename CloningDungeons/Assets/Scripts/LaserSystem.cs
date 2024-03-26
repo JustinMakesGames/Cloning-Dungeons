@@ -30,13 +30,16 @@ public class LaserSystem : MonoBehaviour
 
     private void Update()
     {
+        TurningLaserOff();
+        TurningLasersOn();
+    }
 
+    private void TurningLaserOff()
+    {
         for (int i = 0; i < buttons.Length; i++)
         {
             if (buttons[i].fullyPressed)
             {
-
-
                 for (int x = 0; x < lasers.Count; x++)
                 {
                     if (lasers[x].CompareTag(tags[i]))
@@ -45,17 +48,16 @@ public class LaserSystem : MonoBehaviour
                         lasers[x].GetComponent<Collider>().enabled = false;
                         lasers[x].GetComponent<MeshRenderer>().enabled = false;
                         print("Laser System works");
-                        
+
                     }
                 }
                 return;
-
-
-
-
             }
-
         }
+    }
+
+    private void TurningLasersOn()
+    {
         for (int i = 0; i < lasers.Count; i++)
         {
             lasers[i].GetComponent<TimeDamageHit>().buttonpressed = false;
@@ -63,10 +65,5 @@ public class LaserSystem : MonoBehaviour
             lasers[i].GetComponent<MeshRenderer>().enabled = true;
             print("Yes");
         }
-
-
-
-
-
     }
 }

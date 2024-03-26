@@ -13,7 +13,5 @@ public class UIScripts : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-   
+    }   
 }

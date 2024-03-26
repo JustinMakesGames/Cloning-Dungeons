@@ -21,6 +21,9 @@ public class CameraComponent : MonoBehaviour
     public bool smallcloneparent;
     public Transform targetposition;
 
+    public float camspeed;
+    public bool timeToMove;
+    public bool cutscene;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +36,7 @@ public class CameraComponent : MonoBehaviour
         
     }
 
-    public float camspeed;
-    public bool timeToMove;
-    public bool cutscene;
+   
    
     void LateUpdate()
     {

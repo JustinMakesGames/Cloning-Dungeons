@@ -12,7 +12,7 @@ public class DoorOpening : MonoBehaviour
     private bool cutscenecompleted;
     private CameraComponent camerascript;
     private Timer timerscript;
-  
+    public float camspeed;
 
     private void Start()
     {
@@ -56,7 +56,7 @@ public class DoorOpening : MonoBehaviour
         
     }
 
-    public float camspeed;
+   
     IEnumerator PlayDoorAnimation()
     {
         timerscript.cutscene = true;
