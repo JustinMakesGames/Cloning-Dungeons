@@ -7,7 +7,7 @@ public class ChestAnimation : MonoBehaviour, iInteractable
 {
     public GameObject chestKey;
     
-    public void interactable()
+    public void Interactable()
     {
         StartCoroutine(ChestOpen());
     }

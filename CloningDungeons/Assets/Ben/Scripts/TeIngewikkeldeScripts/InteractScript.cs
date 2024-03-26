@@ -75,7 +75,7 @@ public class InteractScript : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<iInteractable>() != null)
             {
                 iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                script.interactable();
+                script.Interactable();
                 item = null;
             }
         }

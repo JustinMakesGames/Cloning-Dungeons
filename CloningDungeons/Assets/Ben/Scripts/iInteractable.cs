@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface iInteractable 
 {
-    public void interactable();
+    public void Interactable();
 }

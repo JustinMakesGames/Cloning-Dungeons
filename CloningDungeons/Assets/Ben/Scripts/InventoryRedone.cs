@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
-public class InventoryRedone : MonoBehaviour, iInteractable
+public class InventoryRedone : MonoBehaviour
 {   
     public RaycastHit hit;
 
@@ -14,6 +14,8 @@ public class InventoryRedone : MonoBehaviour, iInteractable
     public GameObject doorKeyImage;
     public GameObject dropDoorKey;
     public GameObject dropChestKey;
+
+    public LayerMask doorlayer;
 
     public int maxDis;
 
@@ -63,22 +65,19 @@ public class InventoryRedone : MonoBehaviour, iInteractable
             {
                 chestKeyImage.SetActive(false);
                 iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                script.interactable();
+                script.Interactable();
             }
         }
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorlayer))
         {
-            if (hit.collider.gameObject.tag == "Door" && doorKeyImage.gameObject.activeInHierarchy == true)
-            {
+            
+            
                 doorKeyImage.SetActive(false);
-                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                script.interactable();
-            }
+                iInteractable doorscript = hit.collider.gameObject.GetComponent<iInteractable>();
+                doorscript.Interactable();
+            
         }
     }
     
-    public void interactable()
-    {
-
-    }
+    
 }
