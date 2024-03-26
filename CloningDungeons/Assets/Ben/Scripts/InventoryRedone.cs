@@ -16,6 +16,7 @@ public class InventoryRedone : MonoBehaviour
     public GameObject dropChestKey;
 
     public LayerMask doorlayer;
+    public LayerMask chestlayer;
 
     public int maxDis;
 
@@ -57,22 +58,17 @@ public class InventoryRedone : MonoBehaviour
             }
         }
 
-
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, chestlayer))
         {
-            if (hit.collider.gameObject.tag == "Chest" && chestKeyImage.gameObject.activeInHierarchy == true)
-            {
-                chestKeyImage.SetActive(false);
-                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                script.Interactable();
-            }
+            chestKeyImage.SetActive(false);
+            iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+            script.Interactable();
         }
         if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorlayer))
         {
             doorKeyImage.SetActive(false);
-            iInteractable doorscript = hit.collider.gameObject.GetComponent<iInteractable>();
-            doorscript.Interactable();
-
+            iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+            script.Interactable();
         }
     }
 }
