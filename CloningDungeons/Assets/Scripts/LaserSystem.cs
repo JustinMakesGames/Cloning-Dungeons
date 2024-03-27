@@ -35,7 +35,7 @@ public class LaserSystem : MonoBehaviour
                 {
                     if (lasers[x].CompareTag(tags[i]))
                     {
-                        lasers[x].GetComponent<TimeDamageHit>().buttonpressed = true;
+                        lasers[x].GetComponent<TimeDamageHit>().buttonPressed = true;
                         lasers[x].GetComponent<Collider>().enabled = false;
                         lasers[x].GetComponent<MeshRenderer>().enabled = false;
                         print("Laser System works");
@@ -48,7 +48,7 @@ public class LaserSystem : MonoBehaviour
 
         for (int i = 0; i < lasers.Count; i++)
         {
-            lasers[i].GetComponent<TimeDamageHit>().buttonpressed = false;
+            lasers[i].GetComponent<TimeDamageHit>().buttonPressed = false;
             lasers[i].GetComponent<Collider>().enabled = true;
             lasers[i].GetComponent<MeshRenderer>().enabled = true;
             print("Yes");

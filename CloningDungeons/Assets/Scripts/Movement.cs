@@ -14,27 +14,27 @@ public class Movement : MonoBehaviour
     public float speed;
     Rigidbody rb;
     public bool jump;
-    public float jumppower;
+    public float jumpPower;
     public bool ableToJump;
     public RaycastHit hit;
     public LayerMask ground;
-    public LayerMask cratejump;
-    protected bool resetjump;
-    public float jumpraycast;
-    protected bool objtograb;
+    public LayerMask crateJump;
+    protected bool resetJump;
+    public float jumpRaycast;
+    protected bool objToGrab;
     
 
 
 
     //Switching from character
     public bool isPlayer;
-    public Transform movecam;
+    public Transform moveCam;
     public Transform cam;
     public CameraComponent script;
 
     //Saving
     public LayerMask save;
-    public float maximumdistance;
+    public float maximumDistance;
     public ToSpawnHere toSpawnHere;
 
     //Lever
@@ -49,8 +49,8 @@ public class Movement : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
         script = cam.GetComponent<CameraComponent>();
-        resetjump = true;
-        jumpraycast = transform.localScale.y + 0.1f;
+        resetJump = true;
+        jumpRaycast = transform.localScale.y + 0.1f;
 
         if (GameObject.FindObjectOfType<ToSpawnHere>() != null)
         {
@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
 
     public virtual void Update()
     {
-        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpraycast, ground);
+        ableToJump = Physics.Raycast(transform.position, -Vector3.up, out hit, jumpRaycast, ground);
 
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
@@ -79,11 +79,11 @@ public class Movement : MonoBehaviour
         if (isPlayer)
         {
             Moving();
-            if (ableToJump && jump && resetjump && !objtograb)
+            if (ableToJump && jump && resetJump && !objToGrab)
             {
                 
                 
-                resetjump = false;
+                resetJump = false;
                 Jump();
                 Invoke(nameof(Reset), 0.25f);
             }
@@ -103,7 +103,7 @@ public class Movement : MonoBehaviour
 
     void Moving()
     {
-        dir = movecam.forward * vert + movecam.right * hor;
+        dir = moveCam.forward * vert + moveCam.right * hor;
         rb.AddForce(dir.normalized * speed * Time.deltaTime);
         
 
@@ -112,7 +112,7 @@ public class Movement : MonoBehaviour
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        rb.AddForce(new Vector3(0, jumppower, 0), ForceMode.Impulse);
+        rb.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
 
 
 
@@ -120,7 +120,7 @@ public class Movement : MonoBehaviour
 
     void Saving()
     {
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumdistance, save) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, save) && Input.GetKeyDown(KeyCode.E))
         {
             print("Saved");
             toSpawnHere.spawnPlace = hit.transform.GetSiblingIndex();
@@ -130,9 +130,9 @@ public class Movement : MonoBehaviour
 
     void Lever()
     {
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumdistance, lever) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, lever) && Input.GetKeyDown(KeyCode.E))
         {
-            hit.transform.parent.parent.GetComponent<Lever>().movinglever = true;
+            hit.transform.parent.parent.GetComponent<Lever>().movingLever = true;
 
         }
     }
@@ -141,7 +141,7 @@ public class Movement : MonoBehaviour
 
     private void Reset()
     {
-        resetjump = true;
+        resetJump = true;
     }
 
 }

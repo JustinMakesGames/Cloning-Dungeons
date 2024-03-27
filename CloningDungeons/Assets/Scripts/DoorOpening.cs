@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class DoorOpening : MonoBehaviour
 {
-    public Button[] buttonscripts;
-    public bool dooropened;
+    public Button[] buttonScripts;
+    public bool doorOpened;
     private Animator animator;
     private Transform cam;
-    private Transform endcamposition;
-    private bool cutscenecompleted;
-    private CameraComponent camerascript;
-    private Timer timerscript;
-    public float camspeed;
+    private Transform endcamPosition;
+    private bool cutsceneCompleted;
+    private CameraComponent cameraScript;
+    private Timer timerScript;
+    public float camSpeed;
 
     private void Start()
     {
-        buttonscripts = GetComponentsInChildren<Button>();
+        buttonScripts = GetComponentsInChildren<Button>();
         animator = transform.GetComponentInChildren<Animator>();
         cam = GameObject.Find("MainCamera").transform;
-        endcamposition = transform.Find("CameraPlacement");
-        camerascript = cam.GetComponent<CameraComponent>();
-        timerscript = FindObjectOfType<Timer>();
+        endcamPosition = transform.Find("CameraPlacement");
+        cameraScript = cam.GetComponent<CameraComponent>();
+        timerScript = FindObjectOfType<Timer>();
         
     }
 
@@ -29,24 +29,24 @@ public class DoorOpening : MonoBehaviour
     {
         
 
-        if (!dooropened && !cutscenecompleted)
+        if (!doorOpened && !cutsceneCompleted)
         {
-            foreach (Button b in buttonscripts)
+            foreach (Button b in buttonScripts)
             {
                 if (!b.fullyPressed)
                 {
-                    dooropened = false;
+                    doorOpened = false;
                     break;
                 }
 
-                dooropened = true;
+                doorOpened = true;
             }
 
             
         }
         
 
-        if (dooropened && !cutscenecompleted)
+        if (doorOpened && !cutsceneCompleted)
         {
             StartCoroutine(PlayDoorAnimation());
             
@@ -59,15 +59,15 @@ public class DoorOpening : MonoBehaviour
    
     IEnumerator PlayDoorAnimation()
     {
-        timerscript.cutscene = true;
-        while (cam.position != endcamposition.position)
+        timerScript.cutscene = true;
+        while (cam.position != endcamPosition.position)
         {
-            camerascript.cutscene = true;
-            cam.position = Vector3.MoveTowards(cam.position, endcamposition.position, camspeed * Time.deltaTime);
-            if (Vector3.Distance(cam.position, endcamposition.position) < 0.05f)
+            cameraScript.cutscene = true;
+            cam.position = Vector3.MoveTowards(cam.position, endcamPosition.position, camSpeed * Time.deltaTime);
+            if (Vector3.Distance(cam.position, endcamPosition.position) < 0.05f)
             {
-                cam.position = endcamposition.position;
-                cam.rotation = endcamposition.rotation;
+                cam.position = endcamPosition.position;
+                cam.rotation = endcamPosition.rotation;
             }
             yield return null;
         }
@@ -77,8 +77,8 @@ public class DoorOpening : MonoBehaviour
         yield return new WaitForSeconds(1);
         //Play Sound Here
         yield return new WaitForSeconds(3);
-        camerascript.cutscene = false;
-        cutscenecompleted = true;
-        timerscript.cutscene = false;
+        cameraScript.cutscene = false;
+        cutsceneCompleted = true;
+        timerScript.cutscene = false;
     }
 }

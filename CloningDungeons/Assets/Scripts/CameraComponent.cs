@@ -14,14 +14,14 @@ public class CameraComponent : MonoBehaviour
     public float xRotation;
     public float yRotation;
 
-    public Transform bigclone;
-    public Transform smallclone;
+    public Transform bigClone;
+    public Transform smallClone;
     public SmallClone script;
-    public bool bigcloneparent;
-    public bool smallcloneparent;
-    public Transform targetposition;
+    public bool bigCloneparent;
+    public bool smallCloneParent;
+    public Transform targetPosition;
 
-    public float camspeed;
+    public float camSpeed;
     public bool timeToMove;
     public bool cutscene;
     // Start is called before the first frame update
@@ -29,9 +29,9 @@ public class CameraComponent : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        bigcloneparent = true;
-        targetposition = bigclone.GetChild(0).transform;       
-        script = smallclone.GetComponent<SmallClone>();       
+        bigCloneparent = true;
+        targetPosition = bigClone.GetChild(0).transform;       
+        script = smallClone.GetComponent<SmallClone>();       
     }
 
    
@@ -44,7 +44,7 @@ public class CameraComponent : MonoBehaviour
             TimeToMove();
             if (!timeToMove)
             {
-                transform.position = targetposition.position;
+                transform.position = targetPosition.position;
             }
 
             if (Input.GetKeyDown(KeyCode.F))
@@ -84,33 +84,33 @@ public class CameraComponent : MonoBehaviour
     //Switching the camera
     void TimeToMove()
     {
-        if (bigcloneparent && timeToMove)
+        if (bigCloneparent && timeToMove)
         {
 
-            targetposition = smallclone.GetChild(0).transform;
-            transform.position = Vector3.MoveTowards(transform.position, targetposition.position, camspeed * Time.deltaTime);
-            bigclone.GetComponent<Movement>().isPlayer = false;
-            smallclone.GetComponent<Movement>().isPlayer = true;
-            if (Vector3.Distance(transform.position, smallclone.GetChild(0).transform.position) < 0.05f)
+            targetPosition = smallClone.GetChild(0).transform;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, camSpeed * Time.deltaTime);
+            bigClone.GetComponent<Movement>().isPlayer = false;
+            smallClone.GetComponent<Movement>().isPlayer = true;
+            if (Vector3.Distance(transform.position, smallClone.GetChild(0).transform.position) < 0.05f)
             {
                 timeToMove = false;
-                bigcloneparent = false;
-                smallcloneparent = true;
+                bigCloneparent = false;
+                smallCloneParent = true;
             }
 
         }
-        else if (!bigcloneparent && timeToMove)
+        else if (!bigCloneparent && timeToMove)
         {
 
-            targetposition = bigclone.GetChild(0).transform;
-            transform.position = Vector3.MoveTowards(transform.position, targetposition.position, camspeed * Time.deltaTime);
-            bigclone.GetComponent<Movement>().isPlayer = true;
-            smallclone.GetComponent<Movement>().isPlayer = false;
-            if (Vector3.Distance(transform.position, bigclone.GetChild(0).transform.position) < 0.05f)
+            targetPosition = bigClone.GetChild(0).transform;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, camSpeed * Time.deltaTime);
+            bigClone.GetComponent<Movement>().isPlayer = true;
+            smallClone.GetComponent<Movement>().isPlayer = false;
+            if (Vector3.Distance(transform.position, bigClone.GetChild(0).transform.position) < 0.05f)
             {
                 timeToMove = false;
-                bigcloneparent = true;
-                smallcloneparent = false;
+                bigCloneparent = true;
+                smallCloneParent = false;
             }
 
             

@@ -7,14 +7,14 @@ public class MovingPlatform : MonoBehaviour
     public Button[] buttons;
     public float speed;
     Transform platform;
-    Rigidbody platformrb;
+    Rigidbody platformRb;
     // Start is called before the first frame update
     void Start()
     {
         
         buttons = GetComponentsInChildren<Button>();
         platform = transform.GetChild(0);
-        platformrb = platform.GetComponent<Rigidbody>();
+        platformRb = platform.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,19 +28,19 @@ public class MovingPlatform : MonoBehaviour
                 buttonpressed = true;
                 if (button.transform.parent.name == "Forward")
                 {
-                    platformrb.velocity = platform.forward * speed * Time.deltaTime;
+                    platformRb.velocity = platform.forward * speed * Time.deltaTime;
                 }
                 else if (button.transform.parent.name == "Right")
                 {
-                    platformrb.velocity = platform.right * speed * Time.deltaTime;
+                    platformRb.velocity = platform.right * speed * Time.deltaTime;
                 }
                 else if (button.transform.parent.name == "Left")
                 {
-                    platformrb.velocity = -platform.right * speed * Time.deltaTime;
+                    platformRb.velocity = -platform.right * speed * Time.deltaTime;
                 }
                 else if (button.transform.parent.name == "Backwards")
                 {
-                    platformrb.velocity = -platform.forward * speed * Time.deltaTime;
+                    platformRb.velocity = -platform.forward * speed * Time.deltaTime;
                 }
             }
             
@@ -48,7 +48,7 @@ public class MovingPlatform : MonoBehaviour
 
         if (!buttonpressed)
         {
-            platformrb.velocity = Vector3.zero;
+            platformRb.velocity = Vector3.zero;
         }
     }
 }

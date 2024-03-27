@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlatformScript : MonoBehaviour
@@ -12,6 +13,9 @@ public class PlatformScript : MonoBehaviour
         "Yellow"
 
     };
+
+    private float time = 2f;
+    private float endTimer = 2f;
 
 
     public Button[] buttons;
@@ -34,6 +38,7 @@ public class PlatformScript : MonoBehaviour
         {
             if (buttons[i].fullyPressed)
             {
+                time = 0;
                 for (int x = 0; x < platforms.Count; x++)
                 {
                     if (platforms[x].CompareTag(tags[i]))
@@ -47,6 +52,12 @@ public class PlatformScript : MonoBehaviour
             }
         }
 
+        time += Time.deltaTime;
+        if (time < endTimer)
+        {
+            return;
+        }
+
         for (int i = 0; i < platforms.Count; i++)
         {
             TurnOffPlatform(
@@ -55,15 +66,7 @@ public class PlatformScript : MonoBehaviour
         }
     }
 
-    private void TurningLaserOff()
-    {
-        
-    }
-
-    private void TurningLasersOn()
-    {
-        
-    }
+   
 
     private void PlatformChange(Material material, Collider collider)
     {

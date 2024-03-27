@@ -106,7 +106,7 @@ public class Inventory : MonoBehaviour
         Destroy(key);
         chestanimator.Play("ChestDeksel");
         yield return new WaitForSeconds(1);
-        doorkey.ifopened = true;
+        doorkey.ifOpened = true;
 
     }
 }

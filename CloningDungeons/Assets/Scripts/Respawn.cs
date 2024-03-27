@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    public Transform bigclone;
-    public Transform smallclone;
+    public Transform bigClone;
+    public Transform smallClone;
 
     private void Start()
     {
-        bigclone = GameObject.Find("Clones").transform.GetChild(0);
-        smallclone = GameObject.Find("Clones").transform.GetChild(1);
+        bigClone = GameObject.Find("Clones").transform.GetChild(0);
+        smallClone = GameObject.Find("Clones").transform.GetChild(1);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Timer.timer -= 30;
-            bigclone.position = transform.GetChild(0).position;
-            smallclone.position = transform.GetChild(1).position;
+            bigClone.position = transform.GetChild(0).position;
+            smallClone.position = transform.GetChild(1).position;
 
 
 

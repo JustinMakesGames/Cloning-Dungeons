@@ -6,17 +6,17 @@ using UnityEngine;
 public class SmallClone : Movement
 {
     [Header("Dragging")]
-    RaycastHit hitsmallclone;
+    RaycastHit hitSmallClone;
     public LayerMask pickupable;
-    public float speedofpickup;
-    public float maxgrabbingdistance;
+    public float speedOfPickUp;
+    public float maxGrabbingDistance;
     public bool ableToDrag;
-    public float camclamp;
+    public float camClamp;
     
     public bool isCameraClamped;
     private bool dragging;
     public Transform obj;
-    public float distancefromposition;
+    public float distanceFromPosition;
     
 
     
@@ -27,10 +27,9 @@ public class SmallClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hitsmallclone, maxgrabbingdistance, pickupable))
+            if (Physics.Raycast(cam.position, cam.forward, out hitSmallClone, maxGrabbingDistance, pickupable))
             {
-                obj = hitsmallclone.collider.transform;
-                obj.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+                obj = hitSmallClone.collider.transform;
                 ableToDrag = true;
             }
 
@@ -40,7 +39,6 @@ public class SmallClone : Movement
                 speed = 2000f;
                 if (obj != null)
                 {
-                    obj.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
                     obj.GetComponent<Rigidbody>().useGravity = true;
 
                 }
@@ -99,8 +97,8 @@ public class SmallClone : Movement
     {
         if (!isCameraClamped)
         {           
-            camclamp = script.yRotation;
-            distancefromposition = Vector3.Distance(transform.position, obj.position);
+            camClamp = script.yRotation;
+            distanceFromPosition = Vector3.Distance(transform.position, obj.position);
             isCameraClamped = true;
         }
     }
@@ -109,9 +107,9 @@ public class SmallClone : Movement
     void Pickup()
     {      
         Rigidbody objrigid = obj.GetComponent<Rigidbody>();
-        Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + movecam.forward * distancefromposition;
+        Vector3 positiontoBe = new Vector3(cam.position.x, obj.position.y, cam.position.z) + moveCam.forward * distanceFromPosition;
         Vector3 movingplace = positiontoBe - obj.position;
-        Vector3 velocity = movingplace * speedofpickup * Time.deltaTime;
+        Vector3 velocity = movingplace * speedOfPickUp * Time.deltaTime;
         objrigid.velocity = velocity;
         speed = 1200f;       
     }    

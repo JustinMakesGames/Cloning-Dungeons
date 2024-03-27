@@ -87,11 +87,11 @@ public class BigClone : Movement
         }
         if (objtoGet != null)
         {
-            objtograb = true;
+            objToGrab = true;
         }
         else
         {
-            objtograb = false;
+            objToGrab = false;
         }
         base.FixedUpdate();
     }

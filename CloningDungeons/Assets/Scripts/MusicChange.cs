@@ -7,46 +7,46 @@ using UnityEngine;
 public class MusicChange : MonoBehaviour
 {
  
-    public bool smallcloneturn;
-    public bool bigcloneturn;
-    private AudioSource bigclonemusic;
-    private AudioSource smallclonemusic;
+    public bool smallCloneTurn;
+    public bool bigCloneTurn;
+    private AudioSource bigCloneMusic;
+    private AudioSource smallCloneMusic;
     public float speed;
 
     private void Start()
     {
-        bigcloneturn = true;
-        bigclonemusic = transform.GetChild(0).GetComponent<AudioSource>();
-        smallclonemusic = transform.GetChild(1).GetComponent<AudioSource>();
+        bigCloneTurn = true;
+        bigCloneMusic = transform.GetChild(0).GetComponent<AudioSource>();
+        smallCloneMusic = transform.GetChild(1).GetComponent<AudioSource>();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && bigcloneturn)
+        if (Input.GetKeyDown(KeyCode.F) && bigCloneTurn)
         {
-            bigcloneturn = false;
-            smallcloneturn = true;
+            bigCloneTurn = false;
+            smallCloneTurn = true;
         }
-        else if (Input.GetKeyDown(KeyCode.F) && smallcloneturn)
+        else if (Input.GetKeyDown(KeyCode.F) && smallCloneTurn)
         {
-            bigcloneturn = true;
-            smallcloneturn = false;
+            bigCloneTurn = true;
+            smallCloneTurn = false;
         }
 
-        if (bigcloneturn)
+        if (bigCloneTurn)
         {
-            if (bigclonemusic.volume != 1 || smallclonemusic.volume != 0)
+            if (bigCloneMusic.volume != 1 || smallCloneMusic.volume != 0)
             {
-                bigclonemusic.volume += speed * Time.deltaTime;
-                smallclonemusic.volume -= speed * Time.deltaTime;
+                bigCloneMusic.volume += speed * Time.deltaTime;
+                smallCloneMusic.volume -= speed * Time.deltaTime;
             }
         }
 
-        else if (smallcloneturn)
+        else if (smallCloneTurn)
         {
-            if (bigclonemusic.volume != 0 || smallclonemusic.volume != 1)
+            if (bigCloneMusic.volume != 0 || smallCloneMusic.volume != 1)
             {
-                bigclonemusic.volume -= speed * Time.deltaTime;
-                smallclonemusic.volume += speed * Time.deltaTime;
+                bigCloneMusic.volume -= speed * Time.deltaTime;
+                smallCloneMusic.volume += speed * Time.deltaTime;
             }
         }
     }

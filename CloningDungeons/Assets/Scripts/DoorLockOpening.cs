@@ -5,9 +5,9 @@ using UnityEngine;
 public class DoorLockOpening : MonoBehaviour
 {
     public LayerMask door;
-    public float maxdis;
+    public float maxDis;
     public Transform cam;
-    public GameObject openlock;
+    public GameObject openLock;
     public GameObject key;
     public RaycastHit hit;
 
@@ -18,7 +18,7 @@ public class DoorLockOpening : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxdis, door))
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, door))
         {
             StartCoroutine(DoorLockOpeningFunction());
         }
@@ -42,7 +42,7 @@ public class DoorLockOpening : MonoBehaviour
         yield return new WaitForSeconds(2);
         Destroy(keyclone);
         Destroy(lockclosed.gameObject);
-        GameObject openlockclone = Instantiate(openlock, spawnobject.position, Quaternion.Euler(0,180,0));
+        GameObject openlockclone = Instantiate(openLock, spawnobject.position, Quaternion.Euler(0,180,0));
         yield return new WaitForSeconds(1);
         dooranimator.Play("DoorOpening");
         yield return new WaitForSeconds(2);
