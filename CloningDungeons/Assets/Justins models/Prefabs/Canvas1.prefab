@@ -884,11 +884,11 @@ MonoBehaviour:
   timertext: {fileID: 5573867389735358122}
   cutscene: 0
   blackscreen: {fileID: 2664676728721450396}
-  image: {fileID: 0}
+  image: {fileID: 4219683540747870221}
   blackscreenspeed: 1
   bigclone: {fileID: 0}
   smallclone: {fileID: 0}
-  gameoverscreen: {fileID: 0}
+  gameoverscreen: {fileID: 2997695770283708}
 --- !u!1 &2056903676755937467
 GameObject:
   m_ObjectHideFlags: 0

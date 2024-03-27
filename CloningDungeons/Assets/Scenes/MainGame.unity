@@ -3309,10 +3309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &164752418
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5574,14 +5574,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
+      propertyPath: bigClone
+      value: 
+      objectReference: {fileID: 2088627013}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
       propertyPath: bigclone
       value: 
       objectReference: {fileID: 2088627013}
     - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
+      propertyPath: camSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
+      propertyPath: xRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
+      propertyPath: yRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
+      propertyPath: smallClone
+      value: 
+      objectReference: {fileID: 281740529}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
       propertyPath: smallclone
       value: 
       objectReference: {fileID: 281740529}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
+      propertyPath: targetPosition
+      value: 
+      objectReference: {fileID: 1380856837}
     - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
       propertyPath: moveOrientation
@@ -6009,10 +6039,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &293236773
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11748,9 +11778,34 @@ PrefabInstance:
       objectReference: {fileID: 1267062790}
     - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
+      propertyPath: moveCam
+      value: 
+      objectReference: {fileID: 1623545581}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
       propertyPath: eInteract
       value: 
       objectReference: {fileID: 2072004562}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: jumpPower
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: maxDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: inventoryspace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: everything.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: cam
@@ -11781,6 +11836,21 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1267062790}
+    - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: moveCam
+      value: 
+      objectReference: {fileID: 1623545581}
+    - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: isCameraClamped
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: maxGrabbingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5540107705961683984, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_Name
@@ -21930,10 +22000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &1161686495
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27402,6 +27472,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 670eab100f9c20648b730f56d861576d, type: 3}
+--- !u!4 &1380856837 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8196670296020073846, guid: 3354881feaa202c40bc166c7d20f4654,
+    type: 3}
+  m_PrefabInstance: {fileID: 634382692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1392962985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28825,10 +28901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &1448101238
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35204,9 +35280,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3523677011978703326, guid: 64d9a8cb878a2ed4baff0d724746383a,
         type: 3}
+      propertyPath: bigClone
+      value: 
+      objectReference: {fileID: 2088627013}
+    - target: {fileID: 3523677011978703326, guid: 64d9a8cb878a2ed4baff0d724746383a,
+        type: 3}
       propertyPath: bigclone
       value: 
       objectReference: {fileID: 2088627013}
+    - target: {fileID: 3523677011978703326, guid: 64d9a8cb878a2ed4baff0d724746383a,
+        type: 3}
+      propertyPath: smallClone
+      value: 
+      objectReference: {fileID: 281740529}
     - target: {fileID: 3523677011978703326, guid: 64d9a8cb878a2ed4baff0d724746383a,
         type: 3}
       propertyPath: smallclone
@@ -39608,10 +39694,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &1913740819
 CapsuleCollider:
   m_ObjectHideFlags: 0

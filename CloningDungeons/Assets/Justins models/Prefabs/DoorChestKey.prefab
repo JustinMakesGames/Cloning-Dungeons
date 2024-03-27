@@ -4982,9 +4982,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d075459d032c034b82f40de2170bf4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatespeed: 100
+  rotateSpeed: 10
   range: 0.1
-  floatingspeed: 5
-  movespeed: 1
-  ifopened: 0
-  endposition: {fileID: 0}
+  floatingSpeed: 0
+  moveSpeed: 0
+  ifOpened: 0
+  endPosition: {fileID: 0}

@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1536e404a757346bc98ee14f99adfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonscripts: []
-  dooropened: 0
-  camspeed: 1
+  buttonScripts: []
+  doorOpened: 0
+  camSpeed: 50
 --- !u!1 &3047088047070797043
 GameObject:
   m_ObjectHideFlags: 0

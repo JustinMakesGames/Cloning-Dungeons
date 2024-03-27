@@ -187,46 +187,46 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   speed: 1000
   jump: 0
-  jumppower: 0
+  jumpPower: 0
   ableToJump: 0
   ground:
     serializedVersion: 2
-    m_Bits: 0
-  cratejump:
+    m_Bits: 4294967295
+  crateJump:
     serializedVersion: 2
-    m_Bits: 0
-  jumpraycast: 0
+    m_Bits: 82048
+  jumpRaycast: 10
   isPlayer: 1
-  movecam: {fileID: 5137429333765730154}
+  moveCam: {fileID: 0}
   cam: {fileID: 0}
   script: {fileID: 0}
   save:
     serializedVersion: 2
-    m_Bits: 0
-  maximumdistance: 0
+    m_Bits: 4096
+  maximumDistance: 2
   toSpawnHere: {fileID: 0}
   lever:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   bigpickup:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   pickup:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   maxDistance: 2
   isGrabbing: 0
   objtoGet: {fileID: 0}
   everything:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   inventoryspace: 0
   key:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   chest:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   eInteract: {fileID: 0}
   stuckagainstwalldistance: 0
   numberawayfromobject: 0
@@ -250,6 +250,12 @@ MonoBehaviour:
     type: 3}
   dropChestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
     type: 3}
+  doorLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  chestLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   maxDis: 5
 --- !u!1 &8046863976763166124
 GameObject:
