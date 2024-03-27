@@ -123,7 +123,7 @@ public class Movement : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maximumdistance, save) && Input.GetKeyDown(KeyCode.E))
         {
             print("Saved");
-            toSpawnHere.spawnplace = hit.transform.GetSiblingIndex();
+            toSpawnHere.spawnPlace = hit.transform.GetSiblingIndex();
             toSpawnHere.SavePlayer();
         }
     }

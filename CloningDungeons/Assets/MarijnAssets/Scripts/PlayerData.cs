@@ -11,7 +11,7 @@ public class PlayerData
    
     public PlayerData(ToSpawnHere toSpawn)
     {
-        toSpawnhere = toSpawn.spawnplace;
+        toSpawnhere = toSpawn.spawnPlace;
     }
 
 

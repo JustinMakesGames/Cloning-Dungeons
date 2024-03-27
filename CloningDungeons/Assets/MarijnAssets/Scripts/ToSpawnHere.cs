@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ToSpawnHere : MonoBehaviour
 {
-    public Transform bigclone;
-    public Transform smallclone;
-    public int spawnplace;
+    public Transform bigClone;
+    public Transform smallClone;
+    public int spawnPlace;
 
     
     void Start()
     {
         StartCoroutine(SpawnPlayer());
-        print(spawnplace);
+        print(spawnPlace);
         
     }
 
@@ -26,15 +26,15 @@ public class ToSpawnHere : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
          
-        spawnplace = data.toSpawnhere;
+        spawnPlace = data.toSpawnhere;
         yield return new WaitForSeconds(0.3f);
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (i == spawnplace)
+            if (i == spawnPlace)
             {
                 print(i + " is the right number to spawn to");
-                bigclone.position = transform.GetChild(i).GetChild(0).position;
-                smallclone.position = transform.GetChild(i).GetChild(1).position;
+                bigClone.position = transform.GetChild(i).GetChild(0).position;
+                smallClone.position = transform.GetChild(i).GetChild(1).position;
                 break;
             }
         }
