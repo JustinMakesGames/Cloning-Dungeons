@@ -14,7 +14,7 @@ public class Respawn : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("SmallPlayer"))
+        if (other.CompareTag("Player"))
         {
             Timer.timer -= 30;
             bigclone.position = transform.GetChild(0).position;

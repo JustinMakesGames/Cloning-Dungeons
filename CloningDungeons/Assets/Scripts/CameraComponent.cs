@@ -30,42 +30,30 @@ public class CameraComponent : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         bigcloneparent = true;
-        targetposition = bigclone.GetChild(0).transform;
-        
-        script = smallclone.GetComponent<SmallClone>();
-        
+        targetposition = bigclone.GetChild(0).transform;       
+        script = smallclone.GetComponent<SmallClone>();       
     }
 
    
    
     void LateUpdate()
     {
-
         if (!cutscene)
         {
+            CameraMovement();
+            TimeToMove();
             if (!timeToMove)
             {
                 transform.position = targetposition.position;
             }
 
-
-            CameraMovement();
-
             if (Input.GetKeyDown(KeyCode.F))
             {
-                bigclone.GetComponent<BigClone>().isGrabbing = false;
-                Rigidbody rb = smallclone.GetComponent<Rigidbody>();
-                rb.useGravity = true;
-                rb.isKinematic = false;
                 timeToMove = true;
             }
+            
 
-            TimeToMove();
         }
-
-        
-        
-
     }
 
     void CameraMovement()

@@ -26,9 +26,7 @@ public class Button : MonoBehaviour
             if (Vector3.Distance(transform.position, endposition) < howMuchDistance)
             {
                 fullyPressed = true;
-            }
-
-            
+            }            
         }
         else
         {

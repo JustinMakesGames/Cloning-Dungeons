@@ -10,14 +10,11 @@ public class LaserSystem : MonoBehaviour
         "Blue",
         "Green",
         "Yellow"
-
     };
   
 
     public Button[] buttons;
     public List<Transform> lasers;
-
-
 
     private void Start()
     {
@@ -29,12 +26,6 @@ public class LaserSystem : MonoBehaviour
     }
 
     private void Update()
-    {
-        TurningLaserOff();
-        TurningLasersOn();
-    }
-
-    private void TurningLaserOff()
     {
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -54,10 +45,7 @@ public class LaserSystem : MonoBehaviour
                 return;
             }
         }
-    }
 
-    private void TurningLasersOn()
-    {
         for (int i = 0; i < lasers.Count; i++)
         {
             lasers[i].GetComponent<TimeDamageHit>().buttonpressed = false;
@@ -67,3 +55,6 @@ public class LaserSystem : MonoBehaviour
         }
     }
 }
+
+  
+
