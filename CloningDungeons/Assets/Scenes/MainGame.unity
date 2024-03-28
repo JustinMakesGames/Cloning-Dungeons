@@ -11414,6 +11414,11 @@ PrefabInstance:
       objectReference: {fileID: 1623545581}
     - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
+      propertyPath: clickToInteract
+      value: 
+      objectReference: {fileID: 730461165}
+    - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
       propertyPath: isCameraClamped
       value: 0
       objectReference: {fileID: 0}
@@ -11430,7 +11435,7 @@ PrefabInstance:
     - target: {fileID: 6350886532020839660, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.84
+      value: -104.9
       objectReference: {fileID: 0}
     - target: {fileID: 6350886532020839660, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
@@ -11440,7 +11445,7 @@ PrefabInstance:
     - target: {fileID: 6350886532020839660, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.12
+      value: -2.07
       objectReference: {fileID: 0}
     - target: {fileID: 6350886532020839660, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
