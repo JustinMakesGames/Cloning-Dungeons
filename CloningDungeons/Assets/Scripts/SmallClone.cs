@@ -17,7 +17,8 @@ public class SmallClone : Movement
     private bool dragging;
     public Transform obj;
     public float distanceFromPosition;
-    
+
+    public GameObject clickToInteract;
 
     
 
@@ -27,10 +28,15 @@ public class SmallClone : Movement
         base.Update();
         if (isPlayer)
         {
-            if (Physics.Raycast(cam.position, cam.forward, out hitSmallClone, maxGrabbingDistance, pickupable))
+            if (Physics.Raycast(cam.position, cam.forward, out hitSmallClone, maxGrabbingDistance, pickupable) && !dragging)
             {
+                clickToInteract.SetActive(true);
                 obj = hitSmallClone.collider.transform;
                 ableToDrag = true;
+            }
+            else
+            {
+                clickToInteract.SetActive(false);
             }
 
             if (!Input.GetMouseButton(0))
