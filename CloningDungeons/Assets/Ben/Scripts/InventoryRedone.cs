@@ -49,12 +49,12 @@ public class InventoryRedone : MonoBehaviour
 
             else
             {
-                if (Input.GetKeyDown(KeyCode.G) && chestKeyImage.gameObject.activeInHierarchy == true)
+                if (Input.GetKeyDown(KeyCode.E) && chestKeyImage.gameObject.activeInHierarchy == true)
                 {
                     chestKeyImage.SetActive(false);
                     Instantiate(dropChestKey, cam.position, cam.rotation);
                 }
-                if (Input.GetKeyDown(KeyCode.G) && doorKeyImage.gameObject.activeInHierarchy == true)
+                if (Input.GetKeyDown(KeyCode.E) && doorKeyImage.gameObject.activeInHierarchy == true)
                 {
                     doorKeyImage.SetActive(false);
                     Instantiate(dropDoorKey, cam.position, cam.rotation);

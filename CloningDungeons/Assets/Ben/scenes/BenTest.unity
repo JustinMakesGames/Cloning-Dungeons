@@ -2003,10 +2003,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &164752418
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3524,14 +3524,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 1435342473}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
+      propertyPath: bigClone
+      value: 
+      objectReference: {fileID: 2088627013}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
       propertyPath: bigclone
       value: 
       objectReference: {fileID: 2088627013}
     - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
+      propertyPath: smallClone
+      value: 
+      objectReference: {fileID: 281740529}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
       propertyPath: smallclone
       value: 
       objectReference: {fileID: 281740529}
+    - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+        type: 3}
+      propertyPath: targetPosition
+      value: 
+      objectReference: {fileID: 1580851147}
     - target: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
       propertyPath: moveOrientation
@@ -3817,10 +3837,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &293236773
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8313,9 +8333,44 @@ PrefabInstance:
       objectReference: {fileID: 1267062790}
     - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 1998332099}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: moveCam
+      value: 
+      objectReference: {fileID: 1267062790}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
       propertyPath: eInteract
       value: 
       objectReference: {fileID: 2072004562}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: jumpPower
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: isGrabbing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: maxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: toSpawnHere
+      value: 
+      objectReference: {fileID: 1787992871}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: everything.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: cam
@@ -15360,10 +15415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &1161686495
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19641,6 +19696,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 634382692}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1435342473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
+    type: 3}
+  m_PrefabInstance: {fileID: 634382692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435342472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb19e2181dba6e4f999bc87d9ef4bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1435598528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19977,10 +20044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &1448101238
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22592,6 +22659,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e74a71b2c9133499faa89053f72150, type: 3}
+--- !u!4 &1580851147 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8196670296020073846, guid: 3354881feaa202c40bc166c7d20f4654,
+    type: 3}
+  m_PrefabInstance: {fileID: 634382692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1595639495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25532,6 +25605,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1701558176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1787992871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3523677011978703326, guid: 64d9a8cb878a2ed4baff0d724746383a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701558176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30153c0e6a128fb4096975b27effd436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1789502818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1524891514925273033, guid: e10e798ae87018e44ad645f26a97981c,
@@ -26769,10 +26854,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayhitpower: 5
-  uphitpower: 5
-  showtimepunishment: {fileID: 0}
-  buttonpressed: 0
+  awayHitPower: 0
+  upHitPower: 0
+  showTimePunishment: {fileID: 0}
+  buttonPressed: 0
 --- !u!136 &1913740819
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28263,6 +28348,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 164191954}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998332099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8620114061354635999, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 264980804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95c78e4af26ef34d9247ea69f508943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2001880204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3795169771435805309, guid: 42e74a71b2c9133499faa89053f72150,
