@@ -61,22 +61,22 @@ public class InventoryRedone : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, chestLayer) &&
-                chestKeyImage.gameObject.activeInHierarchy == true)
+            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
             {
-                chestKeyImage.SetActive(false);
-                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                script.Interactable();
-            }
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorLayer) &&
-                doorKeyImage.gameObject.activeInHierarchy == true)
-            {
-                doorKeyImage.SetActive(false);
-                iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                script.Interactable();
+                if (chestKeyImage.gameObject.activeInHierarchy == true && Physics.Raycast(cam.position, cam.forward, out hit, maxDis,chestLayer))
+                {
+                    chestKeyImage.SetActive(false);
+                    iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+                    script.Interactable();
+                }   
+                if (doorKeyImage.gameObject.activeInHierarchy == true && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorLayer))
+                {
+                    doorKeyImage.SetActive(false);
+                    iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
+                    script.Interactable();
+                }
             }
         }
-        
     }
 }
     
