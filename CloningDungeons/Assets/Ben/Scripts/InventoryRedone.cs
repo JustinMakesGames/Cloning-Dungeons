@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ public class InventoryRedone : MonoBehaviour
 
     public int maxDis;
 
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,6 @@ public class InventoryRedone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (transform.GetComponent<BigClone>().isPlayer)
         {
             if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
@@ -76,6 +77,15 @@ public class InventoryRedone : MonoBehaviour
                     iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
                     script.Interactable();
                 }
+            }
+            // moet een check moving voor komen
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                anim.SetBool("IsWalking", true);
+            }
+            else
+            {
+                anim.SetBool("IsWalking", false);
             }
         }
     }

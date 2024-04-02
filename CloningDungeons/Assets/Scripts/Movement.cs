@@ -41,9 +41,8 @@ public class Movement : MonoBehaviour
     public LayerMask lever;
 
     
-
     
-
+    
     void Start()
     {
         

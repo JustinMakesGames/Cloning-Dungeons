@@ -10766,6 +10766,11 @@ PrefabInstance:
       objectReference: {fileID: 1267062790}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1382668207}
+    - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
       propertyPath: walk
       value: 
       objectReference: {fileID: 4906999055354433962, guid: d437b42dd7ef44b45b5189aed0d50477,
@@ -10780,6 +10785,11 @@ PrefabInstance:
       propertyPath: chestKeyImage
       value: 
       objectReference: {fileID: 1050894651}
+    - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: characterModel
+      value: 
+      objectReference: {fileID: 1382668206}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: doorlayer.m_Bits
@@ -10918,12 +10928,12 @@ PrefabInstance:
     - target: {fileID: 8196670296020073846, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 8196670296020073846, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.04
+      value: 0.131
       objectReference: {fileID: 0}
     - target: {fileID: 8233691486638417960, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
@@ -10948,7 +10958,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6325389246778560579, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1382668207}
   m_SourcePrefab: {fileID: 100100000, guid: 3354881feaa202c40bc166c7d20f4654, type: 3}
 --- !u!4 &637647789 stripped
 Transform:
@@ -24454,6 +24468,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 634382692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1382668206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6325389246778560579, guid: 3354881feaa202c40bc166c7d20f4654,
+    type: 3}
+  m_PrefabInstance: {fileID: 634382692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1382668207
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382668206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d73f29194ceb57c41bc18697782723ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1392962985
 PrefabInstance:
   m_ObjectHideFlags: 0
