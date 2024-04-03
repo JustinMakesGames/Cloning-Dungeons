@@ -79,7 +79,7 @@ public class InventoryRedone : MonoBehaviour
                 }
             }
             // moet een check moving voor komen
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKey(KeyCode.W))
             {
                 anim.SetBool("IsWalking", true);
             }

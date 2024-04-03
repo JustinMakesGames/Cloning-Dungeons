@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [Header("Movement Checker")]
+    [SerializeField] private bool isMoving;
+
     //Input
     public float hor;
     public float vert;
@@ -104,6 +107,15 @@ public class Movement : MonoBehaviour
     {
         dir = moveCam.forward * vert + moveCam.right * hor;
         rb.AddForce(dir.normalized * speed * Time.deltaTime);
+
+        if (dir.magnitude > 0.01f)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
         
 
     }
