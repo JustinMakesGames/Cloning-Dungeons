@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [Header("Movement Checker")]
-    [SerializeField] private bool isMoving;
+    public bool isMoving;
 
     //Input
     public float hor;

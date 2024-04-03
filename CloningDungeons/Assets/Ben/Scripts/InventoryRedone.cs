@@ -22,7 +22,6 @@ public class InventoryRedone : MonoBehaviour
 
     public int maxDis;
 
-    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,15 +76,6 @@ public class InventoryRedone : MonoBehaviour
                     iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
                     script.Interactable();
                 }
-            }
-            // moet een check moving voor komen
-            if (Input.GetKey(KeyCode.W))
-            {
-                anim.SetBool("IsWalking", true);
-            }
-            else
-            {
-                anim.SetBool("IsWalking", false);
             }
         }
     }
