@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class MusicChange : MonoBehaviour
