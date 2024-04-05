@@ -17,6 +17,7 @@ TagManager:
   - DoorKey
   - Chest
   - Door
+  - Key
   layers:
   - Default
   - TransparentFX

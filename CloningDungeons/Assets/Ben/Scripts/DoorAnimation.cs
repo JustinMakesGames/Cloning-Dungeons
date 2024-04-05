@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class DoorAnimation : MonoBehaviour, iInteractable
+public class DoorAnimation : MonoBehaviour
 {
     public GameObject doorKey;
     public GameObject openLock;
 
-    public void Interactable()
+    public void Use()
     {
         StartCoroutine(DoorOpen());
     }
