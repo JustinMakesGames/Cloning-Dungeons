@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,19 +12,23 @@ public class InventoryRedone : MonoBehaviour
     public Transform cam;
     public GameObject chestKeyImage;
     public GameObject doorKeyImage;
-    public GameObject dropDoorKey;
-    public GameObject dropChestKey;
+    public GameObject dropKey;
+    public GameObject doorKey;
+    public GameObject chestKey;
+
 
     public LayerMask doorLayer;
     public LayerMask chestLayer;
 
     public int maxDis;
+    public bool keyActive;
 
     // Start is called before the first frame update
     void Start()
     {
-        chestKeyImage.SetActive(false);
-        doorKeyImage.SetActive(false);
+        chestKeyImage.gameObject.SetActive(false);
+        doorKeyImage.gameObject.SetActive(false);
+        keyActive = false;
     }
 
     // Update is called once per frame
@@ -33,47 +38,64 @@ public class InventoryRedone : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
             {
-                if (hit.collider.gameObject.tag == "ChestKey" && doorKeyImage.gameObject.activeInHierarchy == false)
-                {
-                    chestKeyImage.gameObject.SetActive(true);
-                    Destroy(hit.collider.transform.parent.gameObject);
-                }
-                if (hit.collider.gameObject.tag == "DoorKey" && chestKeyImage.gameObject.activeInHierarchy == false)
-                {
-                    doorKeyImage.gameObject.SetActive(true);
-                    Destroy(hit.collider.transform.parent.gameObject);
-                }
+                Pickup();
             }
 
-            else
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (Input.GetKeyDown(KeyCode.E) && chestKeyImage.gameObject.activeInHierarchy == true)
-                {
-                    chestKeyImage.SetActive(false);
-                    Instantiate(dropChestKey, cam.position, cam.rotation);
-                }
-                if (Input.GetKeyDown(KeyCode.E) && doorKeyImage.gameObject.activeInHierarchy == true)
-                {
-                    doorKeyImage.SetActive(false);
-                    Instantiate(dropDoorKey, cam.position, cam.rotation);
-                }
+                Drop();
             }
 
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (chestKeyImage.gameObject.activeInHierarchy == true && Physics.Raycast(cam.position, cam.forward, out hit, maxDis,chestLayer))
-                {
-                    chestKeyImage.SetActive(false);
-                    iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                    script.Interactable();
-                }   
-                if (doorKeyImage.gameObject.activeInHierarchy == true && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorLayer))
-                {
-                    doorKeyImage.SetActive(false);
-                    iInteractable script = hit.collider.gameObject.GetComponent<iInteractable>();
-                    script.Interactable();
-                }
+                Use();
             }
+        }
+    }
+    
+    void Pickup()
+    {
+        if (hit.collider.gameObject.tag == "ChestKey" && keyActive == false)
+        {
+            keyActive = true;
+            chestKeyImage.gameObject.SetActive(true);
+            dropKey = chestKey;
+            Destroy(hit.collider.transform.parent.gameObject);
+        }
+        if (hit.collider.gameObject.tag == "DoorKey" && keyActive == false)
+        {
+            keyActive = true;
+            doorKeyImage.gameObject.SetActive(true);
+            dropKey = doorKey;
+            Destroy(hit.collider.transform.parent.gameObject);
+        }
+    }
+    void Drop()
+    {
+        if (keyActive == true)
+        {
+            keyActive = false;
+            chestKeyImage.SetActive(false);
+            doorKeyImage.SetActive(false);
+            Instantiate(dropKey, cam.position, cam.rotation);
+            dropKey = null;
+        }
+    }
+    void Use()
+    {
+        if (dropKey == chestKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, chestLayer))
+        {
+            chestKeyImage.SetActive(false);
+            keyActive = false;
+            dropKey = null;
+            hit.collider.gameObject.GetComponent<ChestAnimation>().Use();
+        }
+        if (dropKey == doorKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorLayer))
+        {
+            doorKeyImage.SetActive(false);
+            keyActive = false;
+            dropKey = null;
+            hit.collider.gameObject.GetComponent<DoorAnimation>().Use();
         }
     }
 }

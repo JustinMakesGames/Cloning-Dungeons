@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ChestAnimation : MonoBehaviour, iInteractable
+public class ChestAnimation : MonoBehaviour
 {
     public GameObject chestKey;
     
-    public void Interactable()
+    public void Use()
     {
         StartCoroutine(ChestOpen());
     }
-
     public IEnumerator ChestOpen()
     {
         Transform chest = transform;
