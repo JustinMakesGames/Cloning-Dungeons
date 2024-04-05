@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30153c0e6a128fb4096975b27effd436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigclone: {fileID: 0}
-  smallclone: {fileID: 0}
-  spawnplace: 0
+  bigClone: {fileID: 0}
+  smallClone: {fileID: 0}
+  spawnPlace: 0
 --- !u!1001 &1700501021152660328
 PrefabInstance:
   m_ObjectHideFlags: 0
