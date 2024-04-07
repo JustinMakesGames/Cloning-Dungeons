@@ -18,6 +18,7 @@ TagManager:
   - Chest
   - Door
   - Key
+  - SavePoint
   layers:
   - Default
   - TransparentFX
