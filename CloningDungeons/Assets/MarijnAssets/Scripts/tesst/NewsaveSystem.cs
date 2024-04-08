@@ -18,7 +18,6 @@ public class NewsaveSystem : MonoBehaviour
         
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
-            print("HITTING");
             if(hit.transform.CompareTag("SavePoint"))
             {
                 eInteract.SetActive(true);
@@ -32,6 +31,8 @@ public class NewsaveSystem : MonoBehaviour
                     PlayerPrefs.SetFloat("PlayerSmallX", playerSmall.transform.position.x);
                     PlayerPrefs.SetFloat("PlayerSmallY", playerSmall.transform.position.y);
                     PlayerPrefs.SetFloat("PlayerSmallZ", playerSmall.transform.position.z);
+
+                    print("Saved");
                 }
             }
             else

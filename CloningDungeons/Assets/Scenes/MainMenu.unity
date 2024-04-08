@@ -6129,7 +6129,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1653129798}
         m_TargetAssemblyTypeName: Sceneloader, Assembly-CSharp
-        m_MethodName: LoadMainGame
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9056,6 +9056,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBig: {fileID: 0}
   playerSmall: {fileID: 0}
+  bigClone: {fileID: 0}
+  smallClone: {fileID: 0}
 --- !u!4 &1653129799
 Transform:
   m_ObjectHideFlags: 0

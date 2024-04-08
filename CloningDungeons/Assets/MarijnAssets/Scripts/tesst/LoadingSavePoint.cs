@@ -11,6 +11,7 @@ public class LoadingSavePoint : MonoBehaviour
     void Start()
     {
         LoadSave();
+        print("Loaded");
     }
 
     private void LoadSave()
