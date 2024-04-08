@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784c27d2820a7ee4dbbc0484783dcaef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallcloneturn: 0
-  bigcloneturn: 0
+  smallCloneTurn: 0
+  bigCloneTurn: 0
   speed: 1
 --- !u!1 &2386159353896991793
 GameObject:
@@ -221,7 +221,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f624afccbc4c3ca4c85acea4c7ecfc5f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -183,11 +183,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e214602e62c25ef4ca27b1749568783f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 466105523749908633}
+      addedObject: {fileID: 2690257233990977183}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e214602e62c25ef4ca27b1749568783f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2690257233990977183}
+      addedObject: {fileID: 7248744087410487144}
   m_SourcePrefab: {fileID: 100100000, guid: e214602e62c25ef4ca27b1749568783f, type: 3}
 --- !u!4 &365309245728585727 stripped
 Transform:
@@ -201,8 +201,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 187866609802285076}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &466105523749908633
-MeshCollider:
+--- !u!114 &2690257233990977183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034146203918478661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8250db7607e876a44ba2c302340859e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestKey: {fileID: 2171152156589816343, guid: 6724f43c15506554bbb7e66dd88813bd,
+    type: 3}
+--- !u!65 &7248744087410487144
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -219,24 +233,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: e214602e62c25ef4ca27b1749568783f, type: 3}
---- !u!114 &2690257233990977183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034146203918478661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8250db7607e876a44ba2c302340859e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestKey: {fileID: 2171152156589816343, guid: 6724f43c15506554bbb7e66dd88813bd,
-    type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.6491082, y: 0.6315398, z: 0.58958757}
+  m_Center: {x: 0, y: 0.31576997, z: 0}
 --- !u!1001 &3133523929863825524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,7 +319,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorChestKey
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2058046495855015801, guid: 5cf595c0d7f65bd4686b36ee28b7637e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

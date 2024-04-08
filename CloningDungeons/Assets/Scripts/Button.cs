@@ -41,6 +41,7 @@ public class Button : MonoBehaviour
         if (collision.collider.gameObject.tag == "Player")
         {
             pressed = true;
+            AudioScript.instance.audiosources[0].Play();
         }
 
     }

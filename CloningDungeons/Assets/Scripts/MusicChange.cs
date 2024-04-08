@@ -32,7 +32,7 @@ public class MusicChange : MonoBehaviour
 
         if (bigCloneTurn)
         {
-            if (bigCloneMusic.volume != 1 || smallCloneMusic.volume != 0)
+            if (bigCloneMusic.volume < 0.5f || smallCloneMusic.volume > 0.5f)
             {
                 bigCloneMusic.volume += speed * Time.deltaTime;
                 smallCloneMusic.volume -= speed * Time.deltaTime;
@@ -41,7 +41,7 @@ public class MusicChange : MonoBehaviour
 
         else if (smallCloneTurn)
         {
-            if (bigCloneMusic.volume != 0 || smallCloneMusic.volume != 1)
+            if (bigCloneMusic.volume > 0.5f || smallCloneMusic.volume < 0.5f)
             {
                 bigCloneMusic.volume -= speed * Time.deltaTime;
                 smallCloneMusic.volume += speed * Time.deltaTime;
