@@ -7,12 +7,11 @@ public class NewsaveSystem : MonoBehaviour
 
     public GameObject cameraPoint;
     public int range;
-    public GameObject player;
-    public Button loadButton;
 
+    public GameObject playerBig;
+    public GameObject playerSmall;
 
     public GameObject eInteract;
-
 
     public void Update()
     {
@@ -25,10 +24,13 @@ public class NewsaveSystem : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
-                    PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
-                    PlayerPrefs.SetFloat("PlayerZ", player.transform.position.z);
-                    PlayerPrefs.Save();
+                    PlayerPrefs.SetFloat("PlayerBigX", playerBig.transform.position.x);
+                    PlayerPrefs.SetFloat("PlayerBigY", playerBig.transform.position.y);
+                    PlayerPrefs.SetFloat("PlayerBigZ", playerBig.transform.position.z);
+
+                    PlayerPrefs.SetFloat("PlayerSmallX", playerSmall.transform.position.x);
+                    PlayerPrefs.SetFloat("PlayerSmallY", playerSmall.transform.position.y);
+                    PlayerPrefs.SetFloat("PlayerSmallZ", playerSmall.transform.position.z);
                 }
             }
             else
@@ -36,6 +38,6 @@ public class NewsaveSystem : MonoBehaviour
                 eInteract.SetActive(false);
             }
         }
-        
+
     }
 }
