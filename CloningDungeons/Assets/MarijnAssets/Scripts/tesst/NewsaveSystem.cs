@@ -5,19 +5,20 @@ using UnityEngine;
 public class NewsaveSystem : MonoBehaviour
 {
 
-    public GameObject cameraPoint;
-    public int range;
+
+    public float range;
 
     public GameObject playerBig;
     public GameObject playerSmall;
 
     public GameObject eInteract;
-
-    public void Update()
+    RaycastHit hit;
+    private void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(cameraPoint.transform.position, cameraPoint.transform.forward, out hit, range))
+        
+        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
+            print("HITTING");
             if(hit.transform.CompareTag("SavePoint"))
             {
                 eInteract.SetActive(true);
@@ -38,6 +39,8 @@ public class NewsaveSystem : MonoBehaviour
                 eInteract.SetActive(false);
             }
         }
+
+        Debug.DrawRay(transform.position, transform.forward * range, Color.red);
 
     }
 }
