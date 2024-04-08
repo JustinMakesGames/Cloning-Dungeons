@@ -116,7 +116,8 @@ public class Movement : MonoBehaviour
         {
             isMoving = false;
         }
-        
+
+        transform.rotation = moveCam.rotation;
 
     }
 
