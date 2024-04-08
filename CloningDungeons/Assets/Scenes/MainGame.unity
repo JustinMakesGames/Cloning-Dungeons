@@ -3563,7 +3563,7 @@ PrefabInstance:
     - target: {fileID: 754326723739118348, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8328189589902275629, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
@@ -26240,8 +26240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6020c4a66ef6be4eae595a8ebef6e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPoint: {fileID: 264980805}
-  range: 2
+  range: 5
   playerBig: {fileID: 1353556859}
   playerSmall: {fileID: 1435342472}
   eInteract: {fileID: 2072004562}
@@ -32171,7 +32170,7 @@ PrefabInstance:
     - target: {fileID: 754326723739118348, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8328189589902275629, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
@@ -35191,7 +35190,7 @@ PrefabInstance:
     - target: {fileID: 754326723739118348, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8328189589902275629, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
@@ -43424,7 +43423,7 @@ PrefabInstance:
     - target: {fileID: 754326723739118348, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8328189589902275629, guid: 5fcc51ff79da75344aae919ac8af53e4,
         type: 3}
