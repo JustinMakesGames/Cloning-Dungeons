@@ -8,7 +8,7 @@ public class Sceneloader : MonoBehaviour
 
     public void Tutorial()
     {
-        SceneManager.LoadScene("TutorialScene 2");
+        SceneManager.LoadScene("TutorialScene");
     }
     public void MainGame()
     {
@@ -18,6 +18,7 @@ public class Sceneloader : MonoBehaviour
     }
     public void LoadGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainGame");
     }
     public void GameQuit()
@@ -27,5 +28,10 @@ public class Sceneloader : MonoBehaviour
     public void DeleteSave()
     {
         PlayerPrefs.DeleteAll();
+    }
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }

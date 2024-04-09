@@ -12,6 +12,7 @@ public class LoadingSavePoint : MonoBehaviour
     {
         StartCoroutine(LoadSave());
         print("Loaded");
+        print(gameObject.name);
     }
 
     private IEnumerator LoadSave()

@@ -22,4 +22,11 @@ public class PauseScript : MonoBehaviour
         
 
     }
+
+    public void Continue()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+    }
 }
