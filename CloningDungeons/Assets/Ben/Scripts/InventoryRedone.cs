@@ -9,8 +9,7 @@ public class InventoryRedone : MonoBehaviour
     public RaycastHit hit;
 
     public Transform cam;
-    public GameObject chestKeyImage;
-    public GameObject doorKeyImage;
+    public GameObject image;
     public GameObject dropKey;
     public GameObject doorKey;
     public GameObject chestKey;
@@ -24,8 +23,7 @@ public class InventoryRedone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chestKeyImage.gameObject.SetActive(false);
-        doorKeyImage.gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
         keyActive = false;
     }
 
@@ -53,19 +51,14 @@ public class InventoryRedone : MonoBehaviour
     
     void Pickup()
     {
-        if (hit.collider.gameObject.tag == "ChestKey" && keyActive == false)
+        if (hit.collider.gameObject.tag == "Key" && keyActive == false)
         {
             keyActive = true;
-            dropKey = chestKey;    
-            chestKeyImage.gameObject.SetActive(true);
+            dropKey = hit.collider.gameObject.GetComponent<Keys>().key;   
+            image = hit.collider.gameObject.GetComponent<Keys>().keyImage;
+            image.gameObject.SetActive(true);
             Destroy(hit.collider.transform.parent.gameObject);
-        }
-        if (hit.collider.gameObject.tag == "DoorKey" && keyActive == false)
-        {
-            keyActive = true;
-            dropKey = doorKey;         
-            doorKeyImage.gameObject.SetActive(true);
-            Destroy(hit.collider.transform.parent.gameObject);
+            print("got it");
         }
     }
     void Drop()
@@ -73,10 +66,10 @@ public class InventoryRedone : MonoBehaviour
         if (keyActive == true)
         {
             keyActive = false;
-            chestKeyImage.SetActive(false);
-            doorKeyImage.SetActive(false);
+            image.gameObject.SetActive(false);
             Instantiate(dropKey, cam.position, cam.rotation);
             dropKey = null;
+            print("Drop");
         }
     }
     void Use()
@@ -85,14 +78,14 @@ public class InventoryRedone : MonoBehaviour
         {
             keyActive = false;
             dropKey = null;
-            chestKeyImage.SetActive(false);
+            image.gameObject.SetActive(false);
             hit.collider.gameObject.GetComponent<ChestAnimation>().Use();
         }
         if (dropKey == doorKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorLayer))
         {
             keyActive = false;
             dropKey = null;
-            doorKeyImage.SetActive(false);
+            image.gameObject.SetActive(false);
             hit.collider.gameObject.GetComponent<DoorAnimation>().Use();
         }
     }

@@ -9881,7 +9881,7 @@ PrefabInstance:
     - target: {fileID: 6509146620604912931, guid: aedac5a4e2ad844438a28cf0c120b476,
         type: 3}
       propertyPath: m_TagString
-      value: DoorKey
+      value: Key
       objectReference: {fileID: 0}
     - target: {fileID: 7147788094000491062, guid: aedac5a4e2ad844438a28cf0c120b476,
         type: 3}
@@ -9933,6 +9933,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7370860975724186534, guid: aedac5a4e2ad844438a28cf0c120b476,
+        type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
+        type: 3}
+    - target: {fileID: 7370860975724186534, guid: aedac5a4e2ad844438a28cf0c120b476,
+        type: 3}
+      propertyPath: keyImage
+      value: 
+      objectReference: {fileID: 1666908752}
     - target: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
         type: 3}
       propertyPath: m_Name
@@ -10846,6 +10857,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4906999055354433962, guid: d437b42dd7ef44b45b5189aed0d50477,
         type: 3}
+    - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1173892373}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: keyImage
@@ -38550,8 +38566,19 @@ PrefabInstance:
     - target: {fileID: 3724012870185061976, guid: b8feb7de282a30c46ac1fe77d595cab7,
         type: 3}
       propertyPath: m_TagString
-      value: ChestKey
+      value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 7032506764505756946, guid: b8feb7de282a30c46ac1fe77d595cab7,
+        type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
+        type: 3}
+    - target: {fileID: 7032506764505756946, guid: b8feb7de282a30c46ac1fe77d595cab7,
+        type: 3}
+      propertyPath: keyImage
+      value: 
+      objectReference: {fileID: 1050894651}
     - target: {fileID: 9164245619288463487, guid: b8feb7de282a30c46ac1fe77d595cab7,
         type: 3}
       propertyPath: m_LocalPosition.x

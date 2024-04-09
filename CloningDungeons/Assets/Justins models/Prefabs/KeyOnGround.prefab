@@ -108,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aae8ac3607c599b40b0d9ab11f7549a4,
         type: 3}
       propertyPath: m_TagString
-      value: ChestKey
+      value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -126,6 +126,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5361182876754129715}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aae8ac3607c599b40b0d9ab11f7549a4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7032506764505756946}
   m_SourcePrefab: {fileID: 100100000, guid: aae8ac3607c599b40b0d9ab11f7549a4, type: 3}
 --- !u!1 &3724012870185061976 stripped
 GameObject:
@@ -195,6 +199,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distancetoDisappear: 15
   players: []
+--- !u!114 &7032506764505756946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724012870185061976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddec140f9a4854391f7c5bb379052f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 3724012870185061976}
+  keyImage: {fileID: 5150948956279152041, guid: 43052bb83d8c2694f9ef3be223371920,
+    type: 3}
 --- !u!4 &4099834034239919330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aae8ac3607c599b40b0d9ab11f7549a4,
