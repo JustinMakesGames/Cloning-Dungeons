@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class InventoryRedone : MonoBehaviour
 {
     public RaycastHit hit;
@@ -15,7 +14,6 @@ public class InventoryRedone : MonoBehaviour
     public GameObject dropKey;
     public GameObject doorKey;
     public GameObject chestKey;
-
 
     public LayerMask doorLayer;
     public LayerMask chestLayer;
