@@ -10,12 +10,14 @@ public class LoadingSavePoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadSave();
+        StartCoroutine(LoadSave());
         print("Loaded");
     }
 
-    private void LoadSave()
+    private IEnumerator LoadSave()
     {
+        yield return new WaitForSeconds(0.3f);
+
         float bigX = PlayerPrefs.GetFloat("PlayerBigX");
         float bigY = PlayerPrefs.GetFloat("PlayerBigY");
         float bigZ = PlayerPrefs.GetFloat("PlayerBIgZ");

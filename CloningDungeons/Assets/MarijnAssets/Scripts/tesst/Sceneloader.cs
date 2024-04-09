@@ -15,18 +15,6 @@ public class Sceneloader : MonoBehaviour
     }
     public void LoadGame()
     {
-        float bigX = PlayerPrefs.GetFloat("PlayerBigX");
-        float bigY = PlayerPrefs.GetFloat("PlayerBigY");
-        float bigZ = PlayerPrefs.GetFloat("PlayerBIgZ");
-
-        float smallX = PlayerPrefs.GetFloat("PlayerSmallX");
-        float smallY = PlayerPrefs.GetFloat("PlayerSmallY");
-        float smallZ = PlayerPrefs.GetFloat("PlayerSmallZ");
-
-        bigClone.position = new Vector3(bigX, bigY, bigZ);
-        smallClone.position = new Vector3(smallX, smallY, smallZ);
-
-
         SceneManager.LoadScene("MainGame");
     }
     public void GameQuit()

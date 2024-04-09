@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class ToSpawnHere : MonoBehaviour
 {
+    public static ToSpawnHere instance;
     public Transform bigClone;
     public Transform smallClone;
     public int spawnPlace;
 
-    
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         StartCoroutine(SpawnPlayer());
@@ -21,12 +25,10 @@ public class ToSpawnHere : MonoBehaviour
 
     public IEnumerator SpawnPlayer()
     {
-        
         print("Yes loaded");
-        PlayerData data = SaveSystem.LoadPlayer();
 
-         
-        spawnPlace = data.toSpawnhere;
+        int getSavedInt = PlayerPrefs.GetInt("SavePoint");
+        spawnPlace = getSavedInt;
         yield return new WaitForSeconds(0.3f);
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -40,12 +42,7 @@ public class ToSpawnHere : MonoBehaviour
         }
     }
 
-    public void SavePlayer()
-    {
-        SaveSystem.SavePlayer(this);
-
-       
-    }
+    
  
     
 }

@@ -70,7 +70,6 @@ public class Movement : MonoBehaviour
 
         Debug.DrawRay(transform.position, -Vector3.up * transform.localScale.y, Color.yellow);
         InputCheck();
-        Saving();
         Lever();
         
         
@@ -130,15 +129,7 @@ public class Movement : MonoBehaviour
 
     }
 
-    void Saving()
-    {
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, save) && Input.GetKeyDown(KeyCode.E))
-        {
-            print("Saved");
-            toSpawnHere.spawnPlace = hit.transform.GetSiblingIndex();
-            toSpawnHere.SavePlayer();
-        }
-    }
+
 
     void Lever()
     {
