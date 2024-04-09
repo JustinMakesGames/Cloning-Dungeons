@@ -44,7 +44,8 @@ public class ToSpawnHere : MonoBehaviour
 
         int getSavedInt = PlayerPrefs.GetInt("SavePoint");
         spawnPlace = getSavedInt;
-        yield return new WaitForSeconds(1f);
+
+        yield return new WaitForSeconds(0.4f);
 
         
         
