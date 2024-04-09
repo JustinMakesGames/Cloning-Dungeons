@@ -4,14 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Sceneloader : MonoBehaviour
 {
-    public GameObject playerBig;
-    public GameObject playerSmall;
-    public Transform bigClone;
-    public Transform smallClone;
+
 
     public void Tutorial()
     {
         SceneManager.LoadScene("TutorialScene 2");
+    }
+    public void MainGame()
+    {
+        PlayerPrefs.DeleteAll();
+
+        SceneManager.LoadScene("MainGame");
     }
     public void LoadGame()
     {
