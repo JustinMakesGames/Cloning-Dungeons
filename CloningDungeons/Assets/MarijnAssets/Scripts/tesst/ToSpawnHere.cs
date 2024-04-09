@@ -29,6 +29,7 @@ public class ToSpawnHere : MonoBehaviour
         {
             bigRb.constraints = ~RigidbodyConstraints.FreezePosition;
             smallRb.constraints = ~RigidbodyConstraints.FreezePosition;
+            Camera.main.transform.GetComponent<CameraComponent>().enabled = true;
         }
         
         print(spawnPlace);
@@ -62,6 +63,7 @@ public class ToSpawnHere : MonoBehaviour
 
         bigRb.constraints = ~RigidbodyConstraints.FreezePosition;
         smallRb.constraints = ~RigidbodyConstraints.FreezePosition;
+        Camera.main.transform.GetComponent<CameraComponent>().enabled = true;
     }
 
     
