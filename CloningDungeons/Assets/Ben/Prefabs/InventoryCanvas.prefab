@@ -391,6 +391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChestKeyImage
       objectReference: {fileID: 0}
+    - target: {fileID: 5150948956279152041, guid: 43052bb83d8c2694f9ef3be223371920,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5475726334912483224, guid: 43052bb83d8c2694f9ef3be223371920,
         type: 3}
       propertyPath: m_Pivot.x

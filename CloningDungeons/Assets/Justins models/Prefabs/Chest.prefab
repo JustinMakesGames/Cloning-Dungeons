@@ -169,7 +169,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e214602e62c25ef4ca27b1749568783f,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e214602e62c25ef4ca27b1749568783f,
         type: 3}
@@ -183,11 +183,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e214602e62c25ef4ca27b1749568783f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2690257233990977183}
+      addedObject: {fileID: 7248744087410487144}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e214602e62c25ef4ca27b1749568783f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7248744087410487144}
+      addedObject: {fileID: 1510553808855460381}
   m_SourcePrefab: {fileID: 100100000, guid: e214602e62c25ef4ca27b1749568783f, type: 3}
 --- !u!4 &365309245728585727 stripped
 Transform:
@@ -201,20 +201,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 187866609802285076}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2690257233990977183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034146203918478661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8250db7607e876a44ba2c302340859e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestKey: {fileID: 2171152156589816343, guid: 6724f43c15506554bbb7e66dd88813bd,
-    type: 3}
 --- !u!65 &7248744087410487144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -236,6 +222,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6491082, y: 0.6315398, z: 0.58958757}
   m_Center: {x: 0, y: 0.31576997, z: 0}
+--- !u!114 &1510553808855460381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034146203918478661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d9422f74a11db4480ce21afd7dfce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestKey: {fileID: 2171152156589816343, guid: 6724f43c15506554bbb7e66dd88813bd,
+    type: 3}
+  doorKey: {fileID: 4474449973497284186, guid: c6324f75d94905249a0b6c6fb5d36131, type: 3}
+  openLock: {fileID: 3810610345896663707, guid: c0d5644a4fbbbdd47aa8ab100796d271,
+    type: 3}
 --- !u!1001 &3133523929863825524
 PrefabInstance:
   m_ObjectHideFlags: 0

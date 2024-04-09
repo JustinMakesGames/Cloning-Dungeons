@@ -14,8 +14,7 @@ public class InventoryRedone : MonoBehaviour
     public GameObject doorKey;
     public GameObject chestKey;
 
-    public LayerMask doorLayer;
-    public LayerMask chestLayer;
+    public LayerMask interactLayer;
 
     public int maxDis;
     public bool keyActive;
@@ -23,8 +22,8 @@ public class InventoryRedone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image.gameObject.SetActive(false);
         keyActive = false;
+        dropKey = null;
     }
 
     // Update is called once per frame
@@ -37,9 +36,12 @@ public class InventoryRedone : MonoBehaviour
                 Pickup();
             }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                Drop();
+                keyActive = false;
+                dropKey = null;
+                image = null;
+                image.SetActive(false);
             }
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -58,35 +60,25 @@ public class InventoryRedone : MonoBehaviour
             image = hit.collider.gameObject.GetComponent<Keys>().keyImage;
             image.gameObject.SetActive(true);
             Destroy(hit.collider.transform.parent.gameObject);
-            print("got it");
-        }
-    }
-    void Drop()
-    {
-        if (keyActive == true)
-        {
-            keyActive = false;
-            image.gameObject.SetActive(false);
-            Instantiate(dropKey, cam.position, cam.rotation);
-            dropKey = null;
-            print("Drop");
         }
     }
     void Use()
     {
-        if (dropKey == chestKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, chestLayer))
+        if (dropKey == chestKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, interactLayer))
         {
             keyActive = false;
             dropKey = null;
             image.gameObject.SetActive(false);
-            hit.collider.gameObject.GetComponent<ChestAnimation>().Use();
+            image = null;
+            hit.collider.gameObject.GetComponent<InteractionAnimations>().ChestOpenInteract();
         }
-        if (dropKey == doorKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, doorLayer))
+        if (dropKey == doorKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, interactLayer))
         {
             keyActive = false;
             dropKey = null;
             image.gameObject.SetActive(false);
-            hit.collider.gameObject.GetComponent<DoorAnimation>().Use();
+            image = null; 
+            hit.collider.gameObject.GetComponent<InteractionAnimations>().DoorOpenInteract();
         }
     }
 }
