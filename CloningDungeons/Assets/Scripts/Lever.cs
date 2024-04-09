@@ -36,6 +36,7 @@ public class Lever : MonoBehaviour
     IEnumerator LeverStarting()
     {
         lever.SetTrigger("Lever");
+        AudioScript.instance.audiosources[5].Play();
         yield return new WaitForSeconds(0.5f);
         timer.cutscene = true;
         camScript.cutscene = true;
@@ -43,8 +44,10 @@ public class Lever : MonoBehaviour
         cam.rotation = camEndPosition.rotation;
         print("This is getting runned");
         door.SetTrigger("DoorOpening");
+        AudioScript.instance.audiosources[1].Play();
         yield return new WaitForSeconds(3);
         
+
         timer.cutscene = false;
         camScript.cutscene = false;
         lever.SetTrigger("LeverClosing");

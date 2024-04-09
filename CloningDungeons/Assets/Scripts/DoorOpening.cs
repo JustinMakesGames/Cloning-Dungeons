@@ -60,7 +60,8 @@ public class DoorOpening : MonoBehaviour
     IEnumerator PlayDoorAnimation()
     {
         timerScript.cutscene = true;
-        AudioScript.instance.audiosources[1].Play();
+
+        AudioScript.instance.audiosources[3].Play();
         while (cam.position != endcamPosition.position)
         {
             cameraScript.cutscene = true;

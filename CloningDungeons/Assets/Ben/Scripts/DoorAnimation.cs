@@ -21,8 +21,7 @@ public class DoorAnimation : MonoBehaviour
         Transform spawnobject = lockclosed.parent.GetChild(1);
         Transform spawnkey = lockclosed.parent.GetChild(3);
 
-
-
+        AudioScript.instance.audiosources[2].Play();
         GameObject keyclone = Instantiate(doorKey, spawnkey.position, spawnkey.rotation, lockclosed.parent);
         Animator keyanimator = keyclone.GetComponentInChildren<Animator>();
         Animator dooranimator = door.GetComponent<Animator>();
