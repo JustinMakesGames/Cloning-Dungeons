@@ -51,7 +51,6 @@ public class LaserSystem : MonoBehaviour
             lasers[i].GetComponent<TimeDamageHit>().buttonPressed = false;
             lasers[i].GetComponent<Collider>().enabled = true;
             lasers[i].GetComponent<MeshRenderer>().enabled = true;
-            print("Yes");
         }
     }
 }

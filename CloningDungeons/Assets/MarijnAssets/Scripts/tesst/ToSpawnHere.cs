@@ -10,13 +10,27 @@ public class ToSpawnHere : MonoBehaviour
     public Transform smallClone;
     public int spawnPlace;
 
+    Rigidbody bigRb;
+    Rigidbody smallRb;
+
     private void Awake()
     {
         instance = this;
+        bigRb = bigClone.GetComponent<Rigidbody>();
+        smallRb = smallClone.GetComponent<Rigidbody>();
     }
     void Start()
     {
-        StartCoroutine(SpawnPlayer());
+        if (PlayerPrefs.HasKey("SavePoint"))
+        {
+            StartCoroutine(SpawnPlayer());
+        }
+        else
+        {
+            bigRb.constraints = ~RigidbodyConstraints.FreezePosition;
+            smallRb.constraints = ~RigidbodyConstraints.FreezePosition;
+        }
+        
         print(spawnPlace);
         
     }
@@ -29,7 +43,10 @@ public class ToSpawnHere : MonoBehaviour
 
         int getSavedInt = PlayerPrefs.GetInt("SavePoint");
         spawnPlace = getSavedInt;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
+
+        
+        
         for (int i = 0; i < transform.childCount; i++)
         {
             if (i == spawnPlace)
@@ -40,6 +57,11 @@ public class ToSpawnHere : MonoBehaviour
                 break;
             }
         }
+
+        yield return new WaitForSeconds(0.2f);
+
+        bigRb.constraints = ~RigidbodyConstraints.FreezePosition;
+        smallRb.constraints = ~RigidbodyConstraints.FreezePosition;
     }
 
     

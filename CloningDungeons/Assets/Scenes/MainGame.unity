@@ -12664,6 +12664,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3158242897163333169, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1789313903}
+    - target: {fileID: 4534898680998696642, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043169199042321362, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: cam
@@ -39120,6 +39135,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4561809948888004121, guid: 64d9a8cb878a2ed4baff0d724746383a,
     type: 3}
   m_PrefabInstance: {fileID: 1701558176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1789313903 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8208905014417771249, guid: 3354881feaa202c40bc166c7d20f4654,
+    type: 3}
+  m_PrefabInstance: {fileID: 634382692}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1789502818 stripped
 Transform:
