@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public Animator anim;
+    public Animator animator;
     private Movement movemnt;
     // Start is called before the first frame update
     void Start()
@@ -17,16 +17,16 @@ public class AnimationController : MonoBehaviour
     {
         if (movemnt.isMoving)
         {
-            anim.SetBool("IsWalking", true);
+            animator.SetBool("IsWalking", true);
         }
         else
         {   
-            anim.SetBool("IsWalking", false);
+            animator.SetBool("IsWalking", false);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            anim.SetBool("IsWalking", false);
+            animator.SetBool("IsWalking", false);
             movemnt.isMoving = false;
         }
     }
