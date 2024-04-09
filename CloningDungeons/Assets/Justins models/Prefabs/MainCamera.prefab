@@ -155,12 +155,12 @@ MonoBehaviour:
   moveOrientation: {fileID: 0}
   xRotation: 0
   yRotation: 0
-  bigclone: {fileID: 0}
-  smallclone: {fileID: 0}
+  bigClone: {fileID: 0}
+  smallClone: {fileID: 0}
   script: {fileID: 0}
-  bigcloneparent: 0
-  smallcloneparent: 0
-  targetposition: {fileID: 0}
-  camspeed: 50
+  bigCloneparent: 0
+  smallCloneParent: 0
+  targetPosition: {fileID: 0}
+  camSpeed: 0
   timeToMove: 0
   cutscene: 0

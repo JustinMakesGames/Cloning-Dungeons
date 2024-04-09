@@ -21,6 +21,7 @@ public class ToSpawnHere : MonoBehaviour
     }
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("SavePoint"))
         {
             StartCoroutine(SpawnPlayer());

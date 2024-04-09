@@ -19,6 +19,8 @@ TagManager:
   - Door
   - Key
   - SavePoint
+  - ChestKeyImage
+  - DoorKeyImage
   layers:
   - Default
   - TransparentFX
