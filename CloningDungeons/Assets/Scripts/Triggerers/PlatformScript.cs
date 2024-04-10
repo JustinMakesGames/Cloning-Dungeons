@@ -12,9 +12,9 @@ public class PlatformScript : MonoBehaviour
         "Yellow"
     };
 
-    private float time = 2f;
-    private float endTimer = 2f;
-    private List<int> activatedButtonIndices = new List<int>(); // Store the indices of activated buttons
+    private float time;
+    private float endTimer = 4f;
+    private List<int> activatedButtonIndices = new List<int>();
 
     public Button[] buttons;
     public List<Transform> platforms;
