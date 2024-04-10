@@ -12,7 +12,7 @@ public class PlatformScript : MonoBehaviour
         "Yellow"
     };
 
-    private float time;
+    [SerializeField] private float[] time = new float[4];
     private float endTimer = 4f;
     private List<int> activatedButtonIndices = new List<int>();
 
@@ -34,8 +34,7 @@ public class PlatformScript : MonoBehaviour
         {
             if (buttons[i].fullyPressed && !activatedButtonIndices.Contains(i))
             {
-                activatedButtonIndices.Add(i);
-                time = 0;
+                time[i] = 0f;
                 for (int x = 0; x < platforms.Count; x++)
                 {
                     if (platforms[x].CompareTag(tags[i]))
@@ -46,13 +45,31 @@ public class PlatformScript : MonoBehaviour
                 }
             }
         }
-
-        time += Time.deltaTime;
-        if (time >= endTimer)
+        
+        for (int i = 0; i < buttons.Length; i++)
         {
-            TurnOffAllPlatforms();
-            activatedButtonIndices.Clear();
+            if (!buttons[i].fullyPressed && !activatedButtonIndices.Contains(i))
+            {
+
+                time[i] += Time.deltaTime;
+
+                if (time[i] > endTimer)
+                {
+                    for (int x = 0; x < platforms.Count; x++)
+                    {
+                        if (platforms[x].CompareTag(tags[i]))
+                        {
+                            TurnOffPlatform(platforms[x].gameObject.GetComponent<MeshRenderer>().material,
+                                platforms[x].gameObject.GetComponent<Collider>());
+                        }
+                    }
+                }
+                
+            }
         }
+
+
+        
     }
 
     private void PlatformChange(Material material, Collider collider)
