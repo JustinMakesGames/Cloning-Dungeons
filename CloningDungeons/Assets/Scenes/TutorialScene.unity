@@ -20067,7 +20067,12 @@ PrefabInstance:
     - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: jumpPower
-      value: 13
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 731366809591886608, guid: 3354881feaa202c40bc166c7d20f4654,
+        type: 3}
+      propertyPath: jumpRaycast
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
@@ -20109,12 +20114,12 @@ PrefabInstance:
     - target: {fileID: 2143282357107154025, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.85
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 2143282357107154025, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.47
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 5509423170262606001, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}

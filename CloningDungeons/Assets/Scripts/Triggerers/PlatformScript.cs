@@ -13,7 +13,7 @@ public class PlatformScript : MonoBehaviour
     };
 
     [SerializeField] private float[] time = new float[4];
-    private float endTimer = 4f;
+    private float endTimer = 3f;
     private List<int> activatedButtonIndices = new List<int>();
 
     public Button[] buttons;
