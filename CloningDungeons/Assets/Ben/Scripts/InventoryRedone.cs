@@ -74,7 +74,6 @@ public class InventoryRedone : MonoBehaviour
                 image = null;
                 hit.collider.gameObject.GetComponent<InteractionAnimations>().ChestOpenInteract();
             }
-            
         }
         if (dropKey == doorKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, interactLayer))
         {
@@ -86,7 +85,6 @@ public class InventoryRedone : MonoBehaviour
                 image = null;
                 hit.collider.gameObject.GetComponent<InteractionAnimations>().DoorOpenInteract();
             }
-            
         }
     }
 }
