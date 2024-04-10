@@ -40,8 +40,8 @@ public class InventoryRedone : MonoBehaviour
             {
                 keyActive = false;
                 dropKey = null;
-                image = null;
                 image.SetActive(false);
+                image = null;
             }
 
             if (Input.GetKeyDown(KeyCode.E))
