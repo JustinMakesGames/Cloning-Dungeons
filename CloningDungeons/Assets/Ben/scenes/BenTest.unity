@@ -10913,7 +10913,7 @@ PrefabInstance:
         type: 3}
       propertyPath: keyImage
       value: 
-      objectReference: {fileID: 1173892373}
+      objectReference: {fileID: 0}
     - target: {fileID: 2115361053306387683, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: maxRange
@@ -20596,12 +20596,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f8f83952f7c25c409192d0264b14663, type: 3}
---- !u!1 &1173892373 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3550976935482262306, guid: f0684f9cf5318734a838cf51ed77a333,
-    type: 3}
-  m_PrefabInstance: {fileID: 1592298679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1176276561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29252,7 +29246,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3550976935482262306, guid: f0684f9cf5318734a838cf51ed77a333, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0684f9cf5318734a838cf51ed77a333, type: 3}
