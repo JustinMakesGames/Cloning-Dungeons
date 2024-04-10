@@ -10,6 +10,7 @@ public class DoorOpening : MonoBehaviour
     private Transform cam;
     private Transform endcamPosition;
     private bool cutsceneCompleted;
+    private bool cutsceneStarted;
     private CameraComponent cameraScript;
     private Timer timerScript;
     public float camSpeed;
@@ -46,8 +47,9 @@ public class DoorOpening : MonoBehaviour
         }
         
 
-        if (doorOpened && !cutsceneCompleted)
+        if (doorOpened && !cutsceneCompleted && !cutsceneStarted)
         {
+            cutsceneStarted = true;
             StartCoroutine(PlayDoorAnimation());
             
 
@@ -61,7 +63,7 @@ public class DoorOpening : MonoBehaviour
     {
         timerScript.cutscene = true;
 
-        AudioScript.instance.audiosources[3].Play();
+        
         while (cam.position != endcamPosition.position)
         {
             cameraScript.cutscene = true;
@@ -76,8 +78,7 @@ public class DoorOpening : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         animator.Play("DoorOpening");
-        yield return new WaitForSeconds(1);
-        //Play Sound Here
+        AudioScript.instance.audiosources[3].Play();
         yield return new WaitForSeconds(3);
         cameraScript.cutscene = false;
         cutsceneCompleted = true;

@@ -7,6 +7,7 @@ public class NewsaveSystem : MonoBehaviour
     public float range;
     public GameObject eInteract;
     public GameObject savedText;
+    private bool isInteracting;
     RaycastHit hit;
 
     private void Update()
@@ -17,6 +18,7 @@ public class NewsaveSystem : MonoBehaviour
             if(hit.transform.CompareTag("SavePoint"))
             {
                 eInteract.SetActive(true);
+                isInteracting = true;
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -29,7 +31,12 @@ public class NewsaveSystem : MonoBehaviour
             }
             else
             {
-                eInteract.SetActive(false);
+                if (isInteracting)
+                {
+                    eInteract.SetActive(false);
+                    isInteracting = false;
+                }
+                
             }
         }
 

@@ -10246,8 +10246,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASD to move around\n\nE to interact \n\nLMB drag key \n\nQ throw small
-    clone \n \n"
+  m_text: "WASD to move.\nE to interact.\nQ to throw.\nR to drop.\nF to switch clone.\nLMB
+    drag key.\n\nQ throw small clone \n \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6ac7f781e70d1a42b8953411e15a0d9, type: 2}
   m_sharedMaterial: {fileID: 6574771552260830467, guid: a6ac7f781e70d1a42b8953411e15a0d9,

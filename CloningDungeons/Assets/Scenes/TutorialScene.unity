@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 13d0112547f053a4ca29176bd7caee83, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.7
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3985,7 +3985,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "E to interact / and drop \n\nLMB drag key \n\nQ throw small clone\n \n"
+  m_text: "WASD to move.\nE to interact.\nQ to throw.\nR to drop.\nF to switch clone.\nLMB
+    drag key.\n \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6ac7f781e70d1a42b8953411e15a0d9, type: 2}
   m_sharedMaterial: {fileID: 6574771552260830467, guid: a6ac7f781e70d1a42b8953411e15a0d9,
@@ -6296,6 +6297,26 @@ PrefabInstance:
     - target: {fileID: 7833705513303365474, guid: 7c137b34486fd944e926255403797b42,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977470257088169409, guid: 7c137b34486fd944e926255403797b42,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977470257088169409, guid: 7c137b34486fd944e926255403797b42,
+        type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977470257088169409, guid: 7c137b34486fd944e926255403797b42,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2f59dac8af44e946a98d4b17c85b1bf, type: 3}
+    - target: {fileID: 7977470257088169409, guid: 7c137b34486fd944e926255403797b42,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20377,17 +20398,17 @@ PrefabInstance:
     - target: {fileID: 2437432062028371052, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.565917
+      value: -6.13
       objectReference: {fileID: 0}
     - target: {fileID: 2437432062028371052, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.89
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 2437432062028371052, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.790001
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 2437432062028371052, guid: 6b3217e62d61dc44da6f6c153e37cc9b,
         type: 3}

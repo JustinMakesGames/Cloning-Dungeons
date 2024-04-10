@@ -38,6 +38,7 @@ public class BigClone : Movement
             if (Physics.Raycast(cam.position, cam.forward, out hitraycast, maxDistance, bigpickup) && !isGrabbing)
             {
                 eInteract.SetActive(true);
+                print("Pressing E to interact");
                 if (Input.GetKeyDown(KeyCode.E) && !isGrabbing)
                 {
                     isGrabbing = true;
@@ -70,6 +71,8 @@ public class BigClone : Movement
                 {
                     Physics.IgnoreCollision(objtoGet.GetComponent<Collider>(), collider, false);
                 }
+
+                objToGrab = false;
             }
         }
  
