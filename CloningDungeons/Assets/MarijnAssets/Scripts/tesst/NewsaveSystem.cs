@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class NewsaveSystem : MonoBehaviour
 {
-
-
     public float range;
-
-
-
     public GameObject eInteract;
+    public GameObject savedText;
     RaycastHit hit;
 
     private void Update()
@@ -28,6 +24,7 @@ public class NewsaveSystem : MonoBehaviour
                     PlayerPrefs.SetInt("SavePoint", ToSpawnHere.instance.spawnPlace);
 
                     print("Saved");
+                    StartCoroutine(GameSaved());
                 }
             }
             else
@@ -38,5 +35,12 @@ public class NewsaveSystem : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * range, Color.red);
 
+    }
+
+    IEnumerator GameSaved()
+    {
+        savedText.SetActive(true);
+        yield return new WaitForSeconds(1);
+        savedText.SetActive(false);
     }
 }
