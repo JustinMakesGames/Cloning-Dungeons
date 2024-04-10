@@ -22,7 +22,7 @@ public class NewsaveSystem : MonoBehaviour
                 {
                     ToSpawnHere.instance.spawnPlace = hit.collider.transform.GetSiblingIndex();
                     PlayerPrefs.SetInt("SavePoint", ToSpawnHere.instance.spawnPlace);
-
+                    hit.collider.transform.GetComponentInChildren<ParticleSystem>().Play();
                     print("Saved");
                     StartCoroutine(GameSaved());
                 }

@@ -8411,10 +8411,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_text
+      value: You need to escape the dungeon in time. You can throw your clone to
+        get him to reach higher destinations. There are campfires in the main game
+        that save your progress.
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2648872811835376185, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
       propertyPath: m_Name
       value: Explain Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848204353987877106, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
