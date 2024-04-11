@@ -63,8 +63,8 @@ public class NewsaveSystem : MonoBehaviour
     IEnumerator ShowTimePlus()
     {
         timePlus.gameObject.SetActive(true);
-        timePlus.text = "+30";
-        Timer.timer += 30;      
+        timePlus.text = "Reset Timer";
+        Timer.timer = 300;     
         yield return new WaitForSeconds(1);
         timePlus.gameObject.SetActive(false);
 

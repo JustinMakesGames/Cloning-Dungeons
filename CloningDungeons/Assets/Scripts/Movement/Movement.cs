@@ -134,9 +134,13 @@ public class Movement : MonoBehaviour
     void Lever()
     {
 
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, lever) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, lever) && Input.GetKeyDown(KeyCode.E) )
         {
-            hit.transform.parent.parent.GetComponent<Lever>().movingLever = true;
+            if (!hit.transform.parent.parent.GetComponent<Lever>().movingLever)
+            {
+                StartCoroutine(hit.transform.parent.parent.GetComponent<Lever>().LeverStarting());
+            }
+            
 
         }
     }

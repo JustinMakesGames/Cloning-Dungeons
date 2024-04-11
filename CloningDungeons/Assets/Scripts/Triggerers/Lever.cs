@@ -22,19 +22,11 @@ public class Lever : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        
-        if (movingLever)
-        {
-            movingLever = false;
-            StartCoroutine(LeverStarting());
-            
-        }
-    }
+    
 
-    IEnumerator LeverStarting()
+    public IEnumerator LeverStarting()
     {
+        movingLever = true;
         lever.SetTrigger("Lever");
         AudioScript.instance.audiosources[5].Play();
         yield return new WaitForSeconds(0.5f);
@@ -53,7 +45,8 @@ public class Lever : MonoBehaviour
         lever.SetTrigger("LeverClosing");
         yield return new WaitForSeconds(20f);
         print("Wow wth");
-        door.SetTrigger("DoorClosing");      
+        door.SetTrigger("DoorClosing");
+        movingLever = false;
       
        
 
