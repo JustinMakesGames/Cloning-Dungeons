@@ -3507,9 +3507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayHitPower: 0
-  upHitPower: 0
-  showTimePunishment: {fileID: 0}
+  awayHitPower: 5
+  upHitPower: 5
+  showTimePunishment: {fileID: 1499588944}
   buttonPressed: 0
 --- !u!136 &164752418
 CapsuleCollider:
@@ -5576,6 +5576,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 58429dc54f020cd47854cbe101a3ce00, type: 2}
+    - target: {fileID: 4621327821138034948, guid: 755f7a1513d69564588683eff58b5d20,
+        type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 1499588944}
     - target: {fileID: 5013032447431442404, guid: 755f7a1513d69564588683eff58b5d20,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6585,9 +6590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayHitPower: 0
-  upHitPower: 0
-  showTimePunishment: {fileID: 0}
+  awayHitPower: 5
+  upHitPower: 5
+  showTimePunishment: {fileID: 1499588944}
   buttonPressed: 0
 --- !u!136 &293236773
 CapsuleCollider:
@@ -13370,12 +13375,12 @@ PrefabInstance:
     - target: {fileID: 2143282357107154025, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 101.49
+      value: 86.33
       objectReference: {fileID: 0}
     - target: {fileID: 2143282357107154025, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.1
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 3158242897163333169, guid: 3354881feaa202c40bc166c7d20f4654,
         type: 3}
@@ -17226,6 +17231,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 27.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3393330118711651517, guid: 72414610715da9d4da9bdb872cf00183,
+        type: 3}
+      propertyPath: upHitPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393330118711651517, guid: 72414610715da9d4da9bdb872cf00183,
+        type: 3}
+      propertyPath: awayHitPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393330118711651517, guid: 72414610715da9d4da9bdb872cf00183,
+        type: 3}
+      propertyPath: showTimePunishment
+      value: 
+      objectReference: {fileID: 1499588944}
     - target: {fileID: 4534190079083652816, guid: 72414610715da9d4da9bdb872cf00183,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17336,6 +17356,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6508724772906774905, guid: 72414610715da9d4da9bdb872cf00183,
+        type: 3}
+      propertyPath: upHitPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508724772906774905, guid: 72414610715da9d4da9bdb872cf00183,
+        type: 3}
+      propertyPath: awayHitPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508724772906774905, guid: 72414610715da9d4da9bdb872cf00183,
+        type: 3}
+      propertyPath: showTimePunishment
+      value: 
+      objectReference: {fileID: 1499588944}
     - target: {fileID: 6616386006566306208, guid: 72414610715da9d4da9bdb872cf00183,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24619,9 +24654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayHitPower: 0
-  upHitPower: 0
-  showTimePunishment: {fileID: 0}
+  awayHitPower: 5
+  upHitPower: 5
+  showTimePunishment: {fileID: 1499588944}
   buttonPressed: 0
 --- !u!136 &1161686495
 CapsuleCollider:
@@ -31789,9 +31824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayHitPower: 0
-  upHitPower: 0
-  showTimePunishment: {fileID: 0}
+  awayHitPower: 5
+  upHitPower: 5
+  showTimePunishment: {fileID: 1499588944}
   buttonPressed: 0
 --- !u!136 &1448101238
 CapsuleCollider:
@@ -33020,6 +33055,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f8f83952f7c25c409192d0264b14663, type: 3}
+--- !u!114 &1499588944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+    type: 3}
+  m_PrefabInstance: {fileID: 1829680557}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1500189111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4626169039217631842, guid: e31bd0f9f02817b44abc46e387f5c22a,
@@ -37747,6 +37794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiePoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3692411977378149065, guid: 755f7a1513d69564588683eff58b5d20,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4092118724655983648, guid: 755f7a1513d69564588683eff58b5d20,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37772,6 +37824,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 58429dc54f020cd47854cbe101a3ce00, type: 2}
+    - target: {fileID: 4621327821138034948, guid: 755f7a1513d69564588683eff58b5d20,
+        type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 1499588944}
     - target: {fileID: 5013032447431442404, guid: 755f7a1513d69564588683eff58b5d20,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40952,6 +41009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2997695770283708, guid: 4f1b7c4bfc302fd479b7b6c25c005295, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1325047539688592460, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
         type: 3}
       propertyPath: m_Pivot.x
@@ -41092,9 +41153,63 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Sceneloader, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5573867389735358122, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 41.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573867389735358122, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a6ac7f781e70d1a42b8953411e15a0d9,
+        type: 2}
+    - target: {fileID: 5573867389735358122, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6574771552260830467, guid: a6ac7f781e70d1a42b8953411e15a0d9,
+        type: 2}
+    - target: {fileID: 5573867389735358122, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5632598665614718089, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a6ac7f781e70d1a42b8953411e15a0d9,
+        type: 2}
+    - target: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6574771552260830467, guid: a6ac7f781e70d1a42b8953411e15a0d9,
+        type: 2}
+    - target: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206981666492939789, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6268550032833508031, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
@@ -41132,6 +41247,21 @@ PrefabInstance:
       propertyPath: gameoverscreen
       value: 
       objectReference: {fileID: 1126982252}
+    - target: {fileID: 8537697037411046330, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537697037411046330, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8537697037411046330, guid: 4f1b7c4bfc302fd479b7b6c25c005295,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8838
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -43291,9 +43421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20e58e2703008438f1997cd9cb5ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awayHitPower: 0
-  upHitPower: 0
-  showTimePunishment: {fileID: 0}
+  awayHitPower: 5
+  upHitPower: 5
+  showTimePunishment: {fileID: 1499588944}
   buttonPressed: 0
 --- !u!136 &1913740819
 CapsuleCollider:
