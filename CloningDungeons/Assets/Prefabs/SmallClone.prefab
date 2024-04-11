@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 3062075201570705667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49099994, z: 0}
+  m_LocalPosition: {x: 0, y: 0.609, z: 0.036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -115,7 +115,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8980080508115053346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb19e2181dba6e4f999bc87d9ef4bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   hor: 0
   vert: 0
   dir: {x: 0, y: 0, z: 0}
@@ -248,3 +249,4 @@ MonoBehaviour:
   isCameraClamped: 0
   obj: {fileID: 0}
   distanceFromPosition: 0
+  clickToInteract: {fileID: 0}

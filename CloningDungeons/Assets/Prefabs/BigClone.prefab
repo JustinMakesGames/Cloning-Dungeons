@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af018aced5ba57459bdbc0cfafdd73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   hor: 0
   vert: 0
   dir: {x: 0, y: 0, z: 0}
@@ -244,19 +245,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  chestKeyImage: {fileID: 0}
-  doorKeyImage: {fileID: 0}
-  dropDoorKey: {fileID: 8447684688386171174, guid: aedac5a4e2ad844438a28cf0c120b476,
-    type: 3}
-  dropChestKey: {fileID: 2914878099196468001, guid: b8feb7de282a30c46ac1fe77d595cab7,
-    type: 3}
-  doorLayer:
+  image: {fileID: 0}
+  dropKey: {fileID: 0}
+  doorKey: {fileID: 0}
+  chestKey: {fileID: 0}
+  interactLayer:
     serializedVersion: 2
-    m_Bits: 32768
-  chestLayer:
-    serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 0
   maxDis: 5
+  keyActive: 0
 --- !u!1 &8046863976763166124
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 8046863976763166124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49099994, z: 0}
+  m_LocalPosition: {x: 0, y: 0.62, z: 0.081}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -55,6 +55,7 @@ public class InventoryRedone : MonoBehaviour
     {
         if (hit.collider.gameObject.tag == "Key" && keyActive == false)
         {
+            AudioScript.instance.audiosources[4].Play();
             keyActive = true;
             dropKey = hit.collider.gameObject.GetComponent<Keys>().key;   
             image = hit.collider.gameObject.GetComponent<Keys>().keyImage;
