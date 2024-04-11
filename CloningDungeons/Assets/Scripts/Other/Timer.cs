@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
     
     private void Start()
     {
-        timer = 300f;
+        timer = 450f;
         image = blackscreen.GetComponent<Image>();
         black = image.color;
 
@@ -39,6 +39,10 @@ public class Timer : MonoBehaviour
         if (!cutscene)
         {
             TimerCountdown();
+        }
+        if (Input.GetKeyDown(KeyCode.N)) 
+        {
+            timer = 600f;
         }
         
     }
