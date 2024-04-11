@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     public GameObject smallclone;
 
     public GameObject gameoverscreen;
-
+    
 
 
 
@@ -61,7 +61,7 @@ public class Timer : MonoBehaviour
 
         if (timer <= 1)
         {
-            PauseScript.instance.enabled = false;
+            FindFirstObjectByType<PauseScript>().GetComponent<PauseScript>().enabled = false;
             if (!blackscreenhappened)
             {
                 image.color += new Color(0, 0, 0, blackscreenspeed * Time.deltaTime);

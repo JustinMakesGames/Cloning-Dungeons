@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    public static PauseScript instance;
     [SerializeField] private GameObject pauseScreen;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

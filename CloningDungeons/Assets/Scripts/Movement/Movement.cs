@@ -42,6 +42,7 @@ public class Movement : MonoBehaviour
 
     //Lever
     public LayerMask lever;
+    public GameObject leverInteract;
 
     
     
@@ -134,15 +135,22 @@ public class Movement : MonoBehaviour
     void Lever()
     {
 
-        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, lever) && Input.GetKeyDown(KeyCode.E) )
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maximumDistance, lever) && !hit.transform.parent.parent.GetComponent<Lever>().movingLever)
         {
-            if (!hit.transform.parent.parent.GetComponent<Lever>().movingLever)
+            leverInteract.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 StartCoroutine(hit.transform.parent.parent.GetComponent<Lever>().LeverStarting());
             }
+        }
+        else
+        {
+            leverInteract.SetActive(false);
+        }
+
             
 
-        }
+        
     }
 
     

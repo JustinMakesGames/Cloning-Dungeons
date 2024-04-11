@@ -15,7 +15,7 @@ public class WinTrigger : MonoBehaviour
 
     private void WinScreenFunction()
     {
-        PauseScript.instance.enabled = false;
+        FindFirstObjectByType<PauseScript>().GetComponent<PauseScript>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
