@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
     
     private void Start()
     {
-        timer = 150f;
+        timer = 300f;
         image = blackscreen.GetComponent<Image>();
         black = image.color;
 
