@@ -8493,9 +8493,8 @@ PrefabInstance:
     - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
       propertyPath: m_text
-      value: You need to escape the dungeon in time. You can throw your clone to
-        get him to reach higher destinations. There are campfires in the main game
-        that save your progress.
+      value: 'You need to escape the dungeon in time. You can throw your clone to
+        get him to reach higher destinations. '
       objectReference: {fileID: 0}
     - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}

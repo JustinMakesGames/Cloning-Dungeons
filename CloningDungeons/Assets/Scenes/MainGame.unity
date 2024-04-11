@@ -23261,7 +23261,10 @@ PrefabInstance:
       value: '
 
 
-        You gotta escape this cell.'
+        You gotta escape this cell
+
+        There are campfires
+        in the main game that save your progress.'
       objectReference: {fileID: 0}
     - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
