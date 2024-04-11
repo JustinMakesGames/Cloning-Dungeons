@@ -12,25 +12,28 @@ public class NewsaveSystem : MonoBehaviour
 
     public TMP_Text timePlus;
     RaycastHit hit;
-    private GameObject hitObjectSaved;
+    private int hitObjectSaved = -1;
 
     private void Update()
     {
         
         if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
-            if(hit.transform.CompareTag("SavePoint") && !hit.collider.gameObject == hitObjectSaved)
+            if(hit.transform.CompareTag("SavePoint") && hit.collider.transform.GetSiblingIndex() != hitObjectSaved)
             {
                 eInteract.SetActive(true);
                 isInteracting = true;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     AudioScript.instance.audiosources[6].Play();
+
                     ToSpawnHere.instance.spawnPlace = hit.collider.transform.GetSiblingIndex();
+                    hitObjectSaved = ToSpawnHere.instance.spawnPlace;
                     PlayerPrefs.SetInt("SavePoint", ToSpawnHere.instance.spawnPlace);
+
                     hit.collider.transform.GetComponentInChildren<ParticleSystem>().Play();
                     print("Saved");
-                    hitObjectSaved = hit.collider.gameObject;
+
                     StartCoroutine(GameSaved());
                     StartCoroutine(ShowTimePlus());
                 }
