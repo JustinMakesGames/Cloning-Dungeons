@@ -42,10 +42,11 @@ GameObject:
   - component: {fileID: 8882232972856470643}
   - component: {fileID: 9004115905712074366}
   - component: {fileID: 560813056216195262}
-  - component: {fileID: 961220061503010055}
   - component: {fileID: 6347052317286885080}
   - component: {fileID: 7844186551026762506}
   - component: {fileID: 8908460417653738745}
+  - component: {fileID: 961220061503010055}
+  - component: {fileID: 5039704041573270723}
   m_Layer: 6
   m_Name: BigClone
   m_TagString: Player
@@ -120,29 +121,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &961220061503010055
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7684877092957884099}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6347052317286885080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -249,11 +227,59 @@ MonoBehaviour:
   dropKey: {fileID: 0}
   doorKey: {fileID: 0}
   chestKey: {fileID: 0}
+  eInteractingKey: {fileID: 0}
+  eInteractDoor: {fileID: 0}
   interactLayer:
     serializedVersion: 2
     m_Bits: 0
   maxDis: 5
   keyActive: 0
+--- !u!136 &961220061503010055
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684877092957884099}
+  m_Material: {fileID: 13400000, guid: ebc9df85ba69bb0489a8b7f896129246, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 1.585454
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.207273, z: 0}
+--- !u!136 &5039704041573270723
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684877092957884099}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Height: 0.2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.9699999, z: 0}
 --- !u!1 &8046863976763166124
 GameObject:
   m_ObjectHideFlags: 0

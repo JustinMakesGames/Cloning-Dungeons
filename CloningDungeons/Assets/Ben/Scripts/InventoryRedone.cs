@@ -14,79 +14,97 @@ public class InventoryRedone : MonoBehaviour
     public GameObject doorKey;
     public GameObject chestKey;
 
+    public GameObject eInteractingKey;
+
+    public GameObject eInteractDoor;
     public LayerMask interactLayer;
 
     public int maxDis;
     public bool keyActive;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         keyActive = false;
         dropKey = null;
+        eInteractingKey.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(gameObject.name);
         if (transform.GetComponent<BigClone>().isPlayer)
         {
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
+            if (Physics.Raycast(cam.position, cam.forward, out hit, maxDis))
             {
-                Pickup();
-            }
+                if (hit.collider.gameObject.CompareTag("Key") && keyActive == false)
+                {
+                    eInteractingKey.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        eInteractingKey.SetActive(false);
+                        Pickup();
+                    }
+                }
+                else
+                {
+                    eInteractingKey.SetActive(false);
+                }
 
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                keyActive = false;
-                dropKey = null;
-                image.SetActive(false);
-                image = null;
             }
+            
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Use();
-            }
+            Use();
         }
     }
     
     void Pickup()
     {
-        if (hit.collider.gameObject.tag == "Key" && keyActive == false)
-        {
-            AudioScript.instance.audiosources[4].Play();
-            keyActive = true;
-            dropKey = hit.collider.gameObject.GetComponent<Keys>().key;   
-            image = hit.collider.gameObject.GetComponent<Keys>().keyImage;
-            image.gameObject.SetActive(true);
-            Destroy(hit.collider.transform.parent.gameObject);
-        }
+        AudioScript.instance.audiosources[4].Play();
+        keyActive = true;
+        dropKey = hit.collider.gameObject.GetComponent<Keys>().key;
+        image = hit.collider.gameObject.GetComponent<Keys>().keyImage;
+        image.gameObject.SetActive(true);
+        Destroy(hit.collider.transform.parent.gameObject);
     }
     void Use()
     {
-        if (dropKey == chestKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, interactLayer))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maxDis, interactLayer) && dropKey != null) 
         {
-            if (hit.collider.gameObject.tag == "Chest")
+            eInteractDoor.SetActive(true);
+            if (dropKey == chestKey)
             {
-                keyActive = false;
-                dropKey = null;
-                image.gameObject.SetActive(false);
-                image = null;
-                hit.collider.gameObject.GetComponent<InteractionAnimations>().ChestOpenInteract();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (hit.collider.gameObject.tag == "Chest")
+                    {
+                        keyActive = false;
+                        dropKey = null;
+                        image.gameObject.SetActive(false);
+                        image = null;
+                        hit.collider.gameObject.GetComponent<InteractionAnimations>().ChestOpenInteract();
+                    }
+                }
+
+            }
+            if (dropKey == doorKey)
+            {
+                if (hit.collider.gameObject.tag == "Door")
+                {
+                    keyActive = false;
+                    dropKey = null;
+                    image.gameObject.SetActive(false);
+                    image = null;
+                    hit.collider.gameObject.GetComponent<InteractionAnimations>().DoorOpenInteract();
+                }
             }
         }
-        if (dropKey == doorKey && Physics.Raycast(cam.position, cam.forward, out hit, maxDis, interactLayer))
+        else
         {
-            if (hit.collider.gameObject.tag == "Door")
-            {
-                keyActive = false;
-                dropKey = null;
-                image.gameObject.SetActive(false);
-                image = null;
-                hit.collider.gameObject.GetComponent<InteractionAnimations>().DoorOpenInteract();
-            }
+            eInteractDoor.SetActive(false);
         }
+        
     }
 }
     

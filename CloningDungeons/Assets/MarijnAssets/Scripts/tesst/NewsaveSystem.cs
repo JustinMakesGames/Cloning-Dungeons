@@ -64,7 +64,7 @@ public class NewsaveSystem : MonoBehaviour
     {
         timePlus.gameObject.SetActive(true);
         timePlus.text = "Reset Timer";
-        Timer.timer = 300;     
+        Timer.timer = 450;    
         yield return new WaitForSeconds(1);
         timePlus.gameObject.SetActive(false);
 

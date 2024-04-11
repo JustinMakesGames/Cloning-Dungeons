@@ -24,6 +24,8 @@ public class CameraComponent : MonoBehaviour
     public float camSpeed;
     public bool timeToMove;
     public bool cutscene;
+
+    public GameObject[] interactables;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +95,10 @@ public class CameraComponent : MonoBehaviour
             smallClone.GetComponent<Movement>().isPlayer = true;
             if (Vector3.Distance(transform.position, smallClone.GetChild(0).transform.position) < 0.05f)
             {
+                foreach (GameObject obj in interactables)
+                {
+                    obj.SetActive(false);
+                }
                 timeToMove = false;
                 bigCloneparent = false;
                 smallCloneParent = true;
@@ -108,6 +114,10 @@ public class CameraComponent : MonoBehaviour
             smallClone.GetComponent<Movement>().isPlayer = false;
             if (Vector3.Distance(transform.position, bigClone.GetChild(0).transform.position) < 0.05f)
             {
+                foreach (GameObject obj in interactables)
+                {
+                    obj.SetActive(false);
+                }
                 timeToMove = false;
                 bigCloneparent = true;
                 smallCloneParent = false;
