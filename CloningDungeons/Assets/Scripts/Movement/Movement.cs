@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     public LayerMask crateJump;
     protected bool resetJump;
     public float jumpRaycast;
-    protected bool objToGrab;
+    public bool objToGrab;
     
 
 

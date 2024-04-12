@@ -58,24 +58,26 @@ public class BigClone : Movement
                 Drop(objtoGet);
             }
 
-            if (Input.GetKeyDown(KeyCode.F) && isGrabbing)
-            {
-                isGrabbing = false;
-                Rigidbody rb = objtoGet.GetComponent<Rigidbody>();
-                rb.useGravity = true;
-                rb.isKinematic = false;
-
-                Collider[] colliders = FindObjectsOfType<Collider>();
-
-                foreach (Collider collider in colliders)
-                {
-                    Physics.IgnoreCollision(objtoGet.GetComponent<Collider>(), collider, false);
-                }
-
-                objToGrab = false;
-            }
+            
         }
- 
+
+        if (Input.GetKeyDown(KeyCode.F) && isGrabbing)
+        {
+            isGrabbing = false;
+            Rigidbody rb = objtoGet.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
+
+            Collider[] colliders = FindObjectsOfType<Collider>();
+
+            foreach (Collider collider in colliders)
+            {
+                Physics.IgnoreCollision(objtoGet.GetComponent<Collider>(), collider, false);
+            }
+            objToGrab = false;
+            objtoGet = null;
+            }
+
     }
 
 
