@@ -217,6 +217,7 @@ MonoBehaviour:
   lever:
     serializedVersion: 2
     m_Bits: 8192
+  leverInteract: {fileID: 0}
   pickupable:
     serializedVersion: 2
     m_Bits: 128
@@ -248,9 +249,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1.8450431
+  m_Height: 1.5619285
   m_Direction: 1
-  m_Center: {x: 0, y: 0.07747848, z: 0}
+  m_Center: {x: 0, y: 0.21903579, z: 0}
 --- !u!136 &5779044373424259776
 CapsuleCollider:
   m_ObjectHideFlags: 0
