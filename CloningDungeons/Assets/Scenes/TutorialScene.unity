@@ -8946,7 +8946,8 @@ PrefabInstance:
       propertyPath: m_text
       value: You need to escape the dungeon in time. You can throw your clone to
         get him to reach higher destinations. There are keys to find. The golden
-        key is for the chest and the silver key is for the doors.
+        key is for the chest and the silver key is for the doors. The big clone can
+        not jump while holding something.
       objectReference: {fileID: 0}
     - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
