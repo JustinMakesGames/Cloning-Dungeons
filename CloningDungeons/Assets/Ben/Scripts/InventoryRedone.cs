@@ -89,14 +89,18 @@ public class InventoryRedone : MonoBehaviour
             }
             if (dropKey == doorKey)
             {
-                if (hit.collider.gameObject.tag == "Door")
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    keyActive = false;
-                    dropKey = null;
-                    image.gameObject.SetActive(false);
-                    image = null;
-                    hit.collider.gameObject.GetComponent<InteractionAnimations>().DoorOpenInteract();
+                    if (hit.collider.gameObject.tag == "Door")
+                    {
+                        keyActive = false;
+                        dropKey = null;
+                        image.gameObject.SetActive(false);
+                        image = null;
+                        hit.collider.gameObject.GetComponent<InteractionAnimations>().DoorOpenInteract();
+                    }
                 }
+                
             }
         }
         else
