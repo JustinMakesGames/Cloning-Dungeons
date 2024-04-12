@@ -21135,6 +21135,105 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 335094009}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1011514962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1970871178}
+    m_Modifications:
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_text
+      value: The buttons disappear after 3 seconds once stepped off the button.
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648872811835376185, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_Name
+      value: Explain Sign (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.7624493
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e46048a28c54cd4789c4ad0ccca73e2, type: 3}
+--- !u!4 &1011514963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3425409063999182979, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1011514962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1012456501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46483,6 +46582,7 @@ Transform:
   - {fileID: 1628780360}
   - {fileID: 1228024224}
   - {fileID: 1558558149}
+  - {fileID: 1011514963}
   - {fileID: 876820333}
   - {fileID: 1301946494}
   - {fileID: 538512125}
