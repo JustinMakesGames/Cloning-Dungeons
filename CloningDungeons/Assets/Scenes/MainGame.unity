@@ -21146,7 +21146,7 @@ PrefabInstance:
     - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
       propertyPath: m_text
-      value: The buttons disappear after 3 seconds once stepped off the button.
+      value: The platforms disappear after 3 seconds once stepped off the button.
       objectReference: {fileID: 0}
     - target: {fileID: 616079900160805216, guid: 4e46048a28c54cd4789c4ad0ccca73e2,
         type: 3}
